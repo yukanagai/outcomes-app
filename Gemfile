@@ -24,13 +24,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+<<<<<<< HEAD
 
+=======
+gem 'ffaker'
+>>>>>>> 03e93ffb177590c252f94af1ba77ceb7b8a6efc8
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
+  gem 'bet'
 end
 
 group :development do
