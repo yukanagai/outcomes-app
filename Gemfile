@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-
-gem 'rails-assets-foundation'
+source 'https://rails-assets.org' do # this is necessary for all bower-based gems
+  gem 'rails-assets-foundation'
+end
 gem 'react-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -24,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# Toti: Adding gem for chartjs implementation in RoR project 
+# More at: https://github.com/coderbydesign/chart-js-rails
+gem 'chart-js-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

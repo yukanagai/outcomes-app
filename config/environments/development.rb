@@ -1,6 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # (Toti) Added per instructions available at:
+  # https://facebook.github.io/react/blog/2013/07/30/use-react-and-jsx-in-ruby-on-rails.html
+  # config.react.variant = :development
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
