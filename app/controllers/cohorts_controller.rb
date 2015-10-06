@@ -16,16 +16,11 @@ class CohortsController < ApplicationController
   # GET /cohorts/1.json
   def show
     # this needs to restrict students by program
-    binding.pry
-    @students = Student.find_by(cohort_id: params[:id])
+    @students = Student.where(cohort_id: params[:id])
     @instructors = CohortOfficer.all
     @cohorts = Cohort.all
     @programs = Program.all
-    @program_names = []
-    @programs.each do |program|
-
-      @program_names.push(program.name)
-    end
+    @program_name = Program.find(@students.first.cohort.program.id).name
 
   end
 

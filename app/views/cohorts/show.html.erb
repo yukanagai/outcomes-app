@@ -50,12 +50,12 @@
 
 <ul>
   <% @cohorts.each do |cohort| %>
-    <% for i in 0..@program_names.length  do %>
-      <% if @program_names.find(cohort.program.name) %>
+
+      <% if @program_name == cohort.program.name %>
         <li> <%= cohort.name  %> </li>
       <% else %>
       <% end %>
-    <% end %>
+
   <% end %>
 </ul>
 
