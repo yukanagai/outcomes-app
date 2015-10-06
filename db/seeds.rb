@@ -41,6 +41,8 @@ ryebread = Cohort.create(program: pd, name:"Ryebread", location:"Union Square", 
 
 
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nialbima", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: josh, cohort:pluto, username:"JOSHBUBIS", password:"josh", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
+
 CohortOfficer.create(contact: bobby, cohort: pluto, role: "Instructional Assistant")
 
 js = Skill.create(name:"Javascript", description:"Fast, popular, front-end scripting language. Watch your tags.")
