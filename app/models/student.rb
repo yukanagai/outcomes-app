@@ -7,4 +7,9 @@ class Student < ActiveRecord::Base
 
   has_secure_password
 
+  def name
+    Student.contact.first_name + " " + Student.contact.last_name
+  end
+
+
 end
