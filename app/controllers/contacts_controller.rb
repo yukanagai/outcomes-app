@@ -4,19 +4,8 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-<<<<<<< HEAD
-    @logged_in = Student.first
     @contacts = {
       :contacts => Contact.all
-=======
-    @contacts = {
-      :contacts => Contact.all,
-      :form => {
-        :action => contacts_path,
-        :csrf_param => request_forgery_protection_token,
-        :csrf_token => form_authenticity_token
-      }
->>>>>>> master
     }
   end
 
