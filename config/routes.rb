@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   resources :programs
   resources :contacts
 
+  get '/login' => 'students#login'
+  post '/login' => 'students#login_post'
+  get '/logout' => 'students#logout'
+
 end
