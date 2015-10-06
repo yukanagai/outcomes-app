@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
+    @logged_in = Student.first
     @contacts = Contact.all
   end
 
