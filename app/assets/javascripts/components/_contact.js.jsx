@@ -4,7 +4,9 @@ var Contact = React.createClass({
     return(
       <div className="contact">
         <td className="contact-name">
+          <a href={"/contacts/"+this.props.data.id+""}>
           {this.props.data.first_name} {this.props.data.last_name}
+          </a>
         </td>
         <td>
          {this.props.data.email}
@@ -12,16 +14,3 @@ var Contact = React.createClass({
       </div>
   )}
 })
-
-// var Movie = React.createClass({
-//   render: function() {
-//     return(
-//       <div className="movie">
-//         <h4 className="movie-title">
-//           {this.props.title}
-//         </h4>
-//         {this.props.children}
-//       </div>
-//     );
-//   }
-// });
