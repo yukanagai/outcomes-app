@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-
-gem 'rails-assets-foundation'
+source 'https://rails-assets.org' do
+	gem 'rails-assets-foundation'
+end
 gem 'react-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

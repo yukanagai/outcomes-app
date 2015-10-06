@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :programs
   resources :contacts
 
+  get '/styleguide' => 'students#styleguide'
+
 end
