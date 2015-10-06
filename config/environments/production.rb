@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # (Toti) Added per instructions available at:
   # https://facebook.github.io/react/blog/2013/07/30/use-react-and-jsx-in-ruby-on-rails.html
-  # config.react.variant = :production
+  config.react.variant = :production
 
   # Code is not reloaded between requests.
   config.cache_classes = true

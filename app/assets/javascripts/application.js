@@ -14,11 +14,12 @@
 //= require jquery_ujs
 
 //= require react
+//= require components
 //= require react_ujs
 
 // (Toti: Added per instructions at https://github.com/coderbydesign/chart-js-rails)
 //= require Chart
 
 //= require turbolinks
-//= require_tree .
+// require_tree .
 //= require_tree ./react_components
