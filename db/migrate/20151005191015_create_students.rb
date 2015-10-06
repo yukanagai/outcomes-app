@@ -2,7 +2,7 @@ class CreateStudents < ActiveRecord::Migration
   def change
     create_table :students do |t|
       t.string :username
-      t.string :password
+      t.string :password_digest
       t.boolean :completed
       t.boolean :employed
       t.boolean :took_survey

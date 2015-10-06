@@ -36,14 +36,14 @@ yuka = Contact.create(first_name:"Yuka", last_name:"N", email:"Yuka@gmail.com", 
 zoe = Contact.create(first_name:"Zoe", last_name:"Sachs", email:"zoesachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
 
 wdi = Program.create(name:"Web Development Immersive", description:"CODE => EXPLODE => KEEP GOING")
-ux_ui = Program.create(name:"User Experice Design Immersive", description:"DESIGN => AMAZE =>GET A JOB?")
+ux_di = Program.create(name:"User Experice Design Immersive", description:"DESIGN => AMAZE =>GET A JOB?")
 pd = Program.create(name:"Product Management Immersive", description:"THING ABOUT PRODUCTS => MAKE SOME MONNAY")
 
 pluto = Cohort.create(program: wdi, name:"Pluto", location:"Union Square", start_date:Date.new(2015, 8, 10), end_date:Date.new(2015, 11, 2))
 bacon = Cohort.create(program: wdi, name:"Bacon", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 lettuce = Cohort.create(program: wdi, name:"Lettuce", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 tomato = Cohort.create(program: wdi, name:"Tomato", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
-liverwurst = Cohort.create(program: ux_ui, name:"Liverwurst", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
+liverwurst = Cohort.create(program: ux_di, name:"Liverwurst", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 ryebread = Cohort.create(program: pd, name:"Ryebread", location:"Union Square", start_date:Date.new(2015, 9, 01), end_date:Date.new(2015, 9,18))
 
 
