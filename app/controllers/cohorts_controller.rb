@@ -16,10 +16,18 @@ class CohortsController < ApplicationController
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
-    @students = Student.all
+    # this needs to restrict students by program
+    binding.pry
+    @students = Student.find_by(cohort_id: params[:id])
     @instructors = CohortOfficer.all
     @cohorts = Cohort.all
     @programs = Program.all
+    @program_names = []
+    @programs.each do |program|
+
+      @program_names.push(program.name)
+    end
+
   end
 
   # GET /cohorts/new
@@ -74,7 +82,7 @@ class CohortsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cohort
-      @cohort = Cohort.find(params[:id])
+      
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -46,9 +46,16 @@
 <strong>
   All cohorts MAKE PART OF SIDEBAR
 </strong>
+
+
 <ul>
   <% @cohorts.each do |cohort| %>
-    <li> <%= cohort.name  %> </li>
+    <% for i in 0..@program_names.length  do %>
+      <% if @program_names.find(cohort.program.name) %>
+        <li> <%= cohort.name  %> </li>
+      <% else %>
+      <% end %>
+    <% end %>
   <% end %>
 </ul>
 
