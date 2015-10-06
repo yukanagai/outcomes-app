@@ -1,0 +1,16 @@
+<div class="login-form">
+  <form action="/login" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+
+    <div id="login-input">
+      <h2 class="header-text">LOGIN</h2>
+
+      <h3><input type="text" name="username" placeholder="Username" class="input-box"></h3>
+
+      <h3><input type="password" value="" name="password" placeholder="Password"  class="input-box"></h3>
+
+      <p><input type="submit" value="Sign In" id="submit-button"></p>
+
+    </div>
+
+</div>
