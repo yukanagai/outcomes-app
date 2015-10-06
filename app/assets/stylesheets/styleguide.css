@@ -1,0 +1,167 @@
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+	border: 10px solid black;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+hr {
+	width: 50%;
+}
+
+.content {
+	margin: 40px 0px;
+}
+
+#ga1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5em;
+	background: #30A370;
+	color: white;
+	display: inline-block;
+	line-height: 1;
+	padding: 15px 40px;
+	border-radius: 10px;
+}
+
+#ga2 {
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5em;
+	background: #1A2B37;
+	color: white;
+	display: inline-block;
+	line-height: 1;
+	padding: 15px 40px;
+	border-radius: 10px;
+}
+
+.colors div {
+	margin-right: 30px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.colors p {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 28px;
+}
+
+#color1 {
+	background: #30A370;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
+#color2 {
+	background: #FCA311;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
+#color3 {
+	background: #1A2B37;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
+#color4 {
+	background: #E5E5E5;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
+.pacifico h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 3em;
+}
+
+.pacifico p {
+	font-size: 1em;;
+}
+
+.opensans h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2em;
+}
+
+.opensans h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;;
+}
+
+.buttons {
+	margin: 0 auto;
+}
+
+
+#mainbutton {
+	background-color: #FCA311;
+	width: 150px;
+	height: auto;
+	padding: 20px;
+	display: inline-block;
+	border-radius: 10px;
+	font-weight: 400;
+}
+
+#secondarybutton {
+	display: inline-block;
+	background-color:#E5E5E5;
+	width: 150px;
+	height: auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+#chart1 {
+	background: white;
+	height: 250px;
+	width: 350px;
+	margin: 0 auto;
+}
+
+.chartinfo {
+	background: white;
+	width: 350px;
+	margin: 0 auto;
+}
+
+.chartinfo p {
+	display: inline-block;
+}
+
+#pie1 {
+	background: #1EBBA6;
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: inline-block;
+}
+
+
