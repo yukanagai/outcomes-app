@@ -11,12 +11,15 @@ class CohortsController < ApplicationController
     @students = Student.all
     @instructors = CohortOfficer.all
 
-    binding.pry
   end
 
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
+    @students = Student.all
+    @instructors = CohortOfficer.all
+    @cohorts = Cohort.all
+    @programs = Program.all
   end
 
   # GET /cohorts/new
