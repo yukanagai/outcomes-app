@@ -38,9 +38,9 @@ tomato = Cohort.create(program: wdi, name:"Tomato", location:"Union Square", sta
 liverwurst = Cohort.create(program: ux_ui, name:"Liverwurst", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 ryebread = Cohort.create(program: pd, name:"Ryebread", location:"Union Square", start_date:Date.new(2015, 9, 01), end_date:Date.new(2015, 9,18))
 
-
-
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nialbima", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: josh, cohort:pluto, username:"JOSHBUBIS", password:"josh", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+
 CohortOfficer.create(contact: bobby, cohort: pluto, role: "Instructional Assistant")
 
 js = Skill.create(name:"Javascript", description:"Fast, popular, front-end scripting language. Watch your tags.")
