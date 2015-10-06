@@ -26,8 +26,8 @@
         <td><%= student.employed? %></td>
         <td><%= student.employer %></td>
         <td><%= student.employed_as %></td>
-        <td><%= student.contact %></td>
-        <td><%= student.cohort %></td>
+        <td><%= student.contact.email %></td>
+        <td><%= student.cohort.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
