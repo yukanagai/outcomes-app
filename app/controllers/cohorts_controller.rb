@@ -10,7 +10,10 @@ class CohortsController < ApplicationController
     @contacts = Contact.all
     @students = Student.all
     @instructors = CohortOfficer.all
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   end
 
   # GET /cohorts/1

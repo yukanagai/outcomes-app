@@ -10,7 +10,36 @@ class CohortOfficersController < ApplicationController
   # GET /cohort_officers/1
   # GET /cohort_officers/1.json
   def show
+    @cohort_officer = CohortOfficer.find(params[:id])
   end
+
+  def login
+    if current_user
+      redirect_to root_path
+    else
+      render :login
+    end
+  end
+
+  def login_post
+    @cohort_officer = CohortOfficer.find_by({contact: params[:contact]})
+      if @cohort_officer
+        if cohort_officer.authenticate(params[:password])
+          sesseion[:cohort_officer_id] = @cohort_officer.id
+          redirect_to root_path
+        else
+          redirect_to '/login'
+        end
+      else
+        redirect_to '/login'
+      end
+  end
+
+  def logout 
+    session[:contact_id]=nil
+    redirect_to '/login'
+  end
+
 
   # GET /cohort_officers/new
   def new
