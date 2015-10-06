@@ -7,4 +7,19 @@ class Student < ActiveRecord::Base
   has_many :student_skills
   has_many :skills, :through => :student_skills
 
+<<<<<<< HEAD
+=======
+  has_secure_password
+
+  #josh: these are a pain in the ass with teh Contact model.
+  # things that'd be good:
+  # contact_info, with fields returned
+  # cohorts, which passes cohort_id into the Cohort model and gives us the object
+  # whatever! this is pretty safe as long as you don't delete things on line 8 or above.
+  # -nick
+  def name
+    "#{Contact.find(contact_id).first_name} #{Contact.find(contact_id).last_name}"
+  end
+
+>>>>>>> 35663e4d88ae8c4eb8f45f150e3b1e424e4730fd
 end
