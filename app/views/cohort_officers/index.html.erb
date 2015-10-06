@@ -15,8 +15,8 @@
   <tbody>
     <% @cohort_officers.each do |cohort_officer| %>
       <tr>
-        <td><%= cohort_officer.contact %></td>
-        <td><%= cohort_officer.cohort %></td>
+        <td><%= "#{cohort_officer.contact.first_name} #{cohort_officer.contact.last_name}" %></td>
+        <td><%= "#{cohort_officer.cohort.program.name} #{cohort_officer.cohort.name}" %></td>
         <td><%= cohort_officer.role %></td>
         <td><%= link_to 'Show', cohort_officer %></td>
         <td><%= link_to 'Edit', edit_cohort_officer_path(cohort_officer) %></td>

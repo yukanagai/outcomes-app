@@ -50,7 +50,6 @@ ryebread = Cohort.create(program: pd, name:"Ryebread", location:"Union Square", 
 
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
-Student.create(contact: andrew, cohort:pluto, username:"andrew", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: calvin, cohort:pluto, username:"calvin", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: christopher, cohort:pluto, username:"christopher", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: eric, cohort:pluto, username:"eric", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
