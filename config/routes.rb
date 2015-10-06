@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
-  resources :cohort_officers
-  resources :student_skills
-  resources :skills
+
+  # contacts have all actions
+  resources :contacts
+
+  # students an are created, edited and deleted through contacts.
   resources :students
+  resources :cohort_officers
+
+  #
   resources :cohorts
   resources :programs
-  resources :contacts
+
+  resources :student_skills
+  resources :skills
+
+
+
+  get '/styleguide' => 'students#styleguide'
 
   get '/login' => 'students#login'
   post '/login' => 'students#login_post'
