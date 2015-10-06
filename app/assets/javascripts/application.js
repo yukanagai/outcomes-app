@@ -15,5 +15,9 @@
 
 //=require react
 //=require react_ujs
+<<<<<<< HEAD
 //= require components
+=======
+
+>>>>>>> master
 //= require_tree .
