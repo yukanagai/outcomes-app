@@ -20,9 +20,8 @@ ActiveRecord::Schema.define(version: 20151005193329) do
     t.integer  "contact_id"
     t.integer  "cohort_id"
     t.string   "role"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "cohort_officers", ["cohort_id"], name: "index_cohort_officers_on_cohort_id", using: :btree
@@ -89,7 +88,7 @@ ActiveRecord::Schema.define(version: 20151005193329) do
 
   create_table "students", force: :cascade do |t|
     t.string   "username"
-    t.string   "password_digest"
+    t.string   "password"
     t.boolean  "completed"
     t.boolean  "employed"
     t.boolean  "took_survey"
@@ -97,8 +96,8 @@ ActiveRecord::Schema.define(version: 20151005193329) do
     t.string   "employed_as"
     t.integer  "contact_id"
     t.integer  "cohort_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "students", ["cohort_id"], name: "index_students_on_cohort_id", using: :btree

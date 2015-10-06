@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
+
   # GET /students
   # GET /students.json
   def index
@@ -10,6 +11,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
   end
 
   # GET /students/new
@@ -24,18 +26,32 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
-
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render :show, status: :created, location: @student }
+    # @student = Student.new(student_params)
+    if session[:contact_id]
+      redirect_to '/cohort'
+    else
+      student_params = params.require(:student).permit(:contact, :cohort, :username, :password_digest, :completed, :employer,)
+      @student = Student.new(student_params)
+      if @student.valid?
+        @student.save
+        session[:student_id] = @student.id
+        redirect_to '/cohorts'
       else
-        format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
+
+  #   respond_to do |format|
+  #     if @student.save
+  #       format.html { redirect_to @student, notice: 'Student was successfully created.' }
+  #       format.json { render :show, status: :created, location: @student }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @student.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
