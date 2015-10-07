@@ -70,10 +70,10 @@ Student.create(contact: victoria, cohort:pluto, username:"victoria", password:"p
 Student.create(contact: yuka, cohort:pluto, username:"yuka", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: zoe, cohort:pluto, username:"zoe", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 
-CohortOfficer.create(contact: bobby, cohort: pluto, role: "Instructional Assistant")
-CohortOfficer.create(contact: dennis, cohort: pluto, role: "Instructional Assistant")
-CohortOfficer.create(contact: pan, cohort: pluto, role: "Instructor")
-CohortOfficer.create(contact: jaden, cohort: pluto, role: "Instructor")
+CohortOfficer.create(contact: bobby, cohort: pluto, role: "Instructional Assistant", password:"password")
+CohortOfficer.create(contact: dennis, cohort: pluto, role: "Instructional Assistant", password:"password")
+CohortOfficer.create(contact: pan, cohort: pluto, role: "Instructor", password:"password")
+CohortOfficer.create(contact: jaden, cohort: pluto, role: "Instructor", password:"password")
 
 js = Skill.create(name:"Javascript", description:"Fast, popular, front-end scripting language. Watch your tags.")
 html = Skill.create(name:"HTML", description:"HYPERTEXT MARKUP LANGUAGE.")

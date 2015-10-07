@@ -23,8 +23,10 @@ class StudentsController < ApplicationController
   end
 
   def login_post
+    binding.pry
     @student = Student.find_by({username: params[:username]})
-    # @cohort_officer = CohortOfficer.find_by({contact: })
+
+    # does not work! super broken
 
     if @student
       if @student.authenticate(params[:password])
@@ -34,12 +36,12 @@ class StudentsController < ApplicationController
         redirect_to '/'
       end
     else
-      if @cohort_officer.authenticate(params[:password])
-        session[:cohort_officer_id] = @cohort_officer.id
-        redirect_to '/cohorts'
-      else
-        redirect_to '/'
-      end
+      # if @cohort_officer.authenticate(params[:password])
+      #   session[:cohort_officer_id] = @cohort_officer.id
+      #   redirect_to '/cohorts'
+      # else
+        redirect_to '/login'
+      # end
     end
   end
 
