@@ -1,6 +1,5 @@
 var Contact = React.createClass({
   render: function() {
-  console.log("props", this.props)
     return(
       <div className="contact">
         <td className="contact-name">
