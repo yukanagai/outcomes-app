@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :cohort_officers
 
   resources :cohorts
+  resources :programs
 
 
 
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   get '/logout' => 'students#logout', redirect_to: "students#login"
 
 
-
+  # get '/programs', to: 'programs#index'
 
   get '/program_data', to: 'cohort_officers#index'
 

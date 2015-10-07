@@ -30,6 +30,7 @@
  	margin: 0;
  	padding: 0;
  	font-family: 'Open Sans', sans-serif;
+ 	background-color: $mercury;
  }
 
  a {
@@ -194,7 +195,7 @@
 
 
 #catlogo {
-	background-image: url(asset-path('catlogo.gif'));
+	background-image: url(asset-path('catlogo.png'));
 	background-size: cover;
 	width: 200px;
 	min-width: 140px;
