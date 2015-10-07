@@ -4,4 +4,8 @@ class CohortOfficer < ActiveRecord::Base
 
 
 
+  def name
+    "#{Contact.find(contact_id).first_name} #{Contact.find(contact_id).last_name}"
+  end
+
 end

@@ -2,6 +2,10 @@
 
 
 <p>
+</strong><%= @student.name %>
+</p>
+
+<p>
   <strong>Username:</strong>
   <%= @student.username %>
 </p>
@@ -38,8 +42,18 @@
 
 <p>
   <strong>Cohort:</strong>
-  <%= @student.cohort.name %>
+  <%= @student.cohort_name %>
 </p>
+
+<p><ul>
+  <strong> Contact info list (this is just a test for now)</strong>
+    <% @student.contact_info_list.each do |something|  %>
+    <li> <%= something %> </li>
+    <% end %>
+</p></ul>
+
+
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
