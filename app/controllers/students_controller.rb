@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      redirect_to root_path
+      redirect_to student_path
     else
       render :login
     end

@@ -14,13 +14,14 @@ Rails.application.routes.draw do
   resources :student_skills
   resources :skills
 
-  root 'cohorts#index'
+
 
   # all logins processed by students controller
-  get '/login' => 'students#login'
+  get '/' => 'students#login'
   post '/login' => 'students#login_post'
   get '/logout' => 'students#logout'
 
+  get '/program_data', to: 'cohort_officers#index'
 
 
   get '/styleguide' => 'students#styleguide'
