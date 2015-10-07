@@ -36,9 +36,9 @@
  	margin: 40px 0px;
  }
 
- #ga1 {
+ #logogreen {
  	font-family: 'Pacifico', cursive;
- 	font-size: 2.5em;
+ 	font-size: 3em;
  	background: #30A370;
  	color: white;
  	display: inline-block;
@@ -47,9 +47,9 @@
  	border-radius: 10px;
  }
 
- #ga2 {
+ #logoblue {
  	font-family: 'Pacifico', cursive;
- 	font-size: 2.5em;
+ 	font-size: 3em;
  	background: #1A2B37;
  	color: white;
  	display: inline-block;
@@ -132,14 +132,13 @@
  	margin: 0 auto;
  }
 
-
  #mainbutton {
- 	background-color: #FCA311;
- 	width: 150px;
+ 	background-color: #F5EA82;
  	height: auto;
  	padding: 20px;
  	display: inline-block;
  	border-radius: 10px;
+ 	border: none;
  	font-weight: 400;
  }
 

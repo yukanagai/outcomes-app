@@ -1,27 +1,15 @@
-
 <div class="login-form">
   <form action="/login" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
+    <h1 id="logoblue">Catcademy</h1>
+
     <div id="login-input">
-      <h2 class="header-text">LOGIN</h2>
-      <h3><input type="text" name="email" placeholder="Email" class="input-box"></h3>
-      <h3><input type="password" value="" name="password" placeholder="Password"  class="input-box"></h3>
-      <p><input type="submit" value="Sign In" id="submit-button"></p>
+      <input type="text" name="username" placeholder="Username" class="input-box" id="firstbox">
+      <br>
+      <input type="password" value="" name="password" placeholder="Password" class="input-box">
+      <br>
+      <input type="submit" value="Sign In" id= "mainbutton">
     </div>
-
-<!--     <div id="new-user">
-      <h2 class="header-text">New user?</h2>
-        <p><a href="/students/new">Sign Up</a></p>
-    </div> -->
-
-      <h3><input type="text" name="username" placeholder="Username" class="input-box"></h3>
-
-      <h3><input type="password" value="" name="password" placeholder="Password"  class="input-box"></h3>
-
-      <p><input type="submit" value="Sign In" id="submit-button"></p>
-
-    </div>
->>>>>>> 35663e4d88ae8c4eb8f45f150e3b1e424e4730fd
-
+  </div>
 </div>
