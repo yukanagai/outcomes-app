@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
   get '/styleguide' => 'students#styleguide'
 
+  get '/survey' => 'surveys#index'
+
 end
