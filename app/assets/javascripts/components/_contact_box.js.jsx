@@ -1,6 +1,7 @@
 var ContactBox = React.createClass({
   getInitialState: function() {
-    return {data: this.props}
+    return {data: []}
+    // return {data: this.props}
   },
 
   loadContacts: function(search_string) {
