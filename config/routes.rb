@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
 
-  get "/data", to: 'cohort_officers#index'
+
 
   # route all officers here?
   get "/cohort/:id/officers", to: 'cohort_officers#show'
@@ -21,8 +21,9 @@ Rails.application.routes.draw do
   # we need a route for "officers attached to this cohort" in 'cohort_officers#show'
 
   # all logins processed by students controller
-  get '/' => 'students#login'
-  post '/login' => 'students#login_post'
+  get '/', to: 'students#login'
+  get '/login', to: 'students#login'
+  post '/login', to: 'students#login_post'
   get '/logout' => 'students#logout', redirect_to: "students#login"
 
 

@@ -23,7 +23,6 @@ class StudentsController < ApplicationController
   end
 
   def login_post
-    binding.pry
     @student = Student.find_by({username: params[:username]})
 
     # does not work! super broken
@@ -31,7 +30,7 @@ class StudentsController < ApplicationController
     if @student
       if @student.authenticate(params[:password])
         session[:student_id] = @student.id
-        redirect_to student_path
+        redirect_to student_path [@student.id]
       else
         redirect_to '/'
       end
