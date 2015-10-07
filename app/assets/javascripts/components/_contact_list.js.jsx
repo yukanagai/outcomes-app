@@ -11,7 +11,7 @@ var ContactList = React.createClass({
 
   return (
     <div className = "contact-list">
-      <table>
+      <table className="main-table">
         <tr>
           <th>
             Name

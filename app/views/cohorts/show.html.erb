@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
   <strong>Name:</strong>
   <%= @cohort.name %>
 </p>
@@ -11,19 +11,52 @@
 </p>
 
 <p>
-  <strong>Start date:</strong>
-  <%= @cohort.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @cohort.end_date %>
-</p>
-
-<p>
   <strong>Program:</strong>
-  <%= @cohort.program %>
+  <%=  @cohort.program.name %>
 </p>
+
+<button>
+  Back to all programs
+</button>
+
+<p>
+  All students MAKE CLICKABLE:
+</p>
+<ul>
+  <% @students.each do |student| %>
+    <% if (student.cohort.name == @cohort.name) %>
+      <li> <%= student.contact.first_name %> <%= student.contact.last_name %> </li>
+    <% else %>
+    <% end %>
+  <% end %>
+</ul>
+
+<p>
+  Instructors MAKE CLICKABLE:
+</p>
+<ul>
+  <% @instructors.each do |instructor| %>
+    <% if (instructor.cohort.name == @cohort.name) %>
+      <li> <%= instructor.contact.first_name %> <%= instructor.contact.last_name %> </li>
+    <% else %>
+    <% end %>
+  <% end %>
+</ul>
+
+<strong>
+  All cohorts MAKE PART OF SIDEBAR
+</strong>
+
+
+<ul>
+  <% @cohorts.each do |cohort| %>
+    <% if @program_name == cohort.program.name %>
+      <li> <%= cohort.name  %> </li>
+    <% else %>
+    <% end %>
+  <% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_cohort_path(@cohort) %> |
 <%= link_to 'Back', cohorts_path %>
