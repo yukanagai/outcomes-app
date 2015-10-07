@@ -1,49 +1,55 @@
 <p id="notice"><%= notice %></p>
 
+<div class="header">
+  <h1 class="headerText">Student Profile</h1>
+</div>
 
-<p>
-</strong><%= @student.name %>
-</p>
+<div class="tablewrapper">
 
-<p>
+  <h1><%=@student.username%></h1>
+
+  <p>
+
   <strong>Username:</strong>
   <%= @student.username %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Password:</strong>
   <%= @student.password %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Completed?:</strong>
   <%= @student.completed? %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employed?:</strong>
   <%= @student.employed? %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employer:</strong>
   <%= @student.employer %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employed as:</strong>
   <%= @student.employed_as %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Contact:</strong>
   <%= @contact_info.email %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Cohort:</strong>
-  <%= @student.cohort_name %>
-</p>
+  <%= @student.cohort.name %>
+  </p>
+</div>
+
 
 <p><ul>
   <strong> Contact info list (this is just a test for now)</strong>

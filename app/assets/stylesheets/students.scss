@@ -1,10 +1,37 @@
-// Place all the styles related to the Students controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
+
+#students_index, #students_show {
+	background-color: $mercury;
+
+	.header {
+		background-color: $eucalyptus;
+		font-size: 2em;
+		color: white;
+	}
+
+	.headerText {
+		font-family: $headerfont;
+		padding: 30px;
+	}
+
+	.tablewrapper {
+		width: 100%;
+		background: white;
+		text-align: left;
+		padding: 20px;
+	}
+
+
+
+}
+
+
+
+
+
 
 
 #students_login {
-
 	background-color:#E5E5E5;
 	color: white;
 	height: 100%;
