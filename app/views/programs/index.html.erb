@@ -1,22 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Programs</h1>
+
+<div class="container">
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
-    <% @programs.each_with_index do |program, index| %>
+    <tr>
+      <td id="header" colspan="2">
+        <h1>Programs</h1>
+      </td>
+    </tr>
 
+    <% @programs.each_with_index do |program, index| %>
       <tr>
-        <td id='<%="progam-#{index}"%>'><%= program.name %></td>
-        <td><%= program.description %></td>
+        <td id='<%="program-#{index}"%>'></td>
+        <td><%= link_to program.name, program %></td>
         <td><%= link_to 'Show', program %></td>
         <td><%= link_to 'Edit', edit_program_path(program) %></td>
         <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,7 +23,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
 
-<%= link_to 'New Program', new_program_path %>
+<div id="catlogo"></div>
