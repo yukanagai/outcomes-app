@@ -14,12 +14,26 @@
  *= require_self
  */
 
+ $eucalyptus: #30A370;
+ $coralred: #FCA311;
+ $bigstone: #1A2B37;
+ $mercury: #E5E5E5;
+ $saharasand: #F5EA82;
+ $background: #E5E5E5;
+
+ $bodyfont: 'Open Sans', sans-serif;
+ $headerfont: 'Pacifico', cursive;
+
  body, html {
  	width: 100%;
  	height: 100%;
  	margin: 0;
  	padding: 0;
  	font-family: 'Open Sans', sans-serif;
+ }
+
+ a {
+ 	text-decoration: none;
  }
 
  .wrapper {
@@ -177,3 +191,14 @@
  	margin-top: 50px;
  	display: inline-block;
  }
+
+
+#catlogo {
+	background-image: url(asset-path('catlogo.gif'));
+	background-size: cover;
+	width: 200px;
+	min-width: 140px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: 100px;
+}

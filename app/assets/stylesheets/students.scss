@@ -12,13 +12,11 @@
 	margin: 0;
 
 	#logoblue {
-		margin-top: 150px;
 		width: 350px;
 		box-sizing: border-box;
 	}
 
 	#login-input {
-		// background-color: #FCA311;
 		display: block;
 		position: relative;
 		margin: 0 auto;
@@ -55,6 +53,16 @@
 			background: #1A2B37;
 			color: white;
 		}
+	}
+
+	#catlogo {
+		background-image: url(asset-path('catlogo.gif'));
+		background-size: cover;
+		width: 200px;
+		min-width: 140px;
+		height: 150px;
+		margin: 0 auto;
+		margin-top: 100px;
 	}
 
 }
