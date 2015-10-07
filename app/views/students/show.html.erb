@@ -52,6 +52,18 @@
     <% end %>
 </p></ul>
 
+<p>
+
+
+
+        <strong> Graduated over 100 days ago? </strong>
+        <% if @student.hundred_days? %>
+        <h3><%= "Yes, you can take the survey!" %></h3>
+        <% else %>
+        <h3><%= "No, you can't take the survey yet. Check back 100 days after graduation." %></h3>
+        <% end %>
+
+</p>
 
 
 

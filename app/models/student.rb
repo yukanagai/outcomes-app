@@ -26,6 +26,14 @@ class Student < ActiveRecord::Base
 
   end
 
+
+
+  def hundred_days?
+    Date.today - cohort.end_date >= 100
+  end
+
+
+
   def cohort_name
     cohort.name
   end
