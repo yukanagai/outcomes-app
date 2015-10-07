@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
+
   # GET /students
   # GET /students.json
   def index
@@ -16,7 +17,7 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      redirect_to root_path
+      redirect_to student_path
     else
       render :login
     end
@@ -24,18 +25,19 @@ class StudentsController < ApplicationController
 
   def login_post
     @student = Student.find_by({username: params[:username]})
-    # @cohort_officer = CohortOfficer.find_by({contact: })
+    @cohort_officer = CohortOfficer.find_by({username: params[:username]})
+    # does not work! super broken
 
     if @student
       if @student.authenticate(params[:password])
-        session[:student_id] = @student.id
-        redirect_to student_path
+        session[:id] = @student.id
+        redirect_to student_path [@student.id]
       else
         redirect_to '/'
       end
     else
       if @cohort_officer.authenticate(params[:password])
-        session[:cohort_officer_id] = @cohort_officer.id
+        session[:id] = @cohort_officer.id
         redirect_to '/cohorts'
       else
         redirect_to '/'
@@ -44,7 +46,7 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    session[:contact_id]=nil
+    session[:id]=nil
     redirect_to '/'
   end
 
@@ -61,18 +63,32 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
-
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render :show, status: :created, location: @student }
+    # @student = Student.new(student_params)
+    if session[:contact_id]
+      redirect_to '/cohort'
+    else
+      student_params = params.require(:student).permit(:contact, :cohort, :username, :password_digest, :completed, :employer,)
+      @student = Student.new(student_params)
+      if @student.valid?
+        @student.save
+        session[:student_id] = @student.id
+        redirect_to '/cohorts'
       else
-        format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
+
+  #   respond_to do |format|
+  #     if @student.save
+  #       format.html { redirect_to @student, notice: 'Student was successfully created.' }
+  #       format.json { render :show, status: :created, location: @student }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @student.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
@@ -97,6 +113,35 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # def login
+  #   if current_user
+  #     redirect_to '/cohorts'
+  #   else
+  #     render :login
+  #   end
+  # end
+
+  # def login_post
+
+  #   @contact = Contact.find_by({email: params[:email]})
+  #   @student = Student.find_by(contact_id: @contact.id)
+  #   if @contact
+  #     if @student['password'].authenticate(params[:password]) || @cohortofficer.password.authenticate(params[:password])
+  #       session[:contact_id] = @contact.id
+  #       redirect_to '/cohorts'
+  #     else
+  #       redirect_to '/login'
+  #     end
+  #   else
+  #     redirect_to '/login'
+  #   end
+  # end
+
+  # def logout
+  #   session[:contact_id]=nil
+  #   redirect_to '/login'
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

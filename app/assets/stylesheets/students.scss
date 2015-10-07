@@ -1,3 +1,69 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#students_login {
+
+	background-color:#E5E5E5;
+	color: white;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+
+	#logoblue {
+		width: 350px;
+		box-sizing: border-box;
+	}
+
+	#login-input {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+
+	.input-box {
+		width: 350px;
+		margin: 0 auto;
+		display: block;
+		max-width: 403px;
+		height: 25px;
+		padding: 20px;
+		border: 0;
+		font-size: 1em;
+		font-color: black;
+  		text-transform: uppercase;
+  		box-sizing: border-box;
+  		outline: 0;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	#mainbutton {
+		width: 350px;
+		font-size: 1em;
+		height: 50px;
+		box-sizing: border-box;
+
+
+		&:hover {
+			background: #1A2B37;
+			color: white;
+		}
+	}
+
+	#catlogo {
+		background-image: url(asset-path('catlogo.gif'));
+		background-size: cover;
+		width: 200px;
+		min-width: 140px;
+		height: 150px;
+		margin: 0 auto;
+		margin-top: 100px;
+	}
+
+}
+

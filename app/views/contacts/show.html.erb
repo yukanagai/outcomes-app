@@ -1,44 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @contact.first_name %>
-</p>
+<!-- hook me up to the contacts_controller show action -->
+<!-- needs to read form data from show-->
 
-<p>
-  <strong>Last name:</strong>
-  <%= @contact.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @contact.twitter %>
-</p>
-
-<p>
-  <strong>Github:</strong>
-  <%= @contact.github %>
-</p>
-
-<p>
-  <strong>Linkedin:</strong>
-  <%= @contact.linkedin %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @contact.phone %>
-</p>
-
-<% if @contact.is_officer? %>
-<h3><%= "Officer" %></h3>
-
+<% if @student %>
+  <% redirect_to student_path %>
+<% elsif @cohort_officer %>
+  <% redirect_to cohort_officer_path %>
 <% end %>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
