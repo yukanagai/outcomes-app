@@ -25,7 +25,7 @@ class CohortOfficersController < ApplicationController
     @cohort_officer = CohortOfficer.find_by({contact: params[:contact]})
       if @cohort_officer
         if cohort_officer.authenticate(params[:password])
-          sesseion[:cohort_officer_id] = @cohort_officer.id
+          session[:cohort_officer_id] = @cohort_officer.id
           redirect_to root_path
         else
           redirect_to '/login'

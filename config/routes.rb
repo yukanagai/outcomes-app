@@ -34,12 +34,12 @@ Rails.application.routes.draw do
 
   get '/styleguide' => 'students#styleguide'
 
-<<<<<<< HEAD
+
   get '/survey' => 'surveys#index'
-=======
+
   get '/login' => 'students#login'
   post '/login' => 'students#login_post'
   get '/logout' => 'students#logout'
->>>>>>> 30abc8a19135927af1bb766ab75c978baa72b7b3
+
 
 end
