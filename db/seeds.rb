@@ -7,10 +7,10 @@ Cohort.destroy_all
 Program.destroy_all
 Contact.destroy_all
 
-
 bobby = Contact.create(first_name:"Bobby", last_name:"King", email:"BobbyKing@gmail.com", twitter:"@BobbyKing", github:"KingBobby", linkedin:"KingBobby",phone:"1231231233")
 calvin = Contact.create(first_name:"Calvin", last_name:"Yeung", email:"CalvinYeung@gmail.com", twitter:"@CalvinYeung", github:"CalvinYeung", linkedin:"CalvinYeung",phone:"1231237777")
 christopher = Contact.create(first_name:"Christopher", last_name:"Smith", email:"Chris@gmail.com", twitter:"@Chris", github:"ChristopherSmith", linkedin:"ChristopherSmith",phone:"3334445555")
+
 dennis = Contact.create(first_name:"Dennis", last_name:"Liaw", email:"dennis.liaw@generalassemb.ly", twitter:"@DennisLiaw", github:"dennisliaw", linkedin:"dennisliaw",phone:"1888231233")
 eric = Contact.create(first_name:"Eric", last_name:"Kim", email:"EricKim@gmail.com", twitter:"@EricKim", github:"EricKim", linkedin:"EricKim",phone:"0980984444")
 ester = Contact.create(first_name:"Ester", last_name:"Zinn", email:"Ester@gmail.com", twitter:"@Ester", github:"EsterZinn", linkedin:"EsterZinn",phone:"0980980987")
@@ -34,6 +34,16 @@ toti = Contact.create(first_name:"Toti", last_name:"F", email:"Toti@gmail.com", 
 victoria = Contact.create(first_name:"Victoria", last_name:"D", email:"Victoria@gmail.com", twitter:"@Victoria", github:"VictoriaF", linkedin:"Victoria",phone:"9374759283")
 yuka = Contact.create(first_name:"Yuka", last_name:"N", email:"Yuka@gmail.com", twitter:"@YukaNagai", github:"YukaF", linkedin:"Yuka",phone:"83948572837")
 zoe = Contact.create(first_name:"Zoe", last_name:"Sachs", email:"zoesachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+oez = Contact.create(first_name:"oez", last_name:"Sachs", email:"oezsachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+auky = Contact.create(first_name:"auky", last_name:"Sachs", email:"aukysachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+itot = Contact.create(first_name:"itot", last_name:"Sachs", email:"itotsachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+hpets = Contact.create(first_name:"hpets", last_name:"Sachs", email:"hpetssachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+keven = Contact.create(first_name:"Keven", last_name:"Sachs", email:"kevensachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+thomas = Contact.create(first_name:"Thomas", last_name:"Sachs", email:"thomassachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+yolanda = Contact.create(first_name:"yolanda", last_name:"Sachs", email:"yolandasachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+mortaki = Contact.create(first_name:"mortaki", last_name:"Sachs", email:"mortakisachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+joker = Contact.create(first_name:"joker", last_name:"Sachs", email:"jokersachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
+batman = Contact.create(first_name:"batman", last_name:"Sachs", email:"batmansachs@gmail.com", twitter:"@Zoesachs", github:"Zoesachs", linkedin:"Zoesachs",phone:"7677708374")
 
 wdi = Program.create(name:"Web Development Immersive", description:"CODE => EXPLODE => KEEP GOING")
 ux_di = Program.create(name:"User Experice Design Immersive", description:"DESIGN => AMAZE =>GET A JOB?")
@@ -46,7 +56,10 @@ tomato = Cohort.create(program: wdi, name:"Tomato", location:"Union Square", sta
 liverwurst = Cohort.create(program: ux_di, name:"Liverwurst", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 ryebread = Cohort.create(program: pd, name:"Ryebread", location:"Union Square", start_date:Date.new(2015, 9, 01), end_date:Date.new(2015, 9,18))
 
-
+CohortOfficer.create( contact: bobby, cohort: pluto, role: "Instructional Assistant", username: "Bobby", password:"password")
+CohortOfficer.create( contact: dennis, cohort: pluto, role: "Instructional Assistant", username: "Dennis", password:"password")
+CohortOfficer.create( contact: pan, cohort: pluto, role: "Instructor", username: "Pan", password:"password")
+CohortOfficer.create( contact: jaden, cohort: pluto, role: "Instructor", username: "Jaden", password:"password")
 
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
@@ -69,6 +82,22 @@ Student.create(contact: toti, cohort:pluto, username:"toti", password:"password"
 Student.create(contact: victoria, cohort:pluto, username:"victoria", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: yuka, cohort:pluto, username:"yuka", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: zoe, cohort:pluto, username:"zoe", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+
+Student.create(contact: oez, cohort:liverwurst, username:"oez", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: auky, cohort:liverwurst, username:"auky", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+
+
+Student.create(contact: itot, cohort:ryebread, username:"itot", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: hpets, cohort:ryebread, username:"hpets", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+
+Student.create(contact: keven, cohort:bacon, username:"keven", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: thomas, cohort:bacon, username:"thomas", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+
+Student.create(contact: mortaki, cohort:lettuce, username:"eric", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: yolanda, cohort:lettuce, username:"yolanda", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+
+Student.create(contact: joker, cohort:tomato, username:"joker", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: batman, cohort:tomato, username:"batman", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 
 CohortOfficer.create(contact: bobby, cohort: pluto, role: "Instructional Assistant")
 CohortOfficer.create(contact: dennis, cohort: pluto, role: "Instructional Assistant")

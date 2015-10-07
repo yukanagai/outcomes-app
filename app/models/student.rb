@@ -5,8 +5,6 @@ class Student < ActiveRecord::Base
   has_many :student_skills
   has_many :skills, :through => :student_skills
 
-  has_secure_password
-
   #josh: these are a pain in the ass with teh Contact model.
   # things that'd be good:
   # contact_info, with fields returned
@@ -17,7 +15,7 @@ class Student < ActiveRecord::Base
     "#{Contact.find(contact_id).first_name} #{Contact.find(contact_id).last_name}"
   end
 
-  
+
   def contact_info_list
 
     [Contact.find(contact_id).email,
@@ -32,8 +30,7 @@ class Student < ActiveRecord::Base
     cohort.name
   end
 
-  # def name
-  #   Student.contact.first_name + " " + Student.contact.last_name
-  # end
+  has_secure_password
+
 
 end

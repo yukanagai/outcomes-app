@@ -5,12 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = {
-      :contacts => Contact.all,
-      :form => {
-        :action => contacts_path,
-        :csrf_param => request_forgery_protection_token,
-        :csrf_token => form_authenticity_token
-      }
+      :contacts => Contact.all
     }
   end
 
