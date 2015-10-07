@@ -17,10 +17,7 @@ class Student < ActiveRecord::Base
     "#{Contact.find(contact_id).first_name} #{Contact.find(contact_id).last_name}"
   end
 
-
-
-
-
+  
   def contact_info_list
 
     [Contact.find(contact_id).email,
