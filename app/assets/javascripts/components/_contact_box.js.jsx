@@ -25,4 +25,7 @@ var ContactBox = React.createClass({
       </div>
     )
   }
+
+  //we need a componentDidUpdate method that resets the data
+
 })

@@ -7,7 +7,6 @@ Cohort.destroy_all
 Program.destroy_all
 Contact.destroy_all
 
-
 bobby = Contact.create(first_name:"Bobby", last_name:"King", email:"BobbyKing@gmail.com", twitter:"@BobbyKing", github:"KingBobby", linkedin:"KingBobby",phone:"1231231233")
 calvin = Contact.create(first_name:"Calvin", last_name:"Yeung", email:"CalvinYeung@gmail.com", twitter:"@CalvinYeung", github:"CalvinYeung", linkedin:"CalvinYeung",phone:"1231237777")
 christopher = Contact.create(first_name:"Christopher", last_name:"Smith", email:"Chris@gmail.com", twitter:"@Chris", github:"ChristopherSmith", linkedin:"ChristopherSmith",phone:"3334445555")
