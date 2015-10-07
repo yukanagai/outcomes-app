@@ -14,6 +14,16 @@
  *= require_self
  */
 
+ $eucalyptus: #30A370;
+ $coralred: #FCA311;
+ $bigstone: #1A2B37;
+ $mercury: #E5E5E5;
+ $saharasand: #F5EA82;
+ $background: #E5E5E5;
+
+ $bodyfont: 'Open Sans', sans-serif;
+ $headerfont: 'Pacifico', cursive;
+
  body, html {
  	width: 100%;
  	height: 100%;
@@ -22,8 +32,11 @@
  	font-family: 'Open Sans', sans-serif;
  }
 
+ a {
+ 	text-decoration: none;
+ }
+
  .wrapper {
- 	border: 10px solid black;
  	width: 80%;
  	margin: 0 auto;
  	text-align: center;
@@ -37,9 +50,9 @@
  	margin: 40px 0px;
  }
 
- #ga1 {
+ #logogreen {
  	font-family: 'Pacifico', cursive;
- 	font-size: 2.5em;
+ 	font-size: 3em;
  	background: #30A370;
  	color: white;
  	display: inline-block;
@@ -48,9 +61,9 @@
  	border-radius: 10px;
  }
 
- #ga2 {
+ #logoblue {
  	font-family: 'Pacifico', cursive;
- 	font-size: 2.5em;
+ 	font-size: 3em;
  	background: #1A2B37;
  	color: white;
  	display: inline-block;
@@ -133,14 +146,13 @@
  	margin: 0 auto;
  }
 
-
  #mainbutton {
- 	background-color: #FCA311;
- 	width: 150px;
+ 	background-color: #F5EA82;
  	height: auto;
  	padding: 20px;
  	display: inline-block;
  	border-radius: 10px;
+ 	border: none;
  	font-weight: 400;
  }
 
@@ -179,3 +191,14 @@
  	margin-top: 50px;
  	display: inline-block;
  }
+
+
+#catlogo {
+	background-image: url(asset-path('catlogo.gif'));
+	background-size: cover;
+	width: 200px;
+	min-width: 140px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: 100px;
+}

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     if session[:contact_id]
       @contact ||= Contact.find(session[:contact_id])
     end
+
   end
   helper_method :current_user
 end

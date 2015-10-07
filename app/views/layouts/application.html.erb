@@ -5,11 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:400,700,300,300italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
-<body id="<%= controller_name %>_<%= action_name %>" class="<%= controller_name %>">
 
-<%= yield %>
+<body id="<%= controller_name %>_<%= action_name %>" class="<%= controller_name %>">
+	<div class="wrapper">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
