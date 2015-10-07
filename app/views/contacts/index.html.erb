@@ -1,7 +1,11 @@
+<div class="main-container">
 <p id="notice"><%= notice %></p>
-
-<h2>Index</h2>
+<div class="headline-box">
+  <h2>Contact Search</h2>
+</div>
 
 <%= react_component('ContactBox', contacts: @contacts) %>
 
 <%= link_to 'New Contact', new_contact_path %>
+<br />
+</div>

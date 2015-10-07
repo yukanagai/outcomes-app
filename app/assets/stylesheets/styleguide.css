@@ -94,6 +94,16 @@ hr {
 	-webkit-border-radius: 50px;
 }
 
+#color5 {
+	background: #F5EA82;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+
 .pacifico h1 {
 	font-family: 'Pacifico', cursive;
 	font-size: 3em;
@@ -163,5 +173,3 @@ hr {
 	margin-top: 50px;
 	display: inline-block;
 }
-
-
