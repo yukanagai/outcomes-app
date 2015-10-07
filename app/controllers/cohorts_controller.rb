@@ -10,8 +10,6 @@ class CohortsController < ApplicationController
     @contacts = Contact.all
     @students = Student.all
     @instructors = CohortOfficer.all
-
-    binding.pry
   end
 
   # GET /cohorts/1

@@ -10,7 +10,44 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
+    @contact_info = Contact.find(@student.contact)
   end
+
+  def login
+    if current_user
+      redirect_to root_path
+    else
+      render :login
+    end
+  end
+
+  def login_post
+    @student = Student.find_by({username: params[:username]})
+    # @cohort_officer = CohortOfficer.find_by({contact: })
+
+    if @student
+      if @student.authenticate(params[:password])
+        session[:student_id] = @student.id
+        redirect_to student_path
+      else
+        redirect_to '/'
+      end
+    else
+      if @cohort_officer.authenticate(params[:password])
+        session[:cohort_officer_id] = @cohort_officer.id
+        redirect_to '/cohorts'
+      else
+        redirect_to '/'
+      end
+    end
+  end
+
+  def logout
+    session[:contact_id]=nil
+    redirect_to '/'
+  end
+
 
   # GET /students/new
   def new
