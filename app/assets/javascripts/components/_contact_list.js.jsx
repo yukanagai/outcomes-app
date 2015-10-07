@@ -22,7 +22,6 @@ var ContactList = React.createClass({
         </tr>
       {contactNodes}
       </table>
-
   </div>
   )}
 })
