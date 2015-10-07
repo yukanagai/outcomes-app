@@ -12,9 +12,10 @@
   </thead>
 
   <tbody>
-    <% @programs.each do |program| %>
+    <% @programs.each_with_index do |program, index| %>
+
       <tr>
-        <td><%= program.name %></td>
+        <td id='<%="progam-#{index}"%>'><%= program.name %></td>
         <td><%= program.description %></td>
         <td><%= link_to 'Show', program %></td>
         <td><%= link_to 'Edit', edit_program_path(program) %></td>
