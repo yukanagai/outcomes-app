@@ -35,5 +35,10 @@
   <%= @contact.phone %>
 </p>
 
+<% if @contact.is_officer == true %>
+<h3><%= "Officer" %></h3>
+
+<% end %>
+
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
