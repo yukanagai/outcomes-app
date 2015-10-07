@@ -35,7 +35,7 @@ class CohortOfficersController < ApplicationController
       end
   end
 
-  def logout 
+  def logout
     session[:contact_id]=nil
     redirect_to '/login'
   end
@@ -98,6 +98,6 @@ class CohortOfficersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cohort_officer_params
-      params.require(:cohort_officer).permit(:contact_id, :cohort_id, :role)
+      params.require(:cohort_officer).permit(:contact_id, :cohort_id, :role, :username)
     end
 end

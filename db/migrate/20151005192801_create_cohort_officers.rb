@@ -5,6 +5,7 @@ class CreateCohortOfficers < ActiveRecord::Migration
       t.references :cohort, index: true, foreign_key: true
       t.string :role
       t.string :password_digest
+      t.string :username
 
       t.timestamps null: false
     end

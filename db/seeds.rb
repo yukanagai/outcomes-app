@@ -46,7 +46,10 @@ tomato = Cohort.create(program: wdi, name:"Tomato", location:"Union Square", sta
 liverwurst = Cohort.create(program: ux_di, name:"Liverwurst", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 ryebread = Cohort.create(program: pd, name:"Ryebread", location:"Union Square", start_date:Date.new(2015, 9, 01), end_date:Date.new(2015, 9,18))
 
-
+CohortOfficer.create( contact: bobby, cohort: pluto, role: "Instructional Assistant", username: "Bobby", password:"password")
+CohortOfficer.create( contact: dennis, cohort: pluto, role: "Instructional Assistant", username: "Dennis", password:"password")
+CohortOfficer.create( contact: pan, cohort: pluto, role: "Instructor", username: "Pan", password:"password")
+CohortOfficer.create( contact: jaden, cohort: pluto, role: "Instructor", username: "Jaden", password:"password")
 
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
@@ -70,10 +73,6 @@ Student.create(contact: victoria, cohort:pluto, username:"victoria", password:"p
 Student.create(contact: yuka, cohort:pluto, username:"yuka", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: zoe, cohort:pluto, username:"zoe", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 
-CohortOfficer.create(contact: bobby, cohort: pluto, role: "Instructional Assistant", password:"password")
-CohortOfficer.create(contact: dennis, cohort: pluto, role: "Instructional Assistant", password:"password")
-CohortOfficer.create(contact: pan, cohort: pluto, role: "Instructor", password:"password")
-CohortOfficer.create(contact: jaden, cohort: pluto, role: "Instructor", password:"password")
 
 js = Skill.create(name:"Javascript", description:"Fast, popular, front-end scripting language. Watch your tags.")
 html = Skill.create(name:"HTML", description:"HYPERTEXT MARKUP LANGUAGE.")
