@@ -20,7 +20,7 @@ class CohortsController < ApplicationController
     @instructors = CohortOfficer.all
     @cohorts = Cohort.all
     @programs = Program.all
-    @program_name = Program.find(@students.first.cohort.program.id).name
+    @program_name = @students.first.cohort.program.name
 
   end
 
