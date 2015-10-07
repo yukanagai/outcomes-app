@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151005193329) do
     t.integer  "cohort_id"
     t.string   "role"
     t.string   "password_digest"
+    t.string   "username"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
