@@ -29,6 +29,13 @@
 	margin: 0;
 }
 }
+<<<<<<< HEAD
+
+// STYLING FOR STUDENTS#SHOW PAGE
+
+// STYLING FOR LOGIN PAGE
+=======
+>>>>>>> 07c78bdfe550f1abe8a95a14c5e98496b11397bc
 
 #students_login {
 
@@ -86,4 +93,100 @@
 		height: 145px;
 		margin-top: 20px;
 	}
+<<<<<<< HEAD
+
+// styles for chart js graphs/dashboard
+
+#canvas-container{
+  width: 100%;
+  text-align: center;
+}
+canvas {
+  display: inline;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top-text-header {
+	margin:0 auto;
+	width:100%;
+	background-color:#30A370;
+	color:white;
+	height:1.5em;
+	line-height:1.5em;
+	font-family: Pacifico, cursive;
+	font-size:4em;
+	border:1px solid #30A370;
+}
+
+.dashboard-widget{
+  display: inline-block;
+	min-width: 270px;
+  width: 33%;
+}
+
+.cohort-list{
+  color:#333;
+  display: inline-block;
+  width:250px;
+  height:250px;
+  vertical-align:top;
+  text-align:center;
+
+=======
+>>>>>>> 07c78bdfe550f1abe8a95a14c5e98496b11397bc
+}
+
+.doughnut-chart{
+  width: 100%;
+  height: 250px;
+}
+
+.pie-chart{
+  width: 100%;
+  height: 250px;
+}
+
+.employed-totals{
+		border-radius: 50%;
+    background-image: url(asset-path('handshake-icon.png'));
+    background-repeat:no-repeat;
+    background-size:45%;
+    background-position:center;
+}
+
+ul.dashboard-chart {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  li:first-child {
+    line-height: 1em;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: Pacifico, cursive;
+    margin-bottom: 1em;
+  }
+}
+
+table.record-list {
+  border-collapse: collapse;
+  margin:0 auto;
+  width:100%;
+  margin-top: 20px;
+  thead{
+    background-color: #30A370;
+    color:#fff;
+  }
+  th {
+    text-align: left;
+    padding: 5px;
+  }
+  td{
+    padding: 5px;
+    font-style: italic;
+  }
+  td a{
+    font-style: normal;
+  }
+}
 }

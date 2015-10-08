@@ -50,7 +50,7 @@ ux_di = Program.create(name:"User Experice Design Immersive", description:"DESIG
 pd = Program.create(name:"Product Management Immersive", description:"THING ABOUT PRODUCTS => MAKE SOME MONNAY")
 
 pluto = Cohort.create(program: wdi, name:"Pluto", location:"Union Square", start_date:Date.new(2015, 8, 10), end_date:Date.new(2015, 11, 2))
-bacon = Cohort.create(program: wdi, name:"Bacon", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
+bacon = Cohort.create(program: wdi, name:"Bacon", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 1,1))
 lettuce = Cohort.create(program: wdi, name:"Lettuce", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 tomato = Cohort.create(program: wdi, name:"Tomato", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))
 liverwurst = Cohort.create(program: ux_di, name:"Liverwurst", location:"Union Square", start_date:Date.new(2015, 9, 28), end_date:Date.new(2015, 12,18))

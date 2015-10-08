@@ -31,6 +31,7 @@
 
   }
 
+
   input[type="text"]{
     height: 30px;
     width: 290px;
@@ -38,14 +39,14 @@
   }
 
   input[type="submit"]{
-    font-family: "opensans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     background-color: #FCA311;
-  	width: 120px;
-  	height: auto;
-  	padding: 10px;
-  	border-radius: 10px;
-  	font-weight: 400;
+        width: 120px;
+        height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 400;
     margin-left: 2%;
   }
 
