@@ -1,20 +1,15 @@
-<ul>
-  <% employed_count = 0 %>
-  <% looking_count = 0 %>
-  <% @students.each do |student| %>
 
-    <%if student.employed?%>
-      <%# @total_employed = Student.count(:conditions => "employed=true:") %>
-      <% employed_count = employed_count + 1 %>
-        <li><%=student.contact.first_name%> <%=student.contact.last_name%></li>
-      <%else%>
-        <% looking_count = looking_count + 1 %>
-      <%end%>
-  <%end%>
+<div id='total_employed'>
+  <!-- <% @total_employed %>
+  <% @total_looking %> -->
+  <%= @overall %>
 
-  <li>Total Employed <%= employed_count %><li>
-  <li>Total Looking <%= looking_count %><li>
-</ul>
+</div>
+
+<!-- <div id="test-feed" style="background-color: #fc0; color:#003; width:100px; height:35px; margin:0 auto; font-family:'Open Sans', sans-serif; font-size:1em; font-style:italic; cursor:pointer; border-radius:5px; top:10px;">test-feed</div> -->
+
+<% @total_looking %>
+
 
 
 

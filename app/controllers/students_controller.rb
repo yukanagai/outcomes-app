@@ -8,13 +8,24 @@ class StudentsController < ApplicationController
     @students = Student.all
     @cohorts = Cohort.all
     @programs = Program.all
-    #Person.count(:conditions => "age > 26")
-    #@total_employed = Student.count(:conditions => "employed? = t")
   end
 
   # Added Method for dashboard
   def dashboard
     @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
+    # Using gon.watch to pass rails vars to js
+    # def index
+    #  @users_count = User.count
+    #  gon.watch.users_count = @users_count
+    # end
+    @total_employed = Student.where(:employed => "t").count
+    gon.watch.total_employed = @total_employed
+    @total_looking = Student.where(:employed => "f").count
+    gon.watch.total_looking = @total_looking
+    @overall = [@total_employed, @total_looking]
+    gon.watch.overall = @overall
   end
 
   # GET /students/1

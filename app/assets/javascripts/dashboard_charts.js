@@ -130,63 +130,140 @@ function initCharts() {
   //-- START: PIEs N DOGHNUTs --//
 
   // For a pie chart...
-  var doughnutChart01Data = [
-    {
-      value: 4,
-      color:"#AA1A1A",
-      highlight: "#D95050",
-      label: "Other"
-    },
-    {
-      value: 15,
-      color: "#30A370",
-      highlight: "#63D6A3",
-      label: "Employed"
-    },
-    {
-      value: 6,
-      color: "#FCA311",
-      highlight: "#FAC56E",
-      label: "Looking"
-    }
-  ];
 
-  var pieChart01Data = [
-    {
-      value: 1,
-      color:"#AA1A1A",
-      highlight: "#D95050",
-      label: "Other"
-    },
-    {
-      value: 18,
-      color: "#30A370",
-      highlight: "#63D6A3",
-      label: "Employed"
-    },
-    {
-      value: 5,
-      color: "#FCA311",
-      highlight: "#FAC56E",
-      label: "Looking"
-    }
-  ];
+  //var feedData = function(count) {
+    //alert(count);
+    //return count;
+    // console.log(the_employed);
+    //return count
+    // return $('#total_employed').text(count);
+  //};
+  // updates the data
+  //gon.watch('total_employed', feedData);
+
+  // $('#test-feed').click(function() {
+  //   gon.watch('total_employed', feedData);
+  //   //gon.unwatch('total_employed', feedData);
+  //   return true;
+  // });
+
+  var overall1 = gon.watch('overall', pieData);
+  // var y = gon.watch('total_looking', pieData);
+  function pieData (overall1){
+    // z = parseInt(y)
+    // alert(overall);
+    console.log(overall1[1])
+    // console.log(typeof x, typeof parseInt(y));
+    var doughnutChart01Data = [
+      {
+        value: 4,
+        color:"#AA1A1A",
+        highlight: "#D95050",
+        label: "Other"
+      },
+      {
+        value: 5,
+        color: "#30A370",
+        highlight: "#63D6A3",
+        label: "Employed"
+      },
+      {
+
+        value: 15,
+        color: "#FCA311",
+        highlight: "#FAC56E",
+        label: "Looking"
+      }
+    ];
+
+    var pieChart01Data = [
+      {
+        value: 1,
+        color:"#AA1A1A",
+        highlight: "#D95050",
+        label: "Other"
+      },
+      {
+        value: overall1[0],
+        color: "#30A370",
+        highlight: "#63D6A3",
+        label: "Employed"
+      },
+      {
+        value: overall1[1],
+        color: "#FCA311",
+        highlight: "#FAC56E",
+        label: "Looking"
+      }
+    ];
+
+
+    var pieChart01ToRender = $("#pieChart01").get(0).getContext("2d");
+    var pieChart01 = new Chart(pieChart01ToRender).Pie(pieChart01Data);
+    // removed index from example in instructons when creating new instance
+    //var myPieChart = new Chart(ctx[0]).Pie(data,options);
+
+
+    // ...And for a doughnut chart
+    var doughnutChart01ToRender = $("#doughnutChart01").get(0).getContext("2d");
+    var doughnutChart01 = new Chart(doughnutChart01ToRender).Doughnut(doughnutChart01Data);
+    // removed index from example in instructons when creating new instance
+    // var myDoughnutChart = new Chart(ctx[1]).Doughnut(data,options);
+
+
+  }
+
+  //pieData();
+
+  // STATIC VALUES FOR PIE CHART
+  // var doughnutChart01Data = [
+  //   {
+  //     value: 4,
+  //     color:"#AA1A1A",
+  //     highlight: "#D95050",
+  //     label: "Other"
+  //   },
+  //   {
+  //     value: the_employed,
+  //     color: "#30A370",
+  //     highlight: "#63D6A3",
+  //     label: "Employed"
+  //   },
+  //   {
+  //     value: 6,
+  //     color: "#FCA311",
+  //     highlight: "#FAC56E",
+  //     label: "Looking"
+  //   }
+  // ];
+  //
+  // var pieChart01Data = [
+  //   {
+  //     value: 1,
+  //     color:"#AA1A1A",
+  //     highlight: "#D95050",
+  //     label: "Other"
+  //   },
+  //   {
+  //     value: 18,
+  //     color: "#30A370",
+  //     highlight: "#63D6A3",
+  //     label: "Employed"
+  //   },
+  //   {
+  //     value: 5,
+  //     color: "#FCA311",
+  //     highlight: "#FAC56E",
+  //     label: "Looking"
+  //   }
+  // ];
 
 
 
 
-  var pieChart01ToRender = $("#pieChart01").get(0).getContext("2d");
-  var pieChart01 = new Chart(pieChart01ToRender).Pie(pieChart01Data);
-  // removed index from example in instructons when creating new instance
-  //var myPieChart = new Chart(ctx[0]).Pie(data,options);
-
-
-  // ...And for a doughnut chart
-  var doughnutChart01ToRender = $("#doughnutChart01").get(0).getContext("2d");
-  var doughnutChart01 = new Chart(doughnutChart01ToRender).Doughnut(doughnutChart01Data);
-  // removed index from example in instructons when creating new instance
-  // var myDoughnutChart = new Chart(ctx[1]).Doughnut(data,options);
 
   //-- END: PIEs N DOGHNUTs --//
+
+
 
 }//END OF Init Function
