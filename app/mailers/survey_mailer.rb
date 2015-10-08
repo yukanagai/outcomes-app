@@ -7,6 +7,7 @@ class SurveyMailer < ApplicationMailer
   #
   def survey_time(contact, student)
     @admin = contact
+    binding.pry
     @greeting = "Hi"
     @studentEmail = student.contact.email
     @studentName = student.name
