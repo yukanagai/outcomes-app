@@ -22,7 +22,15 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      redirect_to student_path
+      session[:contact_id] = current_user.id
+
+      if current_user.is_officer?
+        session[:id] = CohortOfficer.find_by(contact: current_user.id).id
+        redirect_to dashboard_path
+      else
+        session[:id] = Student.find_by(contact: current_user.id).id
+        redirect_to student_path(session[:id])
+      end
     else
       render :login
     end
@@ -35,14 +43,14 @@ class StudentsController < ApplicationController
 
     if @student
       if @student.authenticate(params[:password])
-        session[:id] = @student.id
-        session[:contact_id] = @student.contact_id
-        redirect_to student_path [@student.id]
+        cookies[:id] = @student.id
+        cookies[:contact_id] = @student.contact_id
+        redirect_to student_path(@student.id)
       end
     elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
-        session[:id] = @cohort_officer.id
-        session[:contact_id] = @cohort_officer.contact_id
+        cookies[:id] = @cohort_officer.id
+        cookies[:contact_id] = @cohort_officer.contact_id
         redirect_to '/cohorts'
       end
     else
@@ -52,8 +60,8 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    session[:contact_id]=nil
-    session[:id] = nil
+    cookies[:contact_id]=nil
+    cookies[:id] = nil
     redirect_to '/'
   end
 
@@ -87,22 +95,10 @@ class StudentsController < ApplicationController
     end
   end
 
-  #   respond_to do |format|
-  #     if @student.save
-  #       format.html { redirect_to @student, notice: 'Student was successfully created.' }
-  #       format.json { render :show, status: :created, location: @student }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @student.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # PATCH/PUT /students/1
-  # PATCH/PUT /students/1.json
   def update
     @student = Student.find(params[:id])
-
+    @contact = Contact.find(params[:contact_id])
+    binding.pry
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
