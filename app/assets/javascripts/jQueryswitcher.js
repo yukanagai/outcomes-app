@@ -1,0 +1,6 @@
+$(function() {
+	$('.loadCohort').click(function() {
+		
+	});
+
+});
