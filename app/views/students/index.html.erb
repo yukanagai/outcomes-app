@@ -14,23 +14,23 @@
       <th>Employed as</th>
       <th>Contact</th>
       <th>Cohort</th>
-      <th colspan="3"></th>
+ <!--      <th colspan="3"></th> -->
     </tr>
   </thead>
 
   <tbody class="bodyRow">
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.username %></td>
+        <td><%= link_to student.username, student %></td>
         <td><%= student.completed? %></td>
         <td><%= student.employed? %></td>
         <td><%= student.employer %></td>
         <td><%= student.employed_as %></td>
         <td><%= student.contact.email %></td>
         <td><%= student.cohort_name %></td>
-        <td><%= link_to 'Show', student %></td>
+ <!--        <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>

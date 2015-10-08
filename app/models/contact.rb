@@ -4,12 +4,15 @@ class Contact < ActiveRecord::Base
   has_many :cohort_officers
 
   def is_officer?
-    if CohortOfficer.find_by(contact_id: id)
+    if CohortOfficer.find_by(contact_id: self.id)
       return true
     else
       return false
     end
   end
 
+  def name
+  	"#{first_name} #{last_name}"
+  end
 
 end
