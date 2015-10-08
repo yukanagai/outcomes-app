@@ -31,22 +31,24 @@ class StudentsController < ApplicationController
     if @student
       if @student.authenticate(params[:password])
         session[:id] = @student.id
+        session[:contact_id] = @student.contact_id
         redirect_to student_path [@student.id]
-      else
-        redirect_to '/'
       end
-    else
+    elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
+        session[:contact_id] = @cohort_officer.contact_id
         redirect_to '/cohorts'
-      else
-        redirect_to '/'
       end
+    else
+      # needs message for "login not found"
+      redirect_to '/'
     end
   end
 
   def logout
-    session[:id]=nil
+    session[:contact_id]=nil
+    session[:id] = nil
     redirect_to '/'
   end
 
