@@ -25,6 +25,7 @@ class StudentsController < ApplicationController
       session[:contact_id] = current_user.id
     end
 
+    # adding a comment
     render :login
   end
 
