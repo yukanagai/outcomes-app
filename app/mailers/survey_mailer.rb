@@ -8,7 +8,9 @@ class SurveyMailer < ApplicationMailer
   def survey_time(contact)
     @contact = Contact.last
     @greeting = "Hi"
-  
+    binding.pry
+    @cohortOfficer_Name = current_user.name
+
 
     mail to: "singhjaskar@gmail.com", subject: "100 day post-graduation survey"
   end

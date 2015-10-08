@@ -26,10 +26,10 @@ class StudentsController < ApplicationController
 
       if current_user.is_officer?
         session[:id] = CohortOfficer.find_by(contact: current_user.id).id
-        redirect_to dashboard_path
+
       else
         session[:id] = Student.find_by(contact: current_user.id).id
-        redirect_to student_path(session[:id])
+
       end
     else
       render :login
