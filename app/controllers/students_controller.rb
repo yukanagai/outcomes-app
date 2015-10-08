@@ -10,16 +10,7 @@ class StudentsController < ApplicationController
 
   # Added Method for dashboard
   def dashboard
-    @all_students = Student.all
-    @students = []
-
-    @all_students.each do |student|
-      if student.hundred_days?
-        @students.push(student)
-      end
-    end
-
-    return @students
+    @students = Student.all
   end
 
   # GET /students/1
