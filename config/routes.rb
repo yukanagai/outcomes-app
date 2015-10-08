@@ -35,8 +35,12 @@ Rails.application.routes.draw do
 
   get '/styleguide' => 'students#styleguide'
 
+
+  get '/survey' => 'surveys#index'
+
   get '/login' => 'students#login'
   post '/login' => 'students#login_post'
   get '/logout' => 'students#logout'
+
 
 end
