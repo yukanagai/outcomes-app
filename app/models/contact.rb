@@ -6,7 +6,8 @@ class Contact < ActiveRecord::Base
   def is_officer?
     if CohortOfficer.find_by(contact_id: id)
       return true
-    else return false
+    else
+      return false
     end
   end
 
