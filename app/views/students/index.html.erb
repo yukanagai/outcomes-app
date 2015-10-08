@@ -1,3 +1,4 @@
+
 <table>
   <thead>
     <tr>
@@ -28,18 +29,18 @@
         <td><%= student.employed_as %></td>
         <td><%= student.contact.email %></td>
         <td><%= student.cohort_name %></td>
-<<<<<<< HEAD
-        <% if student.contact.is_officer? %>
+
+        <% if current_user.is_officer? %>
           <td><%= link_to 'Show', student %></td>
           <td><%= link_to 'Edit', edit_student_path(student) %></td>
           <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>
-          <% end %>
-=======
- <!--        <td><%= link_to 'Show', student %></td>
+        <% elsif current_user.id == student.contact.id %>
+        <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
->>>>>>> refactoring-survey
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+        <% end %>
+
       </tr>
     <% end %>
   </tbody>

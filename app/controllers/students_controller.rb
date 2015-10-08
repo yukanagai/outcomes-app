@@ -26,10 +26,10 @@ class StudentsController < ApplicationController
 
       if current_user.is_officer?
         session[:id] = CohortOfficer.find_by(contact: current_user.id).id
-        redirect_to dashboard_path
+
       else
         session[:id] = Student.find_by(contact: current_user.id).id
-        redirect_to student_path(session[:id])
+
       end
     else
       render :login
@@ -43,14 +43,14 @@ class StudentsController < ApplicationController
 
     if @student
       if @student.authenticate(params[:password])
-        cookies[:id] = @student.id
-        cookies[:contact_id] = @student.contact_id
+        session[:id] = @student.id
+        session[:contact_id] = @student.contact_id
         redirect_to student_path(@student.id)
       end
     elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
-        cookies[:id] = @cohort_officer.id
-        cookies[:contact_id] = @cohort_officer.contact_id
+        session[:id] = @cohort_officer.id
+        session[:contact_id] = @cohort_officer.contact_id
         redirect_to '/cohorts'
       end
     else
@@ -60,8 +60,8 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    cookies[:contact_id]=nil
-    cookies[:id] = nil
+    session[:contact_id]=nil
+    session[:id] = nil
     redirect_to '/'
   end
 
