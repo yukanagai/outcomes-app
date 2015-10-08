@@ -5,7 +5,7 @@
         <h1 class="headerText">Students</h1>
       </th>
     </tr>
-    
+
     <tr class="headerRow">
       <th>Username</th>
       <th>Completed?</th>
@@ -28,9 +28,12 @@
         <td><%= student.employed_as %></td>
         <td><%= student.contact.email %></td>
         <td><%= student.cohort_name %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if student.contact.is_officer? %>
+          <td><%= link_to 'Show', student %></td>
+          <td><%= link_to 'Edit', edit_student_path(student) %></td>
+          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
