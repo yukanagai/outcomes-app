@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
 
+<<<<<<< HEAD
 <p>
   <strong>Programs<strong>
 <p>
@@ -11,10 +11,19 @@
 </ul>
 
 <h1>Listing Cohorts</h1>
+=======
+<p id="notice"><%= notice %></p>
+>>>>>>> bebe7910cde2f8010f844e320c4fe882e957c396
 
 <table>
   <thead>
     <tr>
+      <th class="header" colspan="8">
+        <h1 class="headerText">Cohorts</h1>
+      </th>
+    </tr>
+
+     <tr class="headerRow">
       <th>Name</th>
       <th>Location</th>
       <th>Start date</th>
@@ -23,13 +32,17 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="bodyRow">
     <% @cohorts.each do |cohort| %>
       <tr>
         <td><%= cohort.name %></td>
         <td><%= cohort.location %></td>
         <td><%= cohort.start_date %></td>
         <td><%= cohort.end_date %></td>
+<<<<<<< HEAD
+=======
+        <td><%= cohort.program.name %></td>
+>>>>>>> bebe7910cde2f8010f844e320c4fe882e957c396
         <td><%= link_to 'Show', cohort %></td>
         <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
         <td><%= link_to 'Destroy', cohort, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -41,3 +54,6 @@
 <br>
 
 <%= link_to 'New Cohort', new_cohort_path %>
+
+
+<div id="catlogo"></div>

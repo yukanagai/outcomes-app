@@ -22,6 +22,7 @@
 	}
 
 
+<<<<<<< HEAD
 
 }
 
@@ -37,6 +38,20 @@
 	height: 100%;
 	padding: 0;
 	margin: 0;
+=======
+// STYLING FOR STUDENTS#SHOW PAGE 
+
+
+
+
+// STYLING FOR LOGIN PAGE 
+
+#students_login {
+
+	.navbar {
+		display: none;
+	}
+>>>>>>> bebe7910cde2f8010f844e320c4fe882e957c396
 
 	#logoblue {
 		width: 350px;
@@ -60,7 +75,6 @@
 		border: 0;
 		font-size: 1em;
 		font-color: black;
-  		text-transform: uppercase;
   		box-sizing: border-box;
   		outline: 0;
 
@@ -71,9 +85,12 @@
 
 	#mainbutton {
 		width: 350px;
+		height: 55px;
 		font-size: 1em;
-		height: 50px;
 		box-sizing: border-box;
+		background-color: #F14E69;
+		text-transform: uppercase;
+		color: white;
 
 
 		&:hover {
@@ -83,14 +100,10 @@
 	}
 
 	#catlogo {
-		background-image: url(asset-path('catlogo.gif'));
-		background-size: cover;
-		width: 200px;
-		min-width: 140px;
-		height: 150px;
-		margin: 0 auto;
-		margin-top: 100px;
+		height: 145px;
+		margin-top: 20px;
 	}
+
 
 }
 

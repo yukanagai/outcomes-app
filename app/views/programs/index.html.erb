@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <table>
-
-  <tbody>
+  <thead>
     <tr>
-      <td id="header" colspan="2">
-        <h1>Programs</h1>
-      </td>
+      <th class="header" colspan="8">
+        <h1 class="headerText">Programs</h1>
+      </th>
     </tr>
-
+  <tbody class="bodyRow">
     <% @programs.each_with_index do |program, index| %>
       <tr>
         <td id='<%="program-#{index}"%>'></td>
@@ -17,6 +16,9 @@
     <% end %>
   </tbody>
 </table>
+<<<<<<< HEAD
 </div>
 
 <div id="catlogo"></div>
+=======
+>>>>>>> bebe7910cde2f8010f844e320c4fe882e957c396
