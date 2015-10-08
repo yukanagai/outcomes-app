@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  
+
   belongs_to :contact
   belongs_to :cohort
 
@@ -13,7 +13,7 @@ class Student < ActiveRecord::Base
   # whatever! this is pretty safe as long as you don't delete things on line 8 or above.
   # -nick
   def name
-    "#{Contact.find(contact_id).first_name} #{Contact.find(contact_id).last_name}"
+    "#{first_name} #{last_name}"
   end
 
   has_secure_password
