@@ -1,4 +1,3 @@
-
 <table>
   <thead>
     <tr>
@@ -12,6 +11,7 @@
       <th>Location</th>
       <th>Start date</th>
       <th>End date</th>
+      <th>Program</th>
 <!--       <th colspan="3"></th> -->
     </tr>
   </thead>
@@ -32,9 +32,10 @@
   </tbody>
 </table>
 
-<br>
+<div class="footer">
+  <div class="button-add-new">
+    <%= link_to 'New Cohort', new_cohort_path %>
+  </div>
+</div>
 
-<%= link_to 'New Cohort', new_cohort_path %>
 
-
-<div id="catlogo"></div>

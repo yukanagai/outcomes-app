@@ -8,7 +8,7 @@
     
     <tr class="headerRow">
       <th>Username</th>
-      <th>Completed?</th>
+      <th>Survey completed?</th>
       <th>Employed?</th>
       <th>Employer</th>
       <th>Employed as</th>
@@ -36,6 +36,10 @@
   </tbody>
 </table>
 
-<br>
+<div class="footer">
+  <div class="button-add-new">
+    <%= link_to 'New Student', new_student_path %>
+  </div>
+</div>
 
-<%= link_to 'New Student', new_student_path %>
+

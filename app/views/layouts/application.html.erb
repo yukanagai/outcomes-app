@@ -19,12 +19,6 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Programs</a></li>
             <li><a href="#">Cohorts</a></li>
-            <% if current_user %>
-            	<li><a href="#"><% current_user.first_name,  %></a></li>
-           	<% else %>
-           		<li><a href="/login">Login</a></li>
-           	<% end %>
-            <li><a href="/logout">Logout</a></li>
        	 </ul>
     </div>
 	<div class="navbar">
@@ -41,7 +35,8 @@
 	<div class="content">
 		<%= yield %>
 		<p id="notice"><%= notice %></p>
-  </div>
+  	</div>
 </div>
+
 </body>
 </html>

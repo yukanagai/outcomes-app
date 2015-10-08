@@ -34,6 +34,16 @@
  	margin: 0 auto;
  }
 
+ li {
+    list-style: none;
+ }
+
+ .subheader {
+    height: 50px;
+    padding: 0;
+    background: $eucalyptus;
+ }
+
 
 .container {
     position: relative;
@@ -160,6 +170,33 @@ a {
  	display: block;
  }
 
+ .footer {
+    text-align: center;
+    background-color: $bigstone;
+    color: white;
+    width: 100%;
+    display: block;
+    padding: 0;
+    height: 50px;
+
+    .button-add-new {
+        position:relative;
+        margin:0 auto;
+        text-align:center;
+        width:200px;
+        height:100px;
+        top:15px;
+    }    
+
+    a {
+        background: $pink;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        top:15px;
+    }
+ }
+
  thead {
  	background-color: $bigstone;
  }
@@ -194,6 +231,7 @@ table {
 
 tbody {
 	padding: 25px;
+    text-align: center;
 }
 
 .headerRow {
@@ -374,6 +412,7 @@ td, th {
 	margin: 0 auto;
 	margin-top: 50px;
 }
+
 
 
 @media only screen and (min-width: 768px) {

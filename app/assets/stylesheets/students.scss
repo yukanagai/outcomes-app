@@ -1,34 +1,5 @@
 @import "application";
 
-#students_index, #students_show {
-	background-color: $mercury;
-
-	.header {
-		background-color: $eucalyptus;
-		font-size: 2em;
-		color: white;
-	}
-
-	.headerText {
-		font-family: $headerfont;
-		padding: 30px;
-	}
-
-	.tablewrapper {
-		width: 100%;
-		background: white;
-		text-align: left;
-		padding: 20px;
-	}
-
-#students_login {
-	background-color:#E5E5E5;
-	color: white;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-}
-}
 
 #students_login {
 
@@ -86,4 +57,9 @@
 		height: 145px;
 		margin-top: 20px;
 	}
+}
+
+
+#students_show {
+
 }

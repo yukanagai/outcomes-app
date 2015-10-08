@@ -13,5 +13,10 @@
   <%= @student_skill.experience %>
 </p>
 
-<%= link_to 'Edit', edit_student_skill_path(@student_skill) %> |
+
+<div class="footer">
+  <div class="button-add-new">
+    <%= link_to 'Edit', edit_student_skill_path(@student_skill) %> |
 <%= link_to 'Back', student_skills_path %>
+  </div>
+</div>

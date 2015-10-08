@@ -17,5 +17,10 @@
   <%= @cohort_officer.role %>
 </p>
 
-<%= link_to 'Edit', edit_cohort_officer_path(@cohort_officer) %> |
-<%= link_to 'Back', cohort_officers_path %>
+
+<div class="footer">
+  <div class="button-add-new">
+		<%= link_to 'Edit', edit_cohort_officer_path(@cohort_officer) %> |
+		<%= link_to 'Back', cohort_officers_path %>
+	</div>
+</div>

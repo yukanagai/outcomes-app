@@ -1,60 +1,59 @@
-<p>
-  <strong>Name:</strong>
-  <%= @cohort.name %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th class="header" colspan="8">
+        <h1 class="headerText"><%= @cohort.name %></h1>
+      </th>
+    </tr>
 
-<p>
-  <strong>Location:</strong>
-  <%= @cohort.location %>
-</p>
+    <tr class="headerRow">
+      <th>Location</th>
+      <th>Program</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Program:</strong>
-  <%=  @cohort.program.name %>
-</p>
+  <tbody>
+    <tr>
+      <td><%= @cohort.location %></td>
+      <td><%=  @cohort.program.name %></td>
+    </tr>
+  </tbody>
+</table>
 
-<button>
-  Back to all programs
-</button>
+<table>
+  <thead>
+    <tr class="headerRow">
+      <th>Instructors</th>
+      <th>Students</th>
+    </tr>
+  </thead>
 
-<p>
-  All students MAKE CLICKABLE:
-</p>
-<ul>
-  <% @students.each do |student| %>
-    <% if (student.cohort.name == @cohort.name) %>
-      <li> <%= student.contact.first_name %> <%= student.contact.last_name %> </li>
-    <% else %>
-    <% end %>
-  <% end %>
-</ul>
-
-<p>
-  Instructors MAKE CLICKABLE:
-</p>
-<ul>
-  <% @instructors.each do |instructor| %>
-    <% if (instructor.cohort.name == @cohort.name) %>
-      <li> <%= instructor.contact.first_name %> <%= instructor.contact.last_name %> </li>
-    <% else %>
-    <% end %>
-  <% end %>
-</ul>
-
-<strong>
-  All cohorts MAKE PART OF SIDEBAR
-</strong>
-
-
-<ul>
-  <% @cohorts.each do |cohort| %>
-    <% if @program_name == cohort.program.name %>
-      <li> <%= cohort.name  %> </li>
-    <% else %>
-    <% end %>
-  <% end %>
-</ul>
+  <tbody>
+    <tr>
+      <td>
+        <% @instructors.each do |instructor| %>
+        <% if (instructor.cohort.name == @cohort.name) %>
+        <li> <%= instructor.contact.first_name %> <%= instructor.contact.last_name %> </li>
+        <% else %>
+        <% end %>
+        <% end %>
+      </td>
+      <td>
+        <% @students.each do |student| %>
+        <% if (student.cohort.name == @cohort.name) %>
+        <li> <%= student.contact.first_name %> <%= student.contact.last_name %> </li>
+        <% else %>
+        <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
-<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
-<%= link_to 'Back', cohorts_path %>
+<div class="footer">
+  <div class="button-add-new">
+    <%= link_to 'Edit', edit_cohort_path(@cohort) %> |
+    <%= link_to 'Back', cohorts_path %>
+  </div>
+</div>
