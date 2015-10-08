@@ -149,6 +149,11 @@ form {
  		background: none;
  		color: black
  	}
+
+ .wrapper {
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	text-align: center;
  }
 
  .navbar {
@@ -365,7 +370,6 @@ td, th {
  	width: 50%;
  }
 
-
 #catlogo {
 	background-image: url(asset-path('catlogo.png'));
 	background-size: cover;
@@ -373,9 +377,9 @@ td, th {
 	min-width: 140px;
 	height: 100px;
 	margin: 0 auto;
+<<<<<<< HEAD
 	margin-top: 50px;
 }
-
 
 @media only screen and (min-width: 768px) {
 

@@ -8,6 +8,11 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  # Added Method for dashboard
+  def dashboard
+    @students = Student.all
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show
