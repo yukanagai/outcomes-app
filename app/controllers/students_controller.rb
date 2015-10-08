@@ -97,7 +97,6 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-    @contact = Contact.find(params[:contact_id])
     binding.pry
     respond_to do |format|
       if @student.update(student_params)
