@@ -33,7 +33,10 @@ class StudentsController < ApplicationController
       end
     else
       render :login
+
     end
+
+    render :login
   end
 
   def login_post
@@ -43,14 +46,14 @@ class StudentsController < ApplicationController
 
     if @student
       if @student.authenticate(params[:password])
-        cookies[:id] = @student.id
-        cookies[:contact_id] = @student.contact_id
+        session[:id] = @student.id
+        session[:contact_id] = @student.contact_id
         redirect_to student_path(@student.id)
       end
     elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
-        cookies[:id] = @cohort_officer.id
-        cookies[:contact_id] = @cohort_officer.contact_id
+        session[:id] = @cohort_officer.id
+        session[:contact_id] = @cohort_officer.contact_id
         redirect_to '/cohorts'
       end
     else
@@ -60,8 +63,9 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    cookies[:contact_id]=nil
-    cookies[:id] = nil
+
+    session[:contact_id]=nil
+    session[:id] = nil
     redirect_to '/'
   end
 
@@ -97,10 +101,17 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-    @contact = Contact.find(params[:contact_id])
-    binding.pry
+    @user = current_user
+
     respond_to do |format|
       if @student.update(student_params)
+        binding.pry
+
+
+        @user.update(contact_params)
+
+        binding.pry
+
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -157,6 +168,11 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id, :checkbox_value)
+      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id)
     end
+
+    def contact_params
+      params.require(:contact).permit(:first_name, :last_name, :email, :twitter, :github, :linkedin, :phone, :website)
+    end
+
 end
