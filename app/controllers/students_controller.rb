@@ -10,7 +10,16 @@ class StudentsController < ApplicationController
 
   # Added Method for dashboard
   def dashboard
-    @students = Student.all
+    @all_students = Student.all
+    @students = []
+
+    @all_students.each do |student|
+      if student.hundred_days?
+        @students.push(student)
+      end
+    end
+
+    return @students
   end
 
   # GET /students/1
@@ -25,7 +34,6 @@ class StudentsController < ApplicationController
       session[:contact_id] = current_user.id
     end
 
-    # adding a comment
     render :login
   end
 
