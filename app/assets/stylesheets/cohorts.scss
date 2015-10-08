@@ -1,3 +1,34 @@
 // Place all the styles related to the Cohorts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table.records-list {
+  border-collapse: collapse;
+  margin:0 auto;
+  width:100%;
+  margin-top: 20px;
+  thead{
+    background-color: #30A370;
+    color:#fff;
+  }
+  th {
+    text-align: left;
+    padding: 5px;
+  }
+  td{
+    padding: 5px;
+    font-style: italic;
+  }
+  td a{
+    font-style: normal;
+  }
+}
+
+ul.programs-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.unbulleted-list{
+  padding: 0;
+  list-style-type: none;
+}

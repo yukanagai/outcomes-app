@@ -1,10 +1,30 @@
+<ul>
+  <% employed_count = 0 %>
+  <% looking_count = 0 %>
+  <% @students.each do |student| %>
+
+    <%if student.employed?%>
+      <%# @total_employed = Student.count(:conditions => "employed=true:") %>
+      <% employed_count = employed_count + 1 %>
+        <li><%=student.contact.first_name%> <%=student.contact.last_name%></li>
+      <%else%>
+        <% looking_count = looking_count + 1 %>
+      <%end%>
+  <%end%>
+
+  <li>Total Employed <%= employed_count %><li>
+  <li>Total Looking <%= looking_count %><li>
+</ul>
+
+
+
 <div id="canvas-container">
 
     <div class="top-text-header">Dashboard
     </div>
     <p id="notice"><%= notice %></p>
 
-    <!-- <section>
+    <%# <section>
         <article>
             <canvas id="lineChart01" width="400" height="400"></canvas>
             <canvas id="barChart01" width="400" height="400"></canvas>
@@ -16,7 +36,7 @@
             <canvas id="radarChart01" width="400" height="400"></canvas>
             <canvas id="polarChart01" width="400" height="400"></canvas>
         </article>
-    </section> -->
+    </section> %>
 
     <section id="charts">
         <article>
@@ -47,11 +67,21 @@
                 <li style="text-align:center;">Cohorts</li>
                 <% Cohort.all.each do |cohort| %>
                 <li style="text-align:center;">
-                  <div style="margin:0 auto; text-align:left; width:35%;">
-                    <a href="<%= cohort_path(cohort) %>"><%=cohort.name%></a>
+                  <div class="cohorts-name-list">
+                    <a href="<%= cohort_path(cohort) %>"><%="View #{cohort.name} Page"%></a>
                   </div>
                 </li>
               <%end%>
+                <li>
+                  <br />
+                  <div class="cohorts-name-list">
+                    <select class="" name="">
+                      <% Cohort.all.each do |cohort| %>
+                        <option value="<%=cohort.name%>"><%=cohort.name%></option>
+                      <%end%>
+                    </select>
+                  </div>
+                </li>
               </ul>
             </div>
         </article>
@@ -62,7 +92,7 @@
 </script>
 </div>
 
-<table class="record-list">
+<table class="records-list">
   <thead>
     <tr>
       <th>Username</th>

@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-
-  <strong>Name:</strong>
-  <%= @cohort.name %>
+<p>
+<strong> Cohort Name:</strong>
+<%= @cohort.name %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Cohort Location:</strong>
   <%= @cohort.location %>
 </p>
 
 <p>
-  <strong>Program:</strong>
-  <%=  @cohort.program.name %>
+    <strong>Program Name:</strong>
 </p>
+
+<ul class="unbulleted-list">
+  <li>
+    <%=  @cohort.program.name %>
+  </li>
+</ul>
 
 <button>
   Back to all programs
@@ -22,7 +27,7 @@
 <p>
   All students MAKE CLICKABLE:
 </p>
-<ul>
+<ul class="unbulleted-list">
   <% @students.each do |student| %>
     <% if (student.cohort.name == @cohort.name) %>
       <li> <%= student.contact.first_name %> <%= student.contact.last_name %> </li>
@@ -34,7 +39,7 @@
 <p>
   Instructors MAKE CLICKABLE:
 </p>
-<ul>
+<ul class="unbulleted-list">
   <% @instructors.each do |instructor| %>
     <% if (instructor.cohort.name == @cohort.name) %>
       <li> <%= instructor.contact.first_name %> <%= instructor.contact.last_name %> </li>
@@ -48,7 +53,7 @@
 </strong>
 
 
-<ul>
+<ul class="unbulleted-list">
   <% @cohorts.each do |cohort| %>
     <% if @program_name == cohort.program.name %>
       <li> <%= cohort.name  %> </li>

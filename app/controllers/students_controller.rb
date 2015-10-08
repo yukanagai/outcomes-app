@@ -6,6 +6,10 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
+    #Person.count(:conditions => "age > 26")
+    #@total_employed = Student.count(:conditions => "employed? = t")
   end
 
   # Added Method for dashboard

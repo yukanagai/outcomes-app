@@ -4,15 +4,15 @@
   <strong>Programs<strong>
 <p>
 
-<ul>
+<ul class="programs-list">
   <% @programs.each do |program| %>
-    <li> <%= program.name %> </li>
+    <li><%= link_to "#{program.name}", program_path(program[:id]) %> </li>
   <% end %>
 </ul>
 
 <h1>Listing Cohorts</h1>
 
-<table>
+<table class="records-list">
   <thead>
     <tr>
       <th>Name</th>
@@ -39,5 +39,5 @@
 </table>
 
 <br>
-
+<hr style="width:100%" />
 <%= link_to 'New Cohort', new_cohort_path %>
