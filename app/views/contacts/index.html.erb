@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Listing Contacts</h1>
 
 <table>
   <thead>
-    <tr>
+    <tr class="headerRow">
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
@@ -16,8 +15,8 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @contacts.each do |contact| %>
+  <tbody class="bodyRow">
+    <% @contacts[:contacts].each do |contact| %>
       <tr>
         <td><%= contact.first_name %></td>
         <td><%= contact.last_name %></td>
@@ -37,3 +36,5 @@
 <br>
 
 <%= link_to 'New Contact', new_contact_path %>
+
+<div id="catlogo"></div>

@@ -10,13 +10,18 @@ class CohortsController < ApplicationController
     @contacts = Contact.all
     @students = Student.all
     @instructors = CohortOfficer.all
-
-    binding.pry
   end
 
   # GET /cohorts/1
   # GET /cohorts/1.json
   def show
+    # this needs to restrict students by program
+    @students = Student.where(cohort_id: params[:id])
+    @instructors = CohortOfficer.all
+    @cohorts = Cohort.all
+    @programs = Program.all
+    @program_name = @students.first.cohort.program.name
+
   end
 
   # GET /cohorts/new

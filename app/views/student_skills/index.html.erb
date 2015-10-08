@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Student Skills</h1>
 
 <table>
   <thead>
-    <tr>
+    <tr class="headerRow">
       <th>Student</th>
       <th>Skill</th>
       <th>Experience</th>
@@ -12,7 +10,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="bodyRow">
     <% @student_skills.each do |student_skill| %>
       <tr>
         <td><%= student_skill.student %></td>
@@ -29,3 +27,5 @@
 <br>
 
 <%= link_to 'New Student skill', new_student_skill_path %>
+
+<div id="catlogo"></div>

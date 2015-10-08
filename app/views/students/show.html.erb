@@ -1,44 +1,43 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+  <p>
   <strong>Username:</strong>
   <%= @student.username %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Password:</strong>
   <%= @student.password %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Completed?:</strong>
   <%= @student.completed? %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employed?:</strong>
   <%= @student.employed? %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employer:</strong>
   <%= @student.employer %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employed as:</strong>
   <%= @student.employed_as %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Contact:</strong>
-  <%= @student.contact %>
-</p>
+  <%= @contact_info.email %>
+  </p>
 
-<p>
+  <p>
   <strong>Cohort:</strong>
-  <%= @student.cohort %>
-</p>
+  <%= @student.cohort.name %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

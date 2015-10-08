@@ -1,0 +1,16 @@
+<div class="login-form">
+  <form action="/login" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+
+    <div id="catlogo"></div>
+    <h1 id="logoblue">Catcademy</h1>
+
+    <div id="login-input">
+      <input type="text" name="username" placeholder="Username" class="input-box" id="firstbox">
+      <br>
+      <input type="password" value="" name="password" placeholder="Password" class="input-box">
+      <br>
+      <input type="submit" value="Sign In" id= "mainbutton">
+    </div>
+
+</div>

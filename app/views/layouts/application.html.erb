@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OutcomesApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>OutcomesApp :: <%= controller_name %></title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
-<body>
 
-<%= yield %>
+<body id="<%= controller_name %>_<%= action_name %>" class="<%= controller_name %>">
+
+<div class="container">
+	<div id="sidebar">
+		<div id="catlogo"></div>
+      	<ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Cohorts</a></li>
+       	 </ul>
+    </div>
+	<div class="navbar">
+		<div class="main-content">
+	        <a href="#" data-toggle=".container" id="sidebar-toggle">
+	            <span class="bar"></span>
+	            <span class="bar"></span>
+	            <span class="bar"></span>
+	        </a>
+			<div id="logobluesmall">Catcademy</div>
+		</div>
+	</div>
+	
+	<div class="content">
+		<%= yield %>
+		<p id="notice"><%= notice %></p>
+    </div>
+
+</div>
+
+
+
 
 </body>
 </html>

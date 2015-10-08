@@ -1,0 +1,386 @@
+/*
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ $eucalyptus: #30A370;
+ $coralred: #FCA311;
+ $bigstone: #1A2B37;
+ $mercury: #E5E5E5;
+ $saharasand: #F5EA82;
+ $pink : #F14E69;
+ $background: #E5E5E5;
+
+ $bodyfont: 'Open Sans', sans-serif;
+ $headerfont: 'Pacifico', cursive;
+
+ body, html {
+ 	width: 100%;
+ 	height: 100%;
+ 	margin: 0;
+ 	padding: 0;
+ 	font-family: $bodyfont;
+ 	background-color: $mercury;
+ 	overflow: auto;
+ }
+
+ .wrapper {
+ 	position: relative;
+	height: 100%;
+	width: 100%;
+ 	text-align: center;
+ 	padding: 0;
+ 	margin: 0 auto;
+ }
+
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    -webkit-transition:  left 0.4s ease-in-out;
+    -moz-transition:  left 0.4s ease-in-out;
+    -ms-transition:  left 0.4s ease-in-out;
+    -o-transition:  left 0.4s ease-in-out;
+    transition:  left 0.4s ease-in-out;
+    margin: 0 auto;
+}
+
+.container.open-sidebar {
+    left: 240px;
+}
+
+#sidebar {
+    position: absolute;
+    left: -240px;
+    background: $bigstone;
+    width: 240px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin: 0;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid white;
+    -webkit-transition:  background 0.3s ease-in-out;
+    -moz-transition:  background 0.3s ease-in-out;
+    -ms-transition:  background 0.3s ease-in-out;
+    -o-transition:  background 0.3s ease-in-out;
+    transition:  background 0.3s ease-in-out;
+}
+
+#sidebar ul li:hover a {
+    background: $pink;
+}
+.main-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+.main-content .content {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	padding-left: 60px;
+	width: 100%;
+}
+
+form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-content .content h1{
+    font-weight: 100;
+}
+
+.main-content .content p{
+    width: 100%;
+    line-height: 160%;
+}
+
+.main-content #sidebar-toggle {
+    background: $bigstone;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    padding: 10px 7px;
+    float: left;
+}
+
+.main-content #sidebar-toggle .bar {
+    display: block;
+    width: 18px;
+    margin-bottom: 3px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+}
+
+.main-content #sidebar-toggle .bar:last-child{
+     margin-bottom: 0;
+}
+
+
+ a {
+ 	text-decoration: none;
+
+ 	&:hover {
+ 		background: none;
+ 		color: black
+ 	}
+ }
+
+ .navbar {
+ 	background-color: $bigstone;
+ 	color: white;
+ 	width: 100%;
+ 	height: 50px;
+ 	display: block;
+ }
+
+ thead {
+ 	background-color: $bigstone;
+ }
+
+.header {
+	padding: 0px;
+	height: 100px;
+	background:  $eucalyptus;
+	margin: 0 auto;
+	font-family: $headerfont;
+}
+
+
+table {
+	margin: 0;
+    width: 100%;
+    height: 100%;
+	background-color: white;
+	border-collapse: collapse;
+}
+
+.headerText {
+	font-size: 2em;
+	color: white;
+	margin: 0 auto;
+	text-transform: none;
+}
+
+.headerRow th {
+	font-weight: bold;
+	color: white;
+}
+
+tbody {
+	padding: 25px;
+}
+
+.headerRow {
+	text-transform: uppercase;
+}
+
+td, th {
+	font-size: 1em;
+	color: black;
+	padding: 25px;
+}
+
+
+ #logogreen {
+ 	font-family: 'Pacifico', cursive;
+ 	font-size: 3em;
+ 	background: #30A370;
+ 	color: white;
+ 	display: inline-block;
+ 	line-height: 1;
+ 	padding: 15px 40px;
+ 	border-radius: 10px;
+ }
+
+ #logoblue {
+ 	font-family: 'Pacifico', cursive;
+ 	font-size: 3em;
+ 	background: #1A2B37;
+ 	color: white;
+ 	display: inline-block;
+ 	line-height: 1;
+ 	padding: 15px 40px;
+ 	border-radius: 10px;
+ }
+
+ #logobluesmall {
+ 	font-family: 'Pacifico', cursive;
+ 	font-size: 2em;
+ 	background: #1A2B37;
+ 	color: white;
+ 	display: inline-block;
+ 	line-height: 1;
+ 	padding: 0px 40px;
+ 	border-radius: 10px;
+ }
+
+ .colors div {
+ 	margin-right: 30px;
+ 	font-family: 'Open Sans', sans-serif;
+ }
+
+ .colors p {
+ 	display: inline-block;
+ 	font-size: 12px;
+ 	margin-right: 28px;
+ }
+
+ #color1 {
+ 	background: #30A370;
+ 	display: inline-block;
+ 	height: 50px;
+ 	width: 50px;
+ 	border-radius: 50%;
+ 	-moz-border-radius: 50px;
+ 	-webkit-border-radius: 50px;
+ }
+
+ #color2 {
+ 	background: #FCA311;
+ 	display: inline-block;
+ 	height: 50px;
+ 	width: 50px;
+ 	border-radius: 50%;
+ 	-moz-border-radius: 50px;
+ 	-webkit-border-radius: 50px;
+ }
+
+ #color3 {
+ 	background: #1A2B37;
+ 	display: inline-block;
+ 	height: 50px;
+ 	width: 50px;
+ 	border-radius: 50%;
+ 	-moz-border-radius: 50px;
+ 	-webkit-border-radius: 50px;
+ }
+
+ #color4 {
+ 	background: #E5E5E5;
+ 	display: inline-block;
+ 	height: 50px;
+ 	width: 50px;
+ 	border-radius: 50%;
+ 	-moz-border-radius: 50px;
+ 	-webkit-border-radius: 50px;
+ }
+
+ .pacifico h1 {
+ 	font-family: 'Pacifico', cursive;
+ 	font-size: 3em;
+ }
+
+ .pacifico p {
+ 	font-size: 1em;;
+ }
+
+ .opensans h1 {
+ 	font-family: 'Open Sans', sans-serif;
+ 	font-size: 2em;
+ }
+
+ .opensans h2 {
+ 	font-family: 'Open Sans', sans-serif;
+ 	font-size: 1em;;
+ }
+
+ .buttons {
+ 	margin: 0 auto;
+ }
+
+ #mainbutton {
+ 	background-color: #F5EA82;
+ 	height: auto;
+ 	padding: 20px;
+ 	display: inline-block;
+ 	border-radius: 10px;
+ 	border: none;
+ 	font-weight: 400;
+ }
+
+ #secondarybutton {
+ 	display: inline-block;
+ 	background-color:#E5E5E5;
+ 	width: 150px;
+ 	height: auto;
+ 	padding: 20px;
+ 	border-radius: 10px;
+ }
+
+ #chart1 {
+ 	background: white;
+ 	height: 250px;
+ 	width: 350px;
+ 	margin: 0 auto;
+ }
+
+ .chartinfo {
+ 	background: white;
+ 	width: 350px;
+ 	margin: 0 auto;
+ }
+
+ .chartinfo p {
+ 	display: inline-block;
+ }
+
+ #pie1 {
+ 	background: #1EBBA6;
+ 	border-radius: 50%;
+ 	height: 150px;
+ 	width: 150px;
+ 	margin: 0 auto;
+ 	margin-top: 50px;
+ 	display: inline-block;
+ }
+
+
+ hr {
+ 	width: 50%;
+ }
+
+
+#catlogo {
+	background-image: url(asset-path('catlogo.png'));
+	background-size: cover;
+	width: 250px;
+	min-width: 140px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}

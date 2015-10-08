@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Contact:</strong>
-  <%= @cohort_officer.contact %>
+  <% @contact = Contact.find(@cohort_officer.contact_id) %>
+  <%= "#{@contact.first_name} #{@contact.last_name}" %>
+
 </p>
 
 <p>
   <strong>Cohort:</strong>
-  <%= @cohort_officer.cohort %>
+  <% @cohort = Cohort.find(@cohort_officer.cohort_id) %>
+  <%= "#{@cohort.name}" %>
 </p>
 
 <p>

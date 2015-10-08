@@ -1,3 +1,109 @@
-// Place all the styles related to the Students controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "application";
+
+#students_index, #students_show {
+	background-color: $mercury;
+
+	.header {
+		background-color: $eucalyptus;
+		font-size: 2em;
+		color: white;
+	}
+
+	.headerText {
+		font-family: $headerfont;
+		padding: 30px;
+	}
+
+	.tablewrapper {
+		width: 100%;
+		background: white;
+		text-align: left;
+		padding: 20px;
+	}
+
+
+<<<<<<< HEAD
+
+}
+
+
+
+
+
+
+
+#students_login {
+	background-color:#E5E5E5;
+	color: white;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+=======
+// STYLING FOR STUDENTS#SHOW PAGE 
+
+
+
+
+// STYLING FOR LOGIN PAGE 
+
+#students_login {
+
+	.navbar {
+		display: none;
+	}
+>>>>>>> bebe7910cde2f8010f844e320c4fe882e957c396
+
+	#logoblue {
+		width: 350px;
+		box-sizing: border-box;
+	}
+
+	#login-input {
+		display: block;
+		position: relative;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
+
+	.input-box {
+		width: 350px;
+		margin: 0 auto;
+		display: block;
+		max-width: 403px;
+		height: 25px;
+		padding: 20px;
+		border: 0;
+		font-size: 1em;
+		font-color: black;
+  		box-sizing: border-box;
+  		outline: 0;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	#mainbutton {
+		width: 350px;
+		height: 55px;
+		font-size: 1em;
+		box-sizing: border-box;
+		background-color: #F14E69;
+		text-transform: uppercase;
+		color: white;
+
+
+		&:hover {
+			background: #1A2B37;
+			color: white;
+		}
+	}
+
+	#catlogo {
+		height: 145px;
+		margin-top: 20px;
+	}
+
+
+}
+
