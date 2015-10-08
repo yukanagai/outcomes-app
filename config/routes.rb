@@ -39,4 +39,6 @@ Rails.application.routes.draw do
   post '/login' => 'students#login_post'
   get '/logout' => 'students#logout'
 
+  get '/dashboard'     => 'students#dashboard'
+
 end
