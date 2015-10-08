@@ -30,9 +30,10 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        SurveyMailer.survey_time(@contac).deliver_now
+
+        format.html { redirect_to '/contacts', notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
-        SurveyMailer.survey_time(@contact).deliver_now
       else
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
