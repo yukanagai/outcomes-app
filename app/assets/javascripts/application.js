@@ -19,9 +19,14 @@
 //= require_tree .
 //= require_tree ./react_components
 
-$(document).ready(function() {
+$(function() {
   $("[data-toggle]").click(function() {
-    var toggle_el = $(this).data("toggle");
-    $(toggle_el).toggleClass("open-sidebar");
+    var toggle = $(this).data("toggle");
+    $(toggle).toggleClass("open-sidebar");
+  });
+
+  $("#catlogo").click(function() {
+  	var toggle = $(this).data("toggle");
+  	$(toggle).toggleClass("open-sidebar");
   });
 });
