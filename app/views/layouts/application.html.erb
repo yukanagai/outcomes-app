@@ -17,14 +17,14 @@
 	<div id="sidebar">
 		<div id="catlogo"></div>
       	<ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Programs</a></li>
-            <li><a href="#">Cohorts</a></li>
-            <% if current_user %>
-            	<li><a href="#"><% @student.username %></a></li>
+      		<% if current_user %>
+            	<li><%= link_to current_user.name, current_user %></li>
            	<% else %>
            		<li><a href="/login">Login</a></li>
            	<% end %>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/programs">Programs</a></li>
+            <li><a href="/cohorts">Cohorts</a></li>
             <li><a href="/logout">Logout</a></li>
        	 </ul>
     </div>

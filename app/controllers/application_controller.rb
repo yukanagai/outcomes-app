@@ -6,8 +6,13 @@ class ApplicationController < ActionController::Base
  def current_user
     if session[:contact_id]
       @contact ||= Contact.find(session[:contact_id])
+ 
     end
 
   end
   helper_method :current_user
 end
+
+ def index
+ 	@user = current_user
+ end
