@@ -1,17 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-
-<div class="container">
-
 <table>
-
-  <tbody>
+  <thead>
     <tr>
-      <td id="header" colspan="2">
-        <h1>Programs</h1>
-      </td>
+      <th class="header" colspan="8">
+        <h1 class="headerText">Programs</h1>
+      </th>
     </tr>
-    
+  <tbody class="bodyRow">
     <% @programs.each_with_index do |program, index| %>
       <tr>
         <td id='<%="program-#{index}"%>'></td>
@@ -23,7 +17,3 @@
     <% end %>
   </tbody>
 </table>
-</div>
-
-
-<div id="catlogo"></div>
