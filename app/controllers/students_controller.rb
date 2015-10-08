@@ -23,17 +23,9 @@ class StudentsController < ApplicationController
   def login
     if current_user
       session[:contact_id] = current_user.id
-
-      if current_user.is_officer?
-        session[:id] = CohortOfficer.find_by(contact: current_user.id).id
-        redirect_to dashboard_path
-      else
-        session[:id] = Student.find_by(contact: current_user.id).id
-        redirect_to student_path(session[:id])
-      end
-    else
-      render :login
     end
+
+    render :login
   end
 
   def login_post
@@ -60,6 +52,7 @@ class StudentsController < ApplicationController
   end
 
   def logout
+
     cookies[:contact_id]=nil
     cookies[:id] = nil
     redirect_to '/'
@@ -97,9 +90,17 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-    binding.pry
+    @user = current_user
+
     respond_to do |format|
       if @student.update(student_params)
+        binding.pry
+
+
+        @user.update(contact_params)
+
+        binding.pry
+
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -156,6 +157,11 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id, :checkbox_value)
+      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id)
     end
+
+    def contact_params
+      params.require(:contact).permit(:first_name, :last_name, :email, :twitter, :github, :linkedin, :phone, :website)
+    end
+
 end

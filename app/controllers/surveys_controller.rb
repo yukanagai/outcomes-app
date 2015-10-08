@@ -10,8 +10,6 @@ def index
   else
     #set survey_user
     @survey_user = Student.find_by(contact: @user.id)
-
-    # update
   end
 end
 
