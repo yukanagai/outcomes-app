@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: outcomes-app_production
-  username: outcomes-app
-  password: <%= ENV['OUTCOMES-APP_DATABASE_PASSWORD'] %>
+  username: pguser
+  password: <%= ENV['OUTCOMES_APP_DATABASE_PASSWORD'] %>

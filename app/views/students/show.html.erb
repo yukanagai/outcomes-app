@@ -1,4 +1,5 @@
   <p>
+
   <strong>Username:</strong>
   <%= @student.username %>
   </p>
@@ -38,6 +39,29 @@
   <%= @student.cohort.name %>
   </p>
 </div>
+
+
+<p><ul>
+  <strong> Contact info list (this is just a test for now)</strong>
+    <% @student.contact_info_list.each do |something|  %>
+    <li> <%= something %> </li>
+    <% end %>
+</p></ul>
+
+<p>
+
+
+
+        <strong> Graduated over 100 days ago? </strong>
+        <% if @student.hundred_days? %>
+        <h3><%= "Yes, you can take the survey!" %></h3>
+        <% else %>
+        <h3><%= "No, you can't take the survey yet. Check back 100 days after graduation." %></h3>
+        <% end %>
+
+</p>
+
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

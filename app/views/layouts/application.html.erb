@@ -6,8 +6,9 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 	<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
 </head>
 
 <body id="<%= controller_name %>_<%= action_name %>" class="<%= controller_name %>">
@@ -32,16 +33,11 @@
 			<div id="logobluesmall">Catcademy</div>
 		</div>
 	</div>
-	
+
 	<div class="content">
 		<%= yield %>
 		<p id="notice"><%= notice %></p>
-    </div>
-
+  </div>
 </div>
-
-
-
-
 </body>
 </html>
