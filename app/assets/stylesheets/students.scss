@@ -80,9 +80,12 @@
 		height: 145px;
 		margin-top: 20px;
 	}
+<<<<<<< HEAD
 
 }
 // styles for chart js graphs/dashboard
+=======
+>>>>>>> refactoring-survey
 
 #canvas-container{
   width: 100%;
@@ -120,8 +123,8 @@ canvas {
   vertical-align:top;
   text-align:center;
 
-
 }
+
 
 .doughnut-chart{
   width: 100%;
@@ -174,4 +177,6 @@ table.record-list {
   td a{
     font-style: normal;
 	}
+}
+
 }
