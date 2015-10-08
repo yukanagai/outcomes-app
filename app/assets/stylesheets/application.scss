@@ -147,8 +147,14 @@ form {
 
  	&:hover {
  		background: none;
- 		color: black
+ 		color: black;
  	}
+}
+
+ .wrapper {
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	text-align: center;
  }
 
  .navbar {
@@ -365,7 +371,6 @@ td, th {
  	width: 50%;
  }
 
-
 #catlogo {
 	background-image: url(asset-path('catlogo.png'));
 	background-size: cover;
@@ -375,7 +380,6 @@ td, th {
 	margin: 0 auto;
 	margin-top: 50px;
 }
-
 
 @media only screen and (min-width: 768px) {
 
