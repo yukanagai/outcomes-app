@@ -11,9 +11,8 @@ def index
     #set survey_user
     @survey_user = Student.find_by(contact: @user.id)
 
-    # update  
+    # update
   end
-
 end
 
 end
