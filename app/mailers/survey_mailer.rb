@@ -5,10 +5,11 @@ class SurveyMailer < ApplicationMailer
   #
   #   en.survey_mailer.survey_time.subject
   #
-  def survey_time(contac)
-    @contac = Contact.last
+  def survey_time(contact)
+    @contact = Contact.last
     @greeting = "Hi"
+  
 
-    mail to: "singhjaskar@yahoo.com", subject: "100 day post-graduation survey"
+    mail to: "singhjaskar@gmail.com", subject: "100 day post-graduation survey"
   end
 end

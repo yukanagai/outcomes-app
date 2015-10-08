@@ -31,5 +31,10 @@
 
 <%= link_to 'New Cohort officer', new_cohort_officer_path %>
 
+<button>
+  Click here to send survey
+  <%SurveyMailer.survey_time(@contact).deliver_now %>
+</button>
+
 
 <div id="catlogo"></div>
