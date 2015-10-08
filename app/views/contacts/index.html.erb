@@ -5,7 +5,7 @@
 
 <table>
   <thead>
-    <tr>
+    <tr class="headerRow">
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
@@ -17,7 +17,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="bodyRow">
     <% @contacts[:contacts].each do |contact| %>
       <tr>
         <td><%= contact.first_name %></td>
@@ -38,3 +38,5 @@
 <br>
 
 <%= link_to 'New Contact', new_contact_path %>
+
+<div id="catlogo"></div>

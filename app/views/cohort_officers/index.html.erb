@@ -1,10 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
 
-<h1>Listing Cohort Officers</h1>
+<p id="notice"><%= notice %></p>
 
 <table>
   <thead>
     <tr>
+      <th class="header" colspan="6">
+        <h1 class="headerText">Cohort Officers</h1>
+      </th>
+    </tr>
+    <tr class="headerRow">
       <th>Contact</th>
       <th>Cohort</th>
       <th>Role</th>
@@ -12,7 +17,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="bodyRow">
     <% @cohort_officers.each do |cohort_officer| %>
       <tr>
         <td><%= "#{cohort_officer.contact.first_name} #{cohort_officer.contact.last_name}" %></td>
@@ -29,3 +34,7 @@
 <br>
 
 <%= link_to 'New Cohort officer', new_cohort_officer_path %>
+
+</div>
+
+<div id="catlogo"></div>

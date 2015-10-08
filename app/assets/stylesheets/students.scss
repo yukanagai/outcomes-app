@@ -3,13 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// STYLING FOR STUDENTS#SHOW PAGE 
+
+
+
+
+// STYLING FOR LOGIN PAGE 
+
 #students_login {
 
-	background-color:#E5E5E5;
-	color: white;
-	height: 100%;
-	padding: 0;
-	margin: 0;
+	.navbar {
+		display: none;
+	}
 
 	#logoblue {
 		width: 350px;
@@ -33,7 +38,6 @@
 		border: 0;
 		font-size: 1em;
 		font-color: black;
-  		text-transform: uppercase;
   		box-sizing: border-box;
   		outline: 0;
 
@@ -44,9 +48,12 @@
 
 	#mainbutton {
 		width: 350px;
+		height: 55px;
 		font-size: 1em;
-		height: 50px;
 		box-sizing: border-box;
+		background-color: #F14E69;
+		text-transform: uppercase;
+		color: white;
 
 
 		&:hover {
@@ -54,6 +61,12 @@
 			color: white;
 		}
 	}
+
+	#catlogo {
+		height: 145px;
+		margin-top: 70px;
+	}
+
 
 }
 
