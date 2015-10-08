@@ -33,7 +33,7 @@
 
 <button>
   Click here to send survey
-  <%SurveyMailer.survey_time(@contact).deliver_now %>
+  <%SurveyMailer.survey_time(current_user, Student.all).deliver_now %>
 </button>
 
 
