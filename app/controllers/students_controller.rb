@@ -26,6 +26,8 @@ class StudentsController < ApplicationController
     gon.watch.total_looking = @total_looking
     @overall = [@total_employed, @total_looking]
     gon.watch.overall = @overall
+    
+
   end
 
   # GET /students/1
