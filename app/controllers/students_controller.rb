@@ -6,20 +6,28 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
   end
 
   # Added Method for dashboard
   def dashboard
-    @all_students = Student.all
-    @students = []
+    @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
 
-    @all_students.each do |student|
-      if student.hundred_days?
-        @students.push(student)
-      end
-    end
+    # Using gon.watch to pass rails vars to js
+    # def index
+    #  @users_count = User.count
+    #  gon.watch.users_count = @users_count
+    # end
+    @total_employed = Student.where(:employed => "t").count
+    gon.watch.total_employed = @total_employed
+    @total_looking = Student.where(:employed => "f").count
+    gon.watch.total_looking = @total_looking
+    @overall = [@total_employed, @total_looking]
+    gon.watch.overall = @overall
 
-    return @students
   end
 
   # GET /students/1
@@ -31,10 +39,10 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      session[:contact_id] = current_user.id
+      redirect_to student_path
+    else
+      render :login
     end
-
-    render :login
   end
 
   def login_post
@@ -44,26 +52,23 @@ class StudentsController < ApplicationController
 
     if @student
       if @student.authenticate(params[:password])
-        cookies[:id] = @student.id
-        cookies[:contact_id] = @student.contact_id
-        redirect_to student_path(@student.id)
-      end
-    elsif @cohort_officer
-      if @cohort_officer.authenticate(params[:password])
-        cookies[:id] = @cohort_officer.id
-        cookies[:contact_id] = @cohort_officer.contact_id
-        redirect_to '/cohorts'
+        session[:id] = @student.id
+        redirect_to student_path [@student.id]
+      else
+        redirect_to '/'
       end
     else
-      # needs message for "login not found"
-      redirect_to '/'
+      if @cohort_officer.authenticate(params[:password])
+        session[:id] = @cohort_officer.id
+        redirect_to '/cohorts'
+      else
+        redirect_to '/'
+      end
     end
   end
 
   def logout
-
-    cookies[:contact_id]=nil
-    cookies[:id] = nil
+    session[:id]=nil
     redirect_to '/'
   end
 
@@ -97,19 +102,24 @@ class StudentsController < ApplicationController
     end
   end
 
+  #   respond_to do |format|
+  #     if @student.save
+  #       format.html { redirect_to @student, notice: 'Student was successfully created.' }
+  #       format.json { render :show, status: :created, location: @student }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @student.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # PATCH/PUT /students/1
+  # PATCH/PUT /students/1.json
   def update
     @student = Student.find(params[:id])
-    @user = current_user
 
     respond_to do |format|
       if @student.update(student_params)
-        binding.pry
-
-
-        @user.update(contact_params)
-
-        binding.pry
-
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -166,11 +176,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id)
+      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id, :checkbox_value)
     end
-
-    def contact_params
-      params.require(:contact).permit(:first_name, :last_name, :email, :twitter, :github, :linkedin, :phone, :website)
-    end
-
 end
