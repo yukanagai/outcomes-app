@@ -11,6 +11,7 @@ bobby = Contact.create(first_name:"Bobby", last_name:"King", email:"BobbyKing@gm
 calvin = Contact.create(first_name:"Calvin", last_name:"Yeung", email:"CalvinYeung@gmail.com", twitter:"@CalvinYeung", github:"CalvinYeung", linkedin:"CalvinYeung",phone:"1231237777", website:"")
 christopher = Contact.create(first_name:"Christopher", last_name:"Smith", email:"Chris@gmail.com", twitter:"@Chris", github:"ChristopherSmith", linkedin:"ChristopherSmith",phone:"3334445555", website:"")
 dennis = Contact.create(first_name:"Dennis", last_name:"Liaw", email:"dennis.liaw@generalassemb.ly", twitter:"@DennisLiaw", github:"dennisliaw", linkedin:"dennisliaw",phone:"1888231233", website:"")
+ed = Contact.create(first_name:"Ed", last_name:"Petner", email:"ed@gmail.com", twitter:"@ed", github:"ed", linkedin:"ed",phone:"0980984444", website:"www.ed.com")
 eric = Contact.create(first_name:"Eric", last_name:"Kim", email:"EricKim@gmail.com", twitter:"@EricKim", github:"EricKim", linkedin:"EricKim",phone:"0980984444", website:"")
 ester = Contact.create(first_name:"Ester", last_name:"Zinn", email:"Ester@gmail.com", twitter:"@Ester", github:"EsterZinn", linkedin:"EsterZinn",phone:"0980980987", website:"")
 harrison = Contact.create(first_name:"Harrison", last_name:"Riddell", email:"HarrisonRiddell@gmail.com", twitter:"@HarrisonIsVoldemort", github:"HarrisonIsVoldemort", linkedin:"HarrisonIsVoldemort",phone:"6666666666", website:"")
@@ -61,6 +62,7 @@ CohortOfficer.create( contact: pan, cohort: pluto, role: "Instructor", username:
 CohortOfficer.create( contact: jaden, cohort: pluto, role: "Instructor", username: "Jaden", password:"password")
 
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
+Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
 Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
 Student.create(contact: calvin, cohort:pluto, username:"calvin", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: christopher, cohort:pluto, username:"christopher", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)

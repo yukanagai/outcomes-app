@@ -11,7 +11,7 @@ var MovieBox = React.createClass({
     $.ajax({
       url:this.props.url,
       method: 'GET',
-      data: {s: title },
+      data: {s: title },3
       success: function(result) {
         this.setState({data: result.Search});
         console.log('data', this.state.data);

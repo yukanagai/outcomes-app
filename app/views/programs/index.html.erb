@@ -8,8 +8,8 @@
       </tr>
     <tbody class="bodyRow">
       <% @programs.each_with_index do |program, index| %>
-        <tr>
-          <td class ="program-index-names" id='<%="program-#{index}"%>'></td>
+        <tr class ="program-index-names" key='<%= index %>' id='<%="switch-#{index}"%>'>
+          <td id='<%="program-#{index}"%>'></td>
           <td><%= link_to program.name, "/programs" %></td>
         </tr>
       <% end %>
