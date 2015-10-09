@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
+  # if params :cohort then look up cohort and @students = cohort.students
 
   # GET /students
   # GET /students.json
