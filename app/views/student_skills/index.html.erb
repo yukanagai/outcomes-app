@@ -1,6 +1,5 @@
-<h1>Listing Student Skills</h1>
-
 <table>
+    
   <thead>
     <tr class="headerRow">
       <th>Student</th>
@@ -24,8 +23,9 @@
   </tbody>
 </table>
 
-<br>
+<div class="footer">
+  <div class="button-add-new">
+    <%= link_to 'New Student skill', new_student_skill_path %>
+  </div>
+</div>
 
-<%= link_to 'New Student skill', new_student_skill_path %>
-
-<div id="catlogo"></div>

@@ -5,11 +5,19 @@
         <h1 class="headerText">Cohort Officers</h1>
       </th>
     </tr>
+
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+        <%= link_to 'Add new Cohort officer', new_cohort_officer_path %>
+        </div>
+      </th>
+    </tr>
+
     <tr class="headerRow">
       <th>Contact</th>
       <th>Cohort</th>
       <th>Role</th>
-<!--       <th colspan="3"></th> -->
     </tr>
   </thead>
 
@@ -19,17 +27,7 @@
         <td><%= link_to "#{cohort_officer.contact.first_name} #{cohort_officer.contact.last_name}", cohort_officer %></td>
         <td><%= "#{cohort_officer.cohort.program.name} #{cohort_officer.cohort.name}" %></td>
         <td><%= cohort_officer.role %></td>
- <!--        <td><%= link_to 'Show', cohort_officer %></td>
-        <td><%= link_to 'Edit', edit_cohort_officer_path(cohort_officer) %></td>
-        <td><%= link_to 'Destroy', cohort_officer, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Cohort officer', new_cohort_officer_path %>
-
-
-<div id="catlogo"></div>

@@ -1,67 +1,104 @@
-  <p>
+<table>
+  <thead>
+    <tr>
+      <th class="header" colspan="2">
+        <h1 class="headerText">Student Profile</h1>
+      </th>
+    </tr>
+    <tr>
+       <th class="linkBar" colspan="2">
+        <div class="button-add-new">
+        <%= link_to 'Edit', edit_student_path(@student) %> | <%= link_to 'Back', students_path %>
+        </div>
+      </th>
+    </tr>
+  </thead>
 
-  <strong>Username:</strong>
-  <%= @student.username %>
-  </p>
+  <tbody class="bodyRow">
+    <tr>
+      <td><strong>Username</strong></td>
+      <td><%= @student.username %></td>
+    </tr>
 
-  <p>
-  <strong>Password:</strong>
-  <%= @student.password %>
-  </p>
+    <tr>
+      <td><strong>Password</strong></td>
+      <td><%= @student.password %></td>
+    </tr>
 
-  <p>
-  <strong>Completed?:</strong>
-  <%= @student.completed? %>
-  </p>
+    <tr>
+      <td><strong>Completed?</strong></td>
+      <td><%= @student.completed? %></td>
+    </tr>
 
-  <p>
-  <strong>Employed?:</strong>
-  <%= @student.employed? %>
-  </p>
+    <tr>
+       <td><strong>Employed?</strong></td>
+       <td><%= @student.employed? %></td>
+    </tr>
 
-  <p>
-  <strong>Employer:</strong>
-  <%= @student.employer %>
-  </p>
+    <tr>
+      <td><strong>Employer</strong></td>
+      <td><%= @student.employer %></td>
+    </tr>
 
-  <p>
-  <strong>Employed as:</strong>
-  <%= @student.employed_as %>
-  </p>
+    <tr>
+      <td><strong>Employed as:</strong></td>
+      <td><%= @student.employed_as %></td>
+    </tr>
 
-  <p>
-  <strong>Contact:</strong>
-  <%= @contact_info.email %>
-  </p>
+    <tr>
+      <td><strong>Contact:</strong></td>
+      <td><%= @contact_info.email %></td>
+    </tr>
 
-  <p>
-  <strong>Cohort:</strong>
-  <%= @student.cohort.name %>
-  </p>
-</div>
+    <tr>
+      <td><strong>Cohort:</strong></td>
+      <td><%= @student.cohort.name %></td>
+    </tr>
+  </tbody>
+</table>
 
+<table>
+    <thead>
+      <tr class="headerRow">
+        <th>100 Day Survey</th>
+      </tr>
+    </th>
+  </thead>
 
-<p><ul>
-  <strong> Contact info list (this is just a test for now)</strong>
-    <% @student.contact_info_list.each do |something|  %>
-    <li> <%= something %> </li>
-    <% end %>
-</p></ul>
+  <tbody class="bodyRow">
+    <tr>
+      <% if @student.hundred_days? %>
+      <td><strong><%= "Yes, you can take the survey!" %></strong></td>
+      <% else %>
+      <td><strong><%= "No, you can't take the survey yet. Check back 100 days after graduation." %></strong></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
 
-<p>
+<table>
+    <thead>
+      <tr>
+        <th class="headerRow" colspan="5">Contact Info</th>
+      </tr>
+    </th>
+  
+  <tbody class="bodyRow">
+    <tr>
+      <% @student.contact_info_list.each do |something|  %>
+      <td><%= something %></td>
+      <% end %>
+    </tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tbody>
+</table>
 
-
-
-        <strong> Graduated over 100 days ago? </strong>
-        <% if @student.hundred_days? %>
-        <h3><%= "Yes, you can take the survey!" %></h3>
-        <% else %>
-        <h3><%= "No, you can't take the survey yet. Check back 100 days after graduation." %></h3>
-        <% end %>
-
-</p>
-
-
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<!-- <div class="footer">
+  <div class="button-add-new">
+    <%= link_to 'Edit', edit_student_path(@student) %> |
+    <%= link_to 'Back', students_path %>
+  </div>
+</div> -->

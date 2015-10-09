@@ -1,5 +1,22 @@
-<h1>New Student</h1>
+<table>
+<thead>
+    <tr>
+      <th class="header" colspan="10">
+        <h1 class="headerText">New Student</h1>
+      </th>
+    </tr>
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+          <%= link_to 'Back', students_path %>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="bodyRow">
+  	<tr>
+		<td><%= render 'form' %></td>
+	</tr>
+	</tbody>
+</table>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', students_path %>

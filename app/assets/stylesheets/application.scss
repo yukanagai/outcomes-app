@@ -34,6 +34,10 @@
  	margin: 0 auto;
  }
 
+ .sidebar {
+    list-style: none;
+ }
+
 
 .container {
     position: relative;
@@ -152,13 +156,7 @@ a {
  	}
 }
 
- .wrapper {
- 	width: 100%;
- 	margin: 0 auto;
- 	text-align: center;
- }
-
- .navbar {
+.navbar {
  	background-color: $bigstone;
  	color: white;
  	width: 100%;
@@ -171,6 +169,7 @@ a {
  }
 
 .header {
+    top: 0;
 	padding: 0px;
 	height: 100px;
 	background:  $eucalyptus;
@@ -179,11 +178,14 @@ a {
 }
 
 table {
-	margin: 0;
-    width: 100%;
+    border-collapse: collapse;
+    width: 80%;
     height: 100%;
+    margin: 0 auto;
 	background-color: white;
-	border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    background: white;
 }
 
 .headerText {
@@ -193,23 +195,22 @@ table {
 	text-transform: none;
 }
 
-.headerRow th {
+.headerRow, .headerRow th {
 	font-weight: bold;
 	color: white;
+    text-transform: uppercase;
 }
 
 tbody {
 	padding: 25px;
 }
 
-.headerRow {
-	text-transform: uppercase;
-}
-
 td, th {
 	font-size: 1em;
 	color: black;
 	padding: 25px;
+    list-style: none;
+    text-align: center;
 }
 
  #logogreen {
@@ -319,6 +320,25 @@ td, th {
  	margin: 0 auto;
  }
 
+ .linkBar {
+    background-color: white;
+    width: 100%;
+    height: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.button-add-new {
+    padding: 3px;
+
+    a {
+        padding: 5px;
+        color: black;
+        font-weight: 700;
+        text-tranform: uppercase;
+    }
+}
+
  #mainbutton {
  	background-color: #F5EA82;
  	height: auto;
@@ -380,6 +400,7 @@ td, th {
 	margin-top: 50px;
 }
 
+<<<<<<< HEAD
 .switcher-sidebar{
   max-width: 20%;
   float: right;
@@ -387,6 +408,14 @@ td, th {
   .header {
     height: 50px;
   }
+=======
+
+.footer {
+    background: $bigstone;
+    width: 100%;
+    bottom: 0;
+    height: 70px;
+>>>>>>> 22d3865458752b3934d89e2f6829cbbcf4c66c21
 }
 
 @media only screen and (min-width: 768px) {

@@ -1,6 +1,23 @@
-<h1>Editing Cohort Officer</h1>
+<table>
+<thead>
+    <tr>
+      <th class="header" colspan="10">
+        <h1 class="headerText">Editing Cohort Officer</h1>
+      </th>
+    </tr>
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+         	<%= link_to 'Show', @cohort_officer %> |
+			<%= link_to 'Back', cohort_officers_path %>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="bodyRow">
+  	<tr>
+		<td><%= render 'form' %></td>
+	</tr>
+	</tbody>
+</table>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @cohort_officer %> |
-<%= link_to 'Back', cohort_officers_path %>

@@ -12,7 +12,13 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   # GET /contacts/1.json
   def show
+    if @contact.is_officer?
+      redirect_to cohort_officer_path(params[:id])
+    else      
+      redirect_to student_path(params[:id])
+    end
   end
+
 
   # GET /contacts/new
   def new
