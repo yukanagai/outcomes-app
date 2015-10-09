@@ -12,10 +12,10 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   # GET /contacts/1.json
   def show
-    if $(this) @student
-      redirect_to student_path
-    elsif current_user == @cohort_officer
-      redirect_to cohort_officer_path
+    if @contact.is_officer?
+      redirect_to cohort_officer_path(params[:id])
+    else      
+      redirect_to student_path(params[:id])
     end
   end
 
