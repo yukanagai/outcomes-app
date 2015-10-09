@@ -21,7 +21,7 @@
  	margin: 0;
  	padding: 0;
  	font-family: $bodyfont;
- 	background-color: white;
+ 	background-color: $mercury;
  	overflow: auto;
  }
 
@@ -169,6 +169,7 @@ a {
  }
 
 .header {
+    top: 0;
 	padding: 0px;
 	height: 100px;
 	background:  $eucalyptus;
@@ -177,10 +178,14 @@ a {
 }
 
 table {
-    width: 100%;
+    border-collapse: collapse;
+    width: 80%;
     height: 100%;
+    margin: 0 auto;
 	background-color: white;
-	border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    background: white;
 }
 
 .headerText {
@@ -193,14 +198,11 @@ table {
 .headerRow, .headerRow th {
 	font-weight: bold;
 	color: white;
+    text-transform: uppercase;
 }
 
 tbody {
 	padding: 25px;
-}
-
-.headerRow {
-	text-transform: uppercase;
 }
 
 td, th {
