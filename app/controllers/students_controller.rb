@@ -31,9 +31,6 @@ class StudentsController < ApplicationController
         session[:id] = Student.find_by(contact: current_user.id).id
 
       end
-    else
-      render :login
-
     end
 
     render :login

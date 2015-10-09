@@ -13,7 +13,7 @@ class Student < ActiveRecord::Base
   # whatever! this is pretty safe as long as you don't delete things on line 8 or above.
   # -nick
   def name
-    "#{first_name} #{last_name}"
+    "#{contact.first_name} #{contact.last_name}"
   end
 
 
@@ -41,5 +41,10 @@ class Student < ActiveRecord::Base
 
   has_secure_password
 
+  def reminder_email(sender, recipient)
+
+      SurveyMailer.survey_time(sender, recipient).deliver_now
+
+  end
 
 end
