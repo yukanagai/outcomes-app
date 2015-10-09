@@ -31,7 +31,7 @@ gem 'chart-js-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'ffaker'
-
+gem 'coffee-rails', "~> 3.1.0"
 
 gem "therubyracer"
 gem "unicorn-rails"
