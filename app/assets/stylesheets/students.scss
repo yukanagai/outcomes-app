@@ -1,15 +1,8 @@
 @import "application";
 
 #students_show {
-	thead {
-		width: 100%;
-	}
-	tbody {
-		width: 60%;
-		margin: 0 auto;
-	}
-	.bodyRow {
-		text-align: center;
+	table {
+		width: 70%;
 	}
 }
 
