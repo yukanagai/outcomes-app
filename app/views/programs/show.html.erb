@@ -1,16 +1,30 @@
-<p>
-  <strong>Name:</strong>
-  <%= @program.name %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th class="header" colspan="2">
+        <h1 class="headerText"><%= @program.name %></h1>
+      </th>
+    </tr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @program.description %>
-</p>
+    <tr>
+      <th class="linkBar" colspan="2">
+        <div class="button-add-new">
+			<%= link_to 'Back', programs_path %>
+        </div>
+      </th>
+    </tr>
 
-<div class="footer">
-  <div class="button-add-new">
-    <%= link_to 'Edit', edit_program_path(@program) %> |
-	<%= link_to 'Back', programs_path %>
-  </div>
-</div>
+    <tr class="headerRow">
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @program.name %></td>
+      <td><%= @program.description %></td>
+    </tr>
+  </tbody>
+
+</table>
