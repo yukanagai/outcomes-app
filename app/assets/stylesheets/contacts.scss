@@ -12,7 +12,6 @@
   }
 
   input[type="submit"]{
-    font-size: 1em;
     background-color: #FCA311;
     border: 0;
     outline: 0;
@@ -21,6 +20,7 @@
     border-radius: 10px;
     font-weight: 400;
     margin-left: 2%;
+    text-transform: uppercase;
   }
 
   h1 {
