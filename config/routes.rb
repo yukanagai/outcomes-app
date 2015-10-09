@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :contacts, only: [:index, :new, :show, :update, :destroy, :create]
   resources :students
-  resources :cohort_officers,
+  resources :cohort_officers
   resources :cohorts
   resources :programs, only: [:index]
 
