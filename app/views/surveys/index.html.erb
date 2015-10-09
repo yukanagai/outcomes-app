@@ -1,4 +1,65 @@
-<!-- Change the width and height values to suit you best -->
-<div class="typeform-widget" data-url="https://plutogroup.typeform.com/to/oPAN6U" data-text="Post-Event Survey" style="width:100%;height:900px;"></div>
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'widget.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
-    <div style="font-family: Sans-Serif;font-size: 12px;color: #999;opacity: 0.5; padding-top: 5px;">Powered by <a href="http://www.typeform.com/?utm_campaign=typeform_oPAN6U&amp;utm_source=website&amp;utm_medium=typeform&amp;utm_content=typeform-embedded&amp;utm_term=English" style="color: #999" target="_blank">Typeform</a></div>
+
+
+<!--
+We're going to add a Survey field to track more data. For now, it's just "employed."
+
+1. Have you found steady work in the tech field since graduation? check
+2. Where are you working (if applicable)? string input
+3. How many jobs have you applied to? checkboxes
+4. Have you received any feedback about your resume, good or bad? Please explain. text area
+5. If you're currently employed, is the position related to y=ur career goals? textarea
+6. If employed, is your position part-time, full-time, or freelance? textarea
+7. What strategies did you use during your employment search? What tools have you found to be the most helpful while looking for new employment?
+textarea
+8. What is your personal website? string
+
+this guy should send an email
+9. Thank you for filling this out! Please let us know of any feedback you have! Afterwards, please scroll down and click "Send". Good luck! textarea
+-->
+<p><%=@user.name%></p>
+<p><%=current_user.name%></p>
+<p><%=@survey_user %></p>
+
+<%= form_for(@survey_user) do |f| %>
+  <h1>IT'S BEEN 100 DAYS!</h1>
+  <div class="field">
+    <p>1. Have you found steady work in the tech field since graduation?</p>
+
+      Yes! Employed <input type="checkbox" name="student[employed]" value="true"/>
+      Nope! Still Searching!<input type="checkbox" id="employed" name="student[employed]" value="false"/>
+
+    <!-- jquery event for hiding/showing this -->
+    <p>2. Where are you working?
+      <% f.label :employer %>
+      <%= f.text_field :employer %>
+    </p>
+    <p> 3. If you're currently employed, what're you up to?
+      <% f.label :employed_as %>
+      <%= f.text_field :employed_as %>
+    </p>
+
+    <%= form_for(@survey_user.contact) do |f| %>
+      <p> 4. Do you have a new email? (if yes, fix it!)
+        <% f.label :email %>
+        <%= f.text_field :email %>
+      </p>
+      <p> 5. Is this still your personal website? (if not, fix it!)
+        <% f.label :website %>
+        <%= f.text_field :website %>
+      </p>
+      <p> 6. Is this Github account still your best work?
+        <% f.label :github %>
+        <%= f.text_field :github %>
+      </p>
+      <p> 7. New phone?
+        <% f.label :phone %>
+        <%= f.text_field :phone %>
+      </p>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+
+<% end %>
