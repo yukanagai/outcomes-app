@@ -8,6 +8,20 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  # Added Method for dashboard
+  def dashboard
+    @all_students = Student.all
+    @students = []
+
+    @all_students.each do |student|
+      if student.hundred_days?
+        @students.push(student)
+      end
+    end
+
+    return @students
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show
@@ -17,10 +31,10 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      redirect_to student_path
-    else
-      render :login
+      session[:contact_id] = current_user.id
     end
+
+    render :login
   end
 
   def login_post
@@ -30,23 +44,26 @@ class StudentsController < ApplicationController
 
     if @student
       if @student.authenticate(params[:password])
-        session[:id] = @student.id
-        redirect_to student_path [@student.id]
-      else
-        redirect_to '/'
+        cookies[:id] = @student.id
+        cookies[:contact_id] = @student.contact_id
+        redirect_to student_path(@student.id)
+      end
+    elsif @cohort_officer
+      if @cohort_officer.authenticate(params[:password])
+        cookies[:id] = @cohort_officer.id
+        cookies[:contact_id] = @cohort_officer.contact_id
+        redirect_to '/cohorts'
       end
     else
-      if @cohort_officer.authenticate(params[:password])
-        session[:id] = @cohort_officer.id
-        redirect_to '/cohorts'
-      else
-        redirect_to '/'
-      end
+      # needs message for "login not found"
+      redirect_to '/'
     end
   end
 
   def logout
-    session[:id]=nil
+
+    cookies[:contact_id]=nil
+    cookies[:id] = nil
     redirect_to '/'
   end
 
@@ -58,6 +75,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    @student = Student.find(params[:id])
   end
 
   # POST /students
@@ -79,22 +97,19 @@ class StudentsController < ApplicationController
     end
   end
 
-  #   respond_to do |format|
-  #     if @student.save
-  #       format.html { redirect_to @student, notice: 'Student was successfully created.' }
-  #       format.json { render :show, status: :created, location: @student }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @student.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
-  # PATCH/PUT /students/1
-  # PATCH/PUT /students/1.json
   def update
+    @student = Student.find(params[:id])
+    @user = current_user
+
     respond_to do |format|
       if @student.update(student_params)
+        binding.pry
+
+
+        @user.update(contact_params)
+
+        binding.pry
+
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -151,6 +166,11 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:username, :password, :completed?, :employed?, :employer, :employed_as, :contact_id, :cohort_id)
+      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id)
     end
+
+    def contact_params
+      params.require(:contact).permit(:first_name, :last_name, :email, :twitter, :github, :linkedin, :phone, :website)
+    end
+
 end

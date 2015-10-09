@@ -1,14 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
+ /*
  *
  *= require_tree .
  *= require_self
@@ -19,6 +9,7 @@
  $bigstone: #1A2B37;
  $mercury: #E5E5E5;
  $saharasand: #F5EA82;
+ $pink : #F14E69;
  $background: #E5E5E5;
 
  $bodyfont: 'Open Sans', sans-serif;
@@ -29,26 +20,197 @@
  	height: 100%;
  	margin: 0;
  	padding: 0;
- 	font-family: 'Open Sans', sans-serif;
- }
-
- a {
- 	text-decoration: none;
+ 	font-family: $bodyfont;
+ 	background-color: $mercury;
+ 	overflow: auto;
  }
 
  .wrapper {
- 	width: 80%;
+ 	position: relative;
+	height: 100%;
+	width: 100%;
+ 	text-align: center;
+ 	padding: 0;
+ 	margin: 0 auto;
+ }
+
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    -webkit-transition:  left 0.4s ease-in-out;
+    -moz-transition:  left 0.4s ease-in-out;
+    -ms-transition:  left 0.4s ease-in-out;
+    -o-transition:  left 0.4s ease-in-out;
+    transition:  left 0.4s ease-in-out;
+    margin: 0 auto;
+}
+
+.container.open-sidebar {
+    left: 240px;
+}
+
+#sidebar {
+    position: absolute;
+    left: -240px;
+    background: $bigstone;
+    width: 240px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin: 0;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid white;
+    -webkit-transition:  background 0.3s ease-in-out;
+    -moz-transition:  background 0.3s ease-in-out;
+    -ms-transition:  background 0.3s ease-in-out;
+    -o-transition:  background 0.3s ease-in-out;
+    transition:  background 0.3s ease-in-out;
+}
+
+#sidebar ul li:hover a {
+    background: $pink;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: relative;
+}
+
+.main-content .content {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	padding-left: 60px;
+	width: 100%;
+}
+
+form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-content .content h1{
+    font-weight: 100;
+}
+
+.main-content .content p{
+    width: 100%;
+    line-height: 160%;
+}
+
+.main-content #sidebar-toggle {
+    background: $bigstone;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    padding: 10px 7px;
+    float: left;
+}
+
+.main-content #sidebar-toggle .bar {
+    display: block;
+    width: 18px;
+    margin-bottom: 3px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+}
+
+.main-content #sidebar-toggle .bar:last-child{
+     margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+
+ 	&:hover {
+ 		background: none;
+ 		color: black;
+ 	}
+}
+
+ .wrapper {
+ 	width: 100%;
  	margin: 0 auto;
  	text-align: center;
  }
 
- hr {
- 	width: 50%;
+ .navbar {
+ 	background-color: $bigstone;
+ 	color: white;
+ 	width: 100%;
+ 	height: 50px;
+ 	display: block;
  }
 
- .content {
- 	margin: 40px 0px;
+ thead {
+ 	background-color: $bigstone;
  }
+
+.header {
+	padding: 0px;
+	height: 100px;
+	background:  $eucalyptus;
+	margin: 0 auto;
+	font-family: $headerfont;
+}
+
+table {
+	margin: 0;
+    width: 100%;
+    height: 100%;
+	background-color: white;
+	border-collapse: collapse;
+}
+
+.headerText {
+	font-size: 2em;
+	color: white;
+	margin: 0 auto;
+	text-transform: none;
+}
+
+.headerRow th {
+	font-weight: bold;
+	color: white;
+}
+
+tbody {
+	padding: 25px;
+}
+
+.headerRow {
+	text-transform: uppercase;
+}
+
+td, th {
+	font-size: 1em;
+	color: black;
+	padding: 25px;
+}
 
  #logogreen {
  	font-family: 'Pacifico', cursive;
@@ -69,6 +231,17 @@
  	display: inline-block;
  	line-height: 1;
  	padding: 15px 40px;
+ 	border-radius: 10px;
+ }
+
+ #logobluesmall {
+ 	font-family: 'Pacifico', cursive;
+ 	font-size: 2em;
+ 	background: #1A2B37;
+ 	color: white;
+ 	display: inline-block;
+ 	line-height: 1;
+ 	padding: 0px 40px;
  	border-radius: 10px;
  }
 
@@ -193,12 +366,24 @@
  }
 
 
+ hr {
+ 	width: 50%;
+ }
+
 #catlogo {
-	background-image: url(asset-path('catlogo.gif'));
+	background-image: url(asset-path('catlogo.png'));
 	background-size: cover;
-	width: 200px;
+	width: 250px;
 	min-width: 140px;
-	height: 150px;
+	height: 100px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
 }

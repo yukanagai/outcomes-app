@@ -1,29 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-
-<div class="container">
-
 <table>
-
-  <tbody>
+  <thead>
     <tr>
-      <td id="header" colspan="2">
-        <h1>Programs</h1>
-      </td>
+      <th class="header" colspan="8">
+        <h1 class="headerText">Programs</h1>
+      </th>
     </tr>
-
+  <tbody class="bodyRow">
     <% @programs.each_with_index do |program, index| %>
       <tr>
         <td id='<%="program-#{index}"%>'></td>
         <td><%= link_to program.name, program %></td>
-        <td><%= link_to 'Show', program %></td>
-        <td><%= link_to 'Edit', edit_program_path(program) %></td>
-        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>
-
-
-<div id="catlogo"></div>

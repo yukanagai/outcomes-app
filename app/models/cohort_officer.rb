@@ -5,7 +5,7 @@ class CohortOfficer < ActiveRecord::Base
   has_secure_password
 
   def name
-    "#{Contact.find(contact_id).first_name} #{Contact.find(contact_id).last_name}"
+    "#{contact.first_name} #{contact.last_name}"
   end
 
 end

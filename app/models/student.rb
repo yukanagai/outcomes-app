@@ -13,9 +13,28 @@ class Student < ActiveRecord::Base
   # whatever! this is pretty safe as long as you don't delete things on line 8 or above.
   # -nick
   def name
-    "#{contact.first_name} #{contact.last_name}"
+    "#{first_name} #{last_name}"
+  end
+
+  def contact_info_list
+
+    [Contact.find(contact_id).email,
+    Contact.find(contact_id).twitter,
+    Contact.find(contact_id).github,
+    Contact.find(contact_id).linkedin,
+    Contact.find(contact_id).phone]
+
+  end
+
+  def hundred_days?
+    Date.today - cohort.end_date >= 100
+  end
+
+  def cohort_name
+    cohort.name
   end
 
   has_secure_password
+
 
 end

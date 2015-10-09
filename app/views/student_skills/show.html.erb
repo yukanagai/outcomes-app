@@ -1,0 +1,17 @@
+<p>
+  <strong>Student:</strong>
+  <%= @student_skill.student %>
+</p>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @student_skill.skill %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @student_skill.experience %>
+</p>
+
+<%= link_to 'Edit', edit_student_skill_path(@student_skill) %> |
+<%= link_to 'Back', student_skills_path %>

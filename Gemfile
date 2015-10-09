@@ -4,6 +4,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-foundation'
 end
 
+gem 'better_errors'
+
 gem 'react-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

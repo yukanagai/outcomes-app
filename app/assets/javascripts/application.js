@@ -16,5 +16,18 @@
 //=require react
 //=require react_ujs
 //=require components
+//=require Chart
 
 //= require_tree .
+
+$(function() {
+  $("[data-toggle]").click(function() {
+    var toggle = $(this).data("toggle");
+    $(toggle).toggleClass("open-sidebar");
+  });
+
+  $("#catlogo").click(function() {
+  	var toggle = $(this).data("toggle");
+  	$(toggle).toggleClass("open-sidebar");
+  });
+});

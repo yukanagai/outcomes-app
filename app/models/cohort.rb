@@ -9,4 +9,7 @@ class Cohort < ActiveRecord::Base
   # cohorts have many officers. officers have many cohorts.
   has_many :cohort_officers
 
+
+
+
 end

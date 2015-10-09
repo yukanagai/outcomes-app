@@ -1,45 +1,67 @@
-<p id="notice"><%= notice %></p>
+  <p>
 
-
-<p>
   <strong>Username:</strong>
   <%= @student.username %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Password:</strong>
   <%= @student.password %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Completed?:</strong>
   <%= @student.completed? %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employed?:</strong>
   <%= @student.employed? %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employer:</strong>
   <%= @student.employer %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Employed as:</strong>
   <%= @student.employed_as %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Contact:</strong>
   <%= @contact_info.email %>
-</p>
+  </p>
 
-<p>
+  <p>
   <strong>Cohort:</strong>
   <%= @student.cohort.name %>
+  </p>
+</div>
+
+
+<p><ul>
+  <strong> Contact info list (this is just a test for now)</strong>
+    <% @student.contact_info_list.each do |something|  %>
+    <li> <%= something %> </li>
+    <% end %>
+</p></ul>
+
+<p>
+
+
+
+        <strong> Graduated over 100 days ago? </strong>
+        <% if @student.hundred_days? %>
+        <h3><%= "Yes, you can take the survey!" %></h3>
+        <% else %>
+        <h3><%= "No, you can't take the survey yet. Check back 100 days after graduation." %></h3>
+        <% end %>
+
 </p>
+
+
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
