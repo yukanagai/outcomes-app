@@ -27,7 +27,9 @@ $(function() {
   });
 
   $("#catlogo").click(function() {
-  	var toggle = $(this).data("toggle");
-  	$(toggle).toggleClass("open-sidebar");
+	$(this).addClass('animated tada').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
+		function() {
+			$(this).removeClass('animated tada');
+		});
+	});
   });
-});

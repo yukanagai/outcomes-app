@@ -129,35 +129,6 @@ class StudentsController < ApplicationController
     end
   end
 
-  # def login
-  #   if current_user
-  #     redirect_to '/cohorts'
-  #   else
-  #     render :login
-  #   end
-  # end
-
-  # def login_post
-
-  #   @contact = Contact.find_by({email: params[:email]})
-  #   @student = Student.find_by(contact_id: @contact.id)
-  #   if @contact
-  #     if @student['password'].authenticate(params[:password]) || @cohortofficer.password.authenticate(params[:password])
-  #       session[:contact_id] = @contact.id
-  #       redirect_to '/cohorts'
-  #     else
-  #       redirect_to '/login'
-  #     end
-  #   else
-  #     redirect_to '/login'
-  #   end
-  # end
-
-  # def logout
-  #   session[:contact_id]=nil
-  #   redirect_to '/login'
-  # end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
