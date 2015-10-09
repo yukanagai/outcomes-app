@@ -24,7 +24,7 @@
   <tbody>
     <tr>
       <td><%= @cohort.location %></td>
-      <td><%=  @cohort.program.name %></td>
+      <td><%=  link_to @cohort.program.name, @cohort.program %></td>
     </tr>
   </tbody>
 
@@ -40,8 +40,7 @@
       <td>
         <% @instructors.each do |instructor| %>
         <% if (instructor.cohort.name == @cohort.name) %>
-        <li> <%= instructor.contact.first_name %> <%= instructor.contact.last_name %> </li>
-        <% else %>
+        <li> <%= link_to instructor.contact.first_name, instructor %> <%= link_to instructor.contact.last_name, instructor %> </li>
         <% end %>
         <% end %>
       </td>
@@ -49,7 +48,7 @@
       <td>
         <% @students.each do |student| %>
         <% if (student.cohort.name == @cohort.name) %>
-        <li> <%= student.contact.first_name %> <%= student.contact.last_name %> </li>
+        <li> <%= link_to student.contact.first_name, student %> <%= link_to student.contact.last_name, student %> </li>
         <% else %>
         <% end %>
         <% end %>
