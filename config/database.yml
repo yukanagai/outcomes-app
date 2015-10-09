@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: outcomes-app_production
+  host: localhost
   username: pguser
   password: <%= ENV['OUTCOMES_APP_DATABASE_PASSWORD'] %>
