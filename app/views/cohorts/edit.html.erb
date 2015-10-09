@@ -1,10 +1,22 @@
-<h1>Editing Cohort</h1>
-
-<%= render 'form' %>
-
-<div class="footer">
-  <div class="button-add-new">
-    <%= link_to 'Show', @cohort %> |
+<table>
+<thead>
+    <tr>
+      <th class="header" colspan="10">
+        <h1 class="headerText">Editing Cohort</h1>
+      </th>
+    </tr>
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+         <%= link_to 'Show', @cohort %> |
 	<%= link_to 'Back', cohorts_path %>
-  </div>
-</div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="bodyRow">
+  	<tr>
+		<td><%= render 'form' %></td>
+	</tr>
+	</tbody>
+</table>

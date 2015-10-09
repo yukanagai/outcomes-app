@@ -1,11 +1,23 @@
-<h1>Editing Student</h1>
-
-<%= render 'form' %>
-
-
-<div class="footer">
-  <div class="button-add-new">
-    <%= link_to 'Show', @student %> |
+<table>
+<thead>
+    <tr>
+      <th class="header" colspan="10">
+        <h1 class="headerText">Editing Student</h1>
+      </th>
+    </tr>
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+         <%= link_to 'Show', @student %> |
 	<%= link_to 'Back', students_path %>
-  </div>
-</div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="bodyRow">
+  	<tr>
+		<td><%= render 'form' %></td>
+	</tr>
+	</tbody>
+</table>
+

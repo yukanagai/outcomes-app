@@ -5,6 +5,13 @@
         <h1 class="headerText">Cohorts</h1>
       </th>
     </tr>
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+        <%= link_to 'Add New Cohort', new_cohort_path %>
+        </div>
+      </th>
+    </tr>
 
      <tr class="headerRow">
       <th>Name</th>
@@ -12,7 +19,6 @@
       <th>Start date</th>
       <th>End date</th>
       <th>Program</th>
-<!--       <th colspan="3"></th> -->
     </tr>
   </thead>
 
@@ -32,10 +38,5 @@
   </tbody>
 </table>
 
-<div class="footer">
-  <div class="button-add-new">
-    <%= link_to 'New Cohort', new_cohort_path %>
-  </div>
-</div>
 
 

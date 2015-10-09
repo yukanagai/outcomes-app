@@ -5,6 +5,13 @@
         <h1 class="headerText">Students</h1>
       </th>
     </tr>
+    <tr>
+      <th class="linkBar" colspan="7">
+        <div class="button-add-new">
+        <%= link_to 'Add New Student', new_student_path %>
+        </div>
+      </th>
+    </tr>
     
     <tr class="headerRow">
       <th>Username</th>
@@ -35,11 +42,5 @@
     <% end %>
   </tbody>
 </table>
-
-<div class="footer">
-  <div class="button-add-new">
-    <%= link_to 'New Student', new_student_path %>
-  </div>
-</div>
 
 

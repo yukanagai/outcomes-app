@@ -21,7 +21,7 @@
  	margin: 0;
  	padding: 0;
  	font-family: $bodyfont;
- 	background-color: $mercury;
+ 	background-color: white;
  	overflow: auto;
  }
 
@@ -36,7 +36,6 @@
 
  .sidebar {
     list-style: none;
-    
  }
 
 
@@ -157,7 +156,7 @@ a {
  	}
 }
 
- .navbar {
+.navbar {
  	background-color: $bigstone;
  	color: white;
  	width: 100%;
@@ -191,7 +190,7 @@ table {
 	text-transform: none;
 }
 
-.headerRow th {
+.headerRow, .headerRow th {
 	font-weight: bold;
 	color: white;
 }
@@ -208,6 +207,8 @@ td, th {
 	font-size: 1em;
 	color: black;
 	padding: 25px;
+    list-style: none;
+    text-align: center;
 }
 
  #logogreen {
@@ -317,6 +318,25 @@ td, th {
  	margin: 0 auto;
  }
 
+ .linkBar {
+    background-color: white;
+    width: 100%;
+    height: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.button-add-new {
+    padding: 3px;
+
+    a {
+        padding: 5px;
+        color: black;
+        font-weight: 700;
+        text-tranform: uppercase;
+    }
+}
+
  #mainbutton {
  	background-color: #F5EA82;
  	height: auto;
@@ -376,6 +396,14 @@ td, th {
 	height: 100px;
 	margin: 0 auto;
 	margin-top: 50px;
+}
+
+
+.footer {
+    background: $bigstone;
+    width: 100%;
+    bottom: 0;
+    height: 70px;
 }
 
 @media only screen and (min-width: 768px) {

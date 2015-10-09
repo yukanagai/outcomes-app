@@ -5,6 +5,13 @@
         <h1 class="headerText">Student Profile</h1>
       </th>
     </tr>
+    <tr>
+       <th class="linkBar" colspan="2">
+        <div class="button-add-new">
+        <%= link_to 'Edit', edit_student_path(@student) %> | <%= link_to 'Back', students_path %>
+        </div>
+      </th>
+    </tr>
   </thead>
 
   <tbody class="bodyRow">
@@ -71,8 +78,8 @@
 
 <table>
     <thead>
-      <tr class="headerRow" colspan="5">
-        <th>100 Day Survey</th>
+      <tr>
+        <th class="headerRow" colspan="5">Contact Info</th>
       </tr>
     </th>
   
@@ -89,9 +96,9 @@
   </tbody>
 </table>
 
-<div class="footer">
+<!-- <div class="footer">
   <div class="button-add-new">
     <%= link_to 'Edit', edit_student_path(@student) %> |
     <%= link_to 'Back', students_path %>
   </div>
-</div>
+</div> -->

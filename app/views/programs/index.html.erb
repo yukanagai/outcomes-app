@@ -11,7 +11,7 @@
     <% @programs.each_with_index do |program, index| %>
       <tr>
         <td id='<%="program-#{index}"%>'></td>
-        <td><%= link_to program.name, program %></td>
+        <td id="programName"><%= program.name %></td>
       </tr>
     <% end %>
   </tbody>
