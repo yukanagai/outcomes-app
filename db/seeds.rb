@@ -61,7 +61,7 @@ CohortOfficer.create( contact: pan, cohort: pluto, role: "Instructor", password:
 CohortOfficer.create( contact: jaden, cohort: pluto, role: "Instructor", password:"password", username: "Jaden")
 
 student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
-Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:false, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:false)
+Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:false, employed:true, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:nil, took_survey:true)
 Student.create(contact: calvin, cohort:pluto, username:"calvin", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: christopher, cohort:pluto, username:"christopher", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
 Student.create(contact: eric, cohort:pluto, username:"eric", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false)
