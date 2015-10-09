@@ -147,29 +147,26 @@ function initCharts() {
   //   return true;
   // });
 
-  var overall1 = gon.watch('overall', pieData);
-  // var y = gon.watch('total_looking', pieData);
-  function pieData (overall1){
-    // z = parseInt(y)
-    // alert(overall);
-    console.log(overall1[1])
+  var overall_data = gon.watch('overall', pieData);
+  function pieData (overall_data){
+    console.log(overall_data)
     // console.log(typeof x, typeof parseInt(y));
     var doughnutChart01Data = [
+      // {
+      //   value: 10,
+      //   color:"#AA1A1A",
+      //   highlight: "#D95050",
+      //   label: "Other"
+      // },
       {
-        value: 4,
-        color:"#AA1A1A",
-        highlight: "#D95050",
-        label: "Other"
-      },
-      {
-        value: 5,
+        value: overall_data.overall_90[0],
         color: "#30A370",
         highlight: "#63D6A3",
         label: "Employed"
       },
       {
 
-        value: 15,
+        value: overall_data.overall_90[1],
         color: "#FCA311",
         highlight: "#FAC56E",
         label: "Looking"
@@ -177,20 +174,20 @@ function initCharts() {
     ];
 
     var pieChart01Data = [
+      // {
+      //   value: 5,
+      //   color:"#AA1A1A",
+      //   highlight: "#D95050",
+      //   label: "Other"
+      // },
       {
-        value: 1,
-        color:"#AA1A1A",
-        highlight: "#D95050",
-        label: "Other"
-      },
-      {
-        value: overall1[0],
+        value: overall_data.overall[0],
         color: "#30A370",
         highlight: "#63D6A3",
         label: "Employed"
       },
       {
-        value: overall1[1],
+        value: overall_data.overall[1],
         color: "#FCA311",
         highlight: "#FAC56E",
         label: "Looking"
