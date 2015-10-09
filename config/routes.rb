@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get '/dashboard' => 'students#dashboard'
   # load survey
   get '/survey' => 'surveys#index'
+  post '/dashboard', to: 'students#send_reminder_email'
 end

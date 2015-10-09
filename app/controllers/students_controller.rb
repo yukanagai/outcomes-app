@@ -13,6 +13,17 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  def reminder_email(sender, recipient)
+    SurveyMailer.survey_time(sender, recipient).deliver_now
+  end
+
+  #POST /dashboard
+  def send_reminder_email
+    binding.pry
+    reminder_email(current_user, Student.first)
+    redirect_to '/dashboard'
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show
@@ -51,7 +62,7 @@ class StudentsController < ApplicationController
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
         session[:contact_id] = @cohort_officer.contact_id
-        redirect_to '/cohorts'
+        redirect_to '/dashboard'
       end
     else
       # needs message for "login not found"
@@ -102,12 +113,10 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update(student_params)
-        binding.pry
 
 
         @user.update(contact_params)
 
-        binding.pry
 
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }

@@ -8,8 +8,9 @@ class SurveyMailer < ApplicationMailer
   def survey_time(contact, student)
     @admin = contact
     @greeting = "Hi"
+    binding.pry
     @studentEmail = student.contact.email
-    @studentName = student.name
+    @studentName = student.contact.name
     mail to: @studentEmail, subject: "100 day post-graduation survey"
   end
 end

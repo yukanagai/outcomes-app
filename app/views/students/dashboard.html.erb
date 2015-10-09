@@ -90,11 +90,10 @@
         <td><%= student.contact.email %></td>
         <td><%= student.cohort.name %></td>
         <td>
-          <input type ='submit' value="Send :)" onclick='.reminder_email'>
-
-          </input>
+          <%#= student%>
+          <%= button_to "Send :)", action:'send_reminder_email', method:'post' %>
+          <!-- <%= tag "input", {"type" => "button", "value" => "Send :)", "action" => "send_reminder_email(#{@student})", "method" => "post"} %> -->
         </td>
-        <% binding.pry %>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -41,10 +41,6 @@ class Student < ActiveRecord::Base
 
   has_secure_password
 
-  def reminder_email(sender, recipient)
 
-      SurveyMailer.survey_time(sender, recipient).deliver_now
-
-  end
 
 end
