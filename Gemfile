@@ -34,7 +34,7 @@ gem 'ffaker'
 
 
 gem "therubyracer"
-gem "unicorn"
+gem "unicorn-rails"
 
 
 group :development, :test do
