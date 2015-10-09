@@ -33,8 +33,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'ffaker'
 
 
-#gem "therubyracer"
-#gem "unicorn"
+gem "therubyracer"
+gem "unicorn"
 
 
 group :development, :test do
