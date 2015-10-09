@@ -6,7 +6,7 @@ end
 
 gem 'better_errors'
 
-gem 'react-rails'
+gem 'react-rails', '~> 1.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -31,6 +31,11 @@ gem 'chart-js-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'ffaker'
+
+
+#gem "therubyracer"
+#gem "unicorn"
+
 
 group :development, :test do
   gem 'byebug'
