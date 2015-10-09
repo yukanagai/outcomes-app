@@ -91,7 +91,7 @@
         <td><%= student.cohort.name %></td>
         <td>
           <%#= student%>
-          <%= button_to "Send :)", action:'send_reminder_email', method:'post' %>
+          <%= button_to "Send :)", action:'send_reminder_email', method:'post', data: { id: student.id } %>
           <!-- <%= tag "input", {"type" => "button", "value" => "Send :)", "action" => "send_reminder_email(#{@student})", "method" => "post"} %> -->
         </td>
         <td><%= link_to 'Show', student %></td>

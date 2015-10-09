@@ -19,8 +19,7 @@ class StudentsController < ApplicationController
 
   #POST /dashboard
   def send_reminder_email
-    binding.pry
-    reminder_email(current_user, Student.first)
+    reminder_email( current_user, Student.find(params[:data][:id].to_i) )
     redirect_to '/dashboard'
   end
 
