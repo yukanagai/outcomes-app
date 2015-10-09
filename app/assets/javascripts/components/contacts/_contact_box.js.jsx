@@ -17,16 +17,16 @@ var ContactBox = React.createClass({
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    search_array = search_string.split(' ')
+    var search_array = search_string.split(' ')
     search_array.forEach(function(word, i){
       search_array[i] = capitalizeFirstLetter(word);
     })
 
     //this is our comparison object. if first_name and last_name don't
     //get us what we need, we're being too anal
-    search_object = {first_name: search_array[0], last_name: search_array[search_string.length - 1]}
+    var search_object = {first_name: search_array[0], last_name: search_array[search_string.length - 1]}
 
-    this.state.data.forEach(function(currentContact){
+    this.props.contacts.contacts.forEach(function(currentContact){
       if (currentContact['first_name'] == search_object['first_name'] ||
           currentContact['last_name'] == search_object['last_name']   ||
           currentContact['first_name'] == search_object['last_name']  ||
@@ -35,11 +35,12 @@ var ContactBox = React.createClass({
       }
     })
 
+    //make an if-else so that when input is blank, the thing resets with this.props.
     this.setState({data: return_array})
   },
 
   handleContactSearch: function(search_string) {
-    console.log(this.props)
+
     this.loadContacts(search_string);
   },
 

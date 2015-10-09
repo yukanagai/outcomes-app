@@ -3,9 +3,7 @@ var ContactList = React.createClass({
   render: function() {
     var contactNodes = this.props.data.map(function(contact){
         return(
-
             <Contact data={contact} key={contact.id}/>
-          
         )
       })
 
