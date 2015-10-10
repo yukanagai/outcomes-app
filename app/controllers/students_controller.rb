@@ -96,7 +96,8 @@ class StudentsController < ApplicationController
       if @student.authenticate(params[:password])
         session[:id] = @student.id
         session[:contact_id] = @student.contact_id
-        redirect_to student_path(@student.id)
+        redirect_to student_path(@student.id),
+        notice: "Hello #{@student.name}!"
       else
         redirect_to '/'
       end
@@ -104,12 +105,14 @@ class StudentsController < ApplicationController
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
         session[:contact_id] = @cohort_officer.contact_id
-        redirect_to '/dashboard'
+        redirect_to '/dashboard',
+        notice: "Hello #{@cohort_officer.name}!"
       else
         redirect_to '/'
       end
     else
-      redirect_to '/'
+      redirect_to '/',
+      error: "you suck"
     end
   end
 
