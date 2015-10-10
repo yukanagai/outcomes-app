@@ -20,7 +20,10 @@ this guy should send an email
 <p><%=current_user.name%></p>
 <p><%=@survey_user %></p> -->
 
+
+
 <div class="surveyForm">
+  <% if current_user.@student.hundred_days? %>
 
   <div class="surveyHeader">
     <h2>Congratulations <%=@survey_user.name %>.</h2>
@@ -62,7 +65,7 @@ this guy should send an email
       <p><%= f.text_field :phone %></p>
 
       <br>
-      
+
     <% end %>
 
     <div class="actions">
@@ -71,5 +74,6 @@ this guy should send an email
   </div>
 
 <% end %>
-
 </div>
+
+<% end %>

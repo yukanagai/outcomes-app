@@ -22,9 +22,16 @@
 	<div id="sidebar">
 		<div id="catlogo"></div>
   	<ul>
+      <% if current_user.is_officer? %>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <% end %>
       <li><a href="/contacts">Contacts</a></li>
       <li><a href="/programs">Programs</a></li>
       <li><a href="/cohorts">Cohorts</a></li>
+      <% if current_user.is_student? %>
+      <li><a href="/survey">100 Day Survey</a></li>
+      <% end %>
+      <li><a href="/logout">Logout</a></li>
    	 </ul>
     </div>
 	<div class="navbar">
