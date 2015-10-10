@@ -1,36 +1,33 @@
 @import "application";
 
-#students_index, #students_show {
-	background-color: $mercury;
-
-	.header {
-		background-color: $eucalyptus;
-		font-size: 2em;
-		color: white;
-	}
-
-	.headerText {
-		font-family: $headerfont;
-		padding: 30px;
-	}
-
-	.tablewrapper {
+#students_show {
+	thead {
 		width: 100%;
-		background: white;
-		text-align: left;
-		padding: 20px;
 	}
-
+	tbody {
+		width: 60%;
+		margin: 0 auto;
+	}
+	.bodyRow {
+		text-align: center;
+	}
 }
 
 // Student login styling
 
+
 #students_login {
-	background-color:#E5E5E5;
-	color: white;
-	height: 100%;
-	padding: 0;
-	margin: 0;
+
+	background: $mercury;
+
+	.footer {
+		display: none;
+	}
+
+
+	.navbar {
+		display: none;
+	}
 
 
 	#logoblue {

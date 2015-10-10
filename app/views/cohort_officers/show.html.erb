@@ -1,21 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th class="header" colspan="2">
+        <h1 class="headerText">Cohort Officer Profile</h1>
+      </th>
+    </tr>
+    <tr>
+       <th class="linkBar" colspan="2">
+        <div class="button-add-new">
+          <%= link_to 'Edit', edit_cohort_officer_path(@cohort_officer) %> |
+    <%= link_to 'Back', cohort_officers_path %>
+        </div>
+      </th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Contact:</strong>
-  <% @contact = Contact.find(@cohort_officer.contact_id) %>
-  <%= "#{@contact.first_name} #{@contact.last_name}" %>
+  <tbody class="bodyRow">
+    <tr>
+      <td><strong>Contact:</strong></td>
+      <% @contact = Contact.find(@cohort_officer.contact_id) %>
+      <td><%= "#{@contact.first_name} #{@contact.last_name}" %></td>
+    </tr>
 
-</p>
+    <tr>
+      <td><strong>Cohort:</strong></td>
+      <% @cohort = Cohort.find(@cohort_officer.cohort_id) %>
+      <td><%= "#{@cohort.name}" %></td>
+    </tr>
 
-<p>
-  <strong>Cohort:</strong>
-  <% @cohort = Cohort.find(@cohort_officer.cohort_id) %>
-  <%= "#{@cohort.name}" %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @cohort_officer.role %>
-</p>
-
-<%= link_to 'Edit', edit_cohort_officer_path(@cohort_officer) %> |
-<%= link_to 'Back', cohort_officers_path %>
+    <tr>
+      <td><strong>Role:</strong></td>
+      <td><%= @cohort_officer.role %></td>
+    </tr>
+  </tbody>
+</table>

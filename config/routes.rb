@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :students
   resources :cohort_officers
   resources :cohorts
-  resources :programs, only: [:index]
+  resources :programs, only: [:index, :show, :edit]
 
   # all logins processed by students controller
   get '/', to: 'students#login'

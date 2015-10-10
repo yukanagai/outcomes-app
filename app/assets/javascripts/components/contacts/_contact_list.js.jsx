@@ -1,17 +1,16 @@
 var ContactList = React.createClass({
 
   render: function() {
-    var contactNodes = this.props.data.contacts.contacts.map(function(contact){
+    var contactNodes = this.props.data.map(function(contact){
         return(
-          <tr>
             <Contact data={contact} key={contact.id}/>
-          </tr>
         )
       })
 
   return (
     <div className = "contact-list">
       <table className="main-table">
+        <tbody>
         <tr>
           <th>
             Name
@@ -21,8 +20,8 @@ var ContactList = React.createClass({
           </th>
         </tr>
       {contactNodes}
+      </tbody>
       </table>
-
   </div>
   )}
 })

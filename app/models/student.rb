@@ -16,7 +16,6 @@ class Student < ActiveRecord::Base
     "#{contact.first_name} #{contact.last_name}"
   end
 
-
   def contact_info_list
 
     [Contact.find(contact_id).email,
@@ -27,13 +26,9 @@ class Student < ActiveRecord::Base
 
   end
 
-
-
   def hundred_days?
     Date.today - cohort.end_date >= 100
   end
-
-
 
   def cohort_name
     cohort.name

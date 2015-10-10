@@ -1,6 +1,18 @@
 @import "application";
 
+// this should inherit from header
+.search-header {
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
 #programs_index {
+
+	table {
+		width: 50%;
+	}
 
 	#program-0 {
 		background-image: url(asset-path('webdev.jpg'));

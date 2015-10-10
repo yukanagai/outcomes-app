@@ -2,7 +2,6 @@ var ContactSearchForm = React.createClass({
   handleSubmit: function(event) {
     event.preventDefault()
     var search_string = React.findDOMNode(this.refs.search_string).value;
-
     //if not there, do nothing
     if (!search_string) {
       return;

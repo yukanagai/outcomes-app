@@ -1,16 +1,22 @@
-<table>
-  <thead>
-    <tr>
-      <th class="header" colspan="8">
-        <h1 class="headerText">Programs</h1>
-      </th>
-    </tr>
-  <tbody class="bodyRow">
-    <% @programs.each_with_index do |program, index| %>
+<div class="switcher-sidebar">
+  <table>
+    <thead>
       <tr>
-        <td id='<%="program-#{index}"%>'></td>
-        <td><%= link_to program.name, program %></td>
+        <th class="header" colspan="8">
+          <h3 class="headerText">All Programs</h3>
+        </th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody class="bodyRow">
+      <% @programs.each_with_index do |program, index| %>
+        <tr>
+          <td class ="program-index-names" id='<%="program-#{index}"%>'></td>
+          <td><%= link_to program.name, "/programs" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="switcher-main">
+  <%= react_component('ProgramBox', {programs: @programs, cohorts: @cohorts}) %>
+</div>
