@@ -59,12 +59,6 @@ class StudentsController < ApplicationController
   def login_post
     @student = Student.find_by({username: params[:username]})
     @cohort_officer = CohortOfficer.find_by({username: params[:username]})
-    # does not work! super broken
-
-    # if !@student && !@cohort_officer
-    #   redirect_to '/'
-    # end
-
 
     if @student
       if @student.authenticate(params[:password])
@@ -76,9 +70,6 @@ class StudentsController < ApplicationController
         else
           redirect_to student_path(@student.id), error: "Hello #{@student.name}!"
         end
-
-
-
       else
         redirect_to '/', error: "Bad Password"
       end
