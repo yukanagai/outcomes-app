@@ -19,6 +19,7 @@ var ContactList = React.createClass({
 
         <tr>
           <th className="linkBar" colSpan='6'>
+            <ContactSearchForm onContactSearch={this.props.onContactSearch}/>
             <div className="button-add-new">
               <a href="/contacts/new">Add New Contact</a>
             </div>
