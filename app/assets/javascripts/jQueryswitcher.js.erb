@@ -1,0 +1,8 @@
+$(function() {
+	$('.loadCohort').click(function() {
+		event.preventDefault();
+		string = $(this).text();
+		$("#jquery-hook").append("<p><%= Cohort.first.name%><p>");
+	});
+
+});

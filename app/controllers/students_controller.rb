@@ -6,11 +6,28 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
   end
 
   # Added Method for dashboard
   def dashboard
     @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
+
+    # Using gon.watch to pass rails vars to js
+    # def index
+    #  @users_count = User.count
+    #  gon.watch.users_count = @users_count
+    # end
+    @total_employed = Student.where(:employed => "t").count
+    gon.watch.total_employed = @total_employed
+    @total_looking = Student.where(:employed => "f").count
+    gon.watch.total_looking = @total_looking
+    @overall = [@total_employed, @total_looking]
+    gon.watch.overall = @overall
+
   end
 
   def reminder_email(sender, recipient)
@@ -42,8 +59,6 @@ class StudentsController < ApplicationController
 
       end
     end
-
-    render :login
   end
 
   def login_post
@@ -57,20 +72,16 @@ class StudentsController < ApplicationController
         session[:contact_id] = @student.contact_id
         redirect_to student_path(@student.id)
       end
-    elsif @cohort_officer
+    else
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
         session[:contact_id] = @cohort_officer.contact_id
         redirect_to '/dashboard'
       end
-    else
-      # needs message for "login not found"
-      redirect_to '/'
     end
   end
 
   def logout
-
     session[:contact_id]=nil
     session[:id] = nil
     redirect_to '/'
@@ -106,16 +117,25 @@ class StudentsController < ApplicationController
     end
   end
 
+  #   respond_to do |format|
+  #     if @student.save
+  #       format.html { redirect_to @student, notice: 'Student was successfully created.' }
+  #       format.json { render :show, status: :created, location: @student }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @student.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # PATCH/PUT /students/1
+  # PATCH/PUT /students/1.json
   def update
     @student = Student.find(params[:id])
-    @user = current_user
 
     respond_to do |format|
       if @student.update(student_params)
-
-
         @user.update(contact_params)
-
 
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
@@ -173,11 +193,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id)
+      params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id, :checkbox_value)
     end
-
-    def contact_params
-      params.require(:contact).permit(:first_name, :last_name, :email, :twitter, :github, :linkedin, :phone, :website)
-    end
-
 end
