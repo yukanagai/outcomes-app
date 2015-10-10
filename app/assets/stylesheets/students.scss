@@ -20,21 +20,12 @@
 	.studentContactInfo {
 		font-size: 11px;
 	}
-}
 
-#students_login {
-
-	background: $mercury;
-
-	.footer {
-		display: none;
+	.studentContactInfo {
+		th {
+			color: white;
+		}
 	}
-
-
-	.navbar {
-		display: none;
-	}
-
 }
 
 
@@ -46,6 +37,10 @@
 	height: 100%;
 	padding: 0;
 	margin: 0;
+
+	.navbar {
+		display: none;
+	}
 
 	#logoblue {
 		width: 350px;
@@ -82,13 +77,19 @@
 		font-size: 1em;
 		height: 50px;
 		box-sizing: border-box;
-
+		background-color: $pink;
+		color: white;
 
 		&:hover {
 			background: #1A2B37;
 			color: white;
 		}
 	}
+
+	.footer {
+		display: none;
+	}
+
 
 	#catlogo {
 		background-image: url(asset-path('catlogo.png'));

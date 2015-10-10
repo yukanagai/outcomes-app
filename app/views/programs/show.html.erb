@@ -1,13 +1,13 @@
 <table>
   <thead>
     <tr>
-      <th class="header" colspan="2">
+      <th class="header" colspan="3">
         <h1 class="headerText"><%= @program.name %></h1>
       </th>
     </tr>
 
     <tr>
-      <th class="linkBar" colspan="2">
+      <th class="linkBar" colspan="3">
         <div class="button-add-new">
 			<%= link_to 'Back', programs_path %>
         </div>
@@ -17,14 +17,21 @@
     <tr class="headerRow">
       <th>Name</th>
       <th>Description</th>
+      <th>Cohorts</th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="bodyRow">
     <tr>
       <td><%= @program.name %></td>
       <td><%= @program.description %></td>
+      <td>
+        <% @cohorts.each do |cohort| %>
+        <% if (@program.id == cohort.program.id) %>
+        <li><%= link_to cohort.name, cohort %></li>
+        <% end %>
+         <% end %>
+       </td>
     </tr>
   </tbody>
-
 </table>
