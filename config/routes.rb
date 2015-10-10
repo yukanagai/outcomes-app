@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   # load survey
   get '/survey' => 'surveys#index'
   post '/dashboard', to: 'students#send_reminder_email'
-
+  post 'dashboard/:id', to: 'students#switch_data_source'
 end

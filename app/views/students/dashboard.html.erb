@@ -67,11 +67,14 @@
                   <br />
                   <div class="cohorts-name-list">
 
-                    <select class="" name="">
+                    <!-- <select class="" name="">
                       <% Cohort.all.each do |cohort| %>
                         <option value="<%=cohort.name%>"><%=cohort.name%></option>
                       <%end%>
-                    </select>
+                    </select> -->
+                    <%= form_tag('/dashboard') do -%>
+                    <%= select_tag(:cohort_options, options_for_select(@cohort_options), include_blank: "All Cohorts") %>
+                    <%end%>
                   </div>
                 </li>
               </ul>
@@ -84,7 +87,7 @@
 </script>
 </div>
 
-<table class="records-list">
+<table class="records-list" style="height:100%">
   <thead>
     <tr>
       <th>Username</th>
@@ -98,7 +101,7 @@
       <th>Send Survey</th>
       <th>Employed date</th>
       <th>Employed in 90</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -127,11 +130,10 @@
       </tr>
       <% end %>
       <tr>
-        <td colspan="13" style="text-align:center; border-top:1px solid #999;">
+        <td colspan="15" style="text-align:center; border-top:1px solid #999;">
           <%= link_to 'New Student', new_student_path  %>
         </td>
       </tr>
   </tbody>
 </table>
-
 <br>

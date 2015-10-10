@@ -1,4 +1,4 @@
-<div class="switcher-sidebar">
+<!-- <div class="switcher-sidebar"> -->
   <table>
     <thead>
       <tr>
@@ -10,13 +10,13 @@
       <% @programs.each_with_index do |program, index| %>
         <tr>
           <td class ="program-index-names" id='<%="program-#{index}"%>'></td>
-          <td><%= link_to program.name, "/programs" %></td>
+          <td><%= link_to program.name, "/cohorts" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
-
+<!-- </div> -->
+<!--
 <div class="switcher-main">
   <%= react_component('ProgramBox', {programs: @programs, cohorts: @cohorts}) %>
-</div>
+</div> -->

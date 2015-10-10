@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-  # if params :cohort then look up cohort and @students = cohort.students
+  # if params :cohort then look up cohort and @students = cohort.students (Jaden's suggestion)
 
   # GET /students
   # GET /students.json
@@ -49,6 +49,16 @@ class StudentsController < ApplicationController
       overall_90: [@total_employed_90, @total_looking_90]
     }
     gon.watch.overall = @overall
+
+
+    #-- cohort options for select_tag
+    @cohort_options = @cohorts.map{|cohort| [cohort.name, cohort.id]}
+
+  end
+
+  def switch_data_source
+    #logic here...
+    #redirect_to "/dashboard"
   end
 
   def reminder_email(sender, recipient)
