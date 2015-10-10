@@ -10,12 +10,13 @@
       <% @programs.each_with_index do |program, index| %>
         <tr>
           <td class ="program-index-names" id='<%="program-#{index}"%>'></td>
-          <td><%= link_to program.name, program %></td>
+          <td><%= link_to program.name, "/cohorts" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
+
+<!-- </div> -->
 <!--
 <div class="switcher-main">
   <%= react_component('ProgramBox', {programs: @programs, cohorts: @cohorts}) %>

@@ -1,6 +1,10 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
+<<<<<<< HEAD
+=======
+  # if params :cohort then look up cohort and @students = cohort.students (Jaden's suggestion)
+>>>>>>> mailer-withmaster-toti-merge
 
   # GET /students
   # GET /students.json
@@ -27,6 +31,16 @@ class StudentsController < ApplicationController
     gon.watch.total_looking = @total_looking
     @overall = [@total_employed, @total_looking]
     gon.watch.overall = @overall
+
+    #-- cohort options for select_tag
+    @cohort_options = @cohorts.map{|cohort| [cohort.name, cohort.id]}
+
+  end
+
+  def switch_data_source
+    #logic here...
+    #redirect_to "/dashboard"
+  end
 
   end
 
