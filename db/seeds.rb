@@ -62,13 +62,13 @@ CohortOfficer.create( contact: jaden, cohort: pluto, role: "Instructor", usernam
 
 
 Student.create(contact: jaskar, cohort:pluto, username:"jaskar", password:"password", completed:true, employed:true, employer:"Apple", employed_as:"Junior Backend Developer", took_survey:true, employed_date:Date.new(2015, 11,05))
-student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:true, employed:true, employer:"Accenture", employed_as:"Full Stack Developer", took_survey:false, employed_date:Date.new(2015-12-01))
-Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:true, employed:true, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:"Badass", took_survey:false, employed_date:Date.new(2016-02-14))
+student_nick = Student.create(contact: nick, cohort:pluto, username:"nick", password:"password", completed:true, employed:true, employer:"Accenture", employed_as:"Full Stack Developer", took_survey:false, employed_date:Date.new(2015,12,01))
+Student.create(contact: josh, cohort:pluto, username:"josh", password:"password", completed:true, employed:true, employer:"GOOGLE! That's right. Josh got a job at fuckin GOOGLE. Fuck yall", employed_as:"Badass", took_survey:false, employed_date:Date.new(2016,02,14))
 Student.create(contact: calvin, cohort:pluto, username:"calvin", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: christopher, cohort:pluto, username:"christopher", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: eric, cohort:pluto, username:"eric", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: ester, cohort:pluto, username:"ester", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
-Student.create(contact: harrison, cohort:pluto, username:"harrison", password:"password", completed:true, employed:true, employer:"Hogwarts School of Witchcraft and Wizardy", employed_as:"Senior Engineer", took_survey:false, employed_date:Date.new(2016-02-16))
+Student.create(contact: harrison, cohort:pluto, username:"harrison", password:"password", completed:true, employed:true, employer:"Hogwarts School of Witchcraft and Wizardy", employed_as:"Senior Engineer", took_survey:false, employed_date:Date.new(2016,02,16))
 Student.create(contact: jacob, cohort:pluto, username:"jacob", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: jenn, cohort:pluto, username:"jenn", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: joy, cohort:pluto, username:"joy", password:"password", completed:true, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
@@ -78,9 +78,9 @@ Student.create(contact: mohamed, cohort:pluto, username:"mohamed", password:"pas
 Student.create(contact: pam, cohort:pluto, username:"pam", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: piere, cohort:pluto, username:"piere", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 Student.create(contact: steph, cohort:pluto, username:"steph", password:"password", completed:true, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
-Student.create(contact: toti, cohort:pluto, username:"toti", password:"password", completed:true, employed:true, employer:"General Assembly", employed_as:"Keeping people in check", took_survey:true, employed_date:Date.new(2015-11-15))
+Student.create(contact: toti, cohort:pluto, username:"toti", password:"password", completed:true, employed:true, employer:"General Assembly", employed_as:"Keeping people in check", took_survey:true, employed_date:Date.new(2015,11,15))
 Student.create(contact: victoria, cohort:pluto, username:"victoria", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
-Student.create(contact: yuka, cohort:pluto, username:"yuka", password:"password", completed:true, employed:true, employer:"Spotify", employed_as:"Full Stack Developer", took_survey:false, employed_date:Date.new(2016-03-01))
+Student.create(contact: yuka, cohort:pluto, username:"yuka", password:"password", completed:true, employed:true, employer:"Spotify", employed_as:"Full Stack Developer", took_survey:false, employed_date:Date.new(2016,03,01))
 Student.create(contact: zoe, cohort:pluto, username:"zoe", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
 
 Student.create(contact: oez, cohort:liverwurst, username:"oez", password:"password", completed:false, employed:false, employer:nil, employed_as:nil, took_survey:false, employed_date:nil)
