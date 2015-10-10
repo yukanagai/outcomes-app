@@ -20,6 +20,17 @@ class Student < ActiveRecord::Base
     "#{contact.first_name} #{contact.last_name}"
   end
 
+
+
+# the below method triggers on someone employed who has taken the survey
+  def is_alumni?
+    if employed == true && took_survey == true
+      return true
+    else
+      return false
+    end
+  end
+
   def contact_info_list
 
     [Contact.find(contact_id).email,
