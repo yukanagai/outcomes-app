@@ -99,7 +99,7 @@ class StudentsController < ApplicationController
         redirect_to student_path(@student.id),
         notice: "Hello #{@student.name}!"
       else
-        redirect_to '/'
+        redirect_to '/', error: "Bad Password"
       end
     elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
@@ -108,11 +108,10 @@ class StudentsController < ApplicationController
         redirect_to '/dashboard',
         notice: "Hello #{@cohort_officer.name}!"
       else
-        redirect_to '/'
+        redirect_to '/', error: "Bad Password"
       end
     else
-      redirect_to '/',
-      error: "you suck"
+      redirect_to '/', error: "Incorrect Username"
     end
   end
 
