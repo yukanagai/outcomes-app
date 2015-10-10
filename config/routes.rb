@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/styleguide' => 'students#styleguide'
 
+  get '/about' => 'students#about'
+
   # load data
   get '/dashboard' => 'students#dashboard'
 

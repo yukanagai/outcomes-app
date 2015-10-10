@@ -1,5 +1,21 @@
 @import "application";
 
+#students_about {
+	.teadHeader {
+		height: 50px;
+		width: 40%;
+		margin: 0 auto;
+		background-color: $eucalyptus;
+		display: inline-block;
+	}
+
+	.teamHeaderText {
+		font-family: $headerfont;
+		color: white;
+		background: $eucalyptus;
+	}
+}
+
 #students_show {
 	.studentContactInfo {
 		font-size: 11px;
