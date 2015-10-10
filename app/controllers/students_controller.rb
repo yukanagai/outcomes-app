@@ -1,10 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-<<<<<<< HEAD
-=======
   # if params :cohort then look up cohort and @students = cohort.students (Jaden's suggestion)
->>>>>>> mailer-withmaster-toti-merge
 
   # GET /students
   # GET /students.json
@@ -182,4 +179,3 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id, :checkbox_value)
     end
-end
