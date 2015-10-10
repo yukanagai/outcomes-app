@@ -47,8 +47,8 @@ var ContactBox = React.createClass({
   render: function() {
     return (
       <div className="contact-box">
-        <ContactSearchForm onContactSearch={this.handleContactSearch}/>
         <ContactList data={this.state.data}/>
+        <ContactSearchForm onContactSearch={this.handleContactSearch}/>
       </div>
     )
   }

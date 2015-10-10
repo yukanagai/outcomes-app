@@ -20,7 +20,7 @@ var ContactList = React.createClass({
         <tr>
           <th className="linkBar" colSpan='6'>
             <div className="button-add-new">
-            Add New Contact
+              <a href="/contacts/new">Add New Contact</a>
             </div>
           </th>
         </tr>
