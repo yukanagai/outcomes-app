@@ -8,22 +8,23 @@ var ContactList = React.createClass({
       })
 
   return (
-    <div className = "contact-list">
+    <div className= "contact-list">
       <table>
       <thead>
         <tr>
-          <th class="header" colspan="10">
-            <h1 class="headerText">Contact Search</h1>
+          <th className="header" colSpan='10'>
+            <h1 className="headerText">Contact Search</h1>
           </th>
         </tr>
 
         <tr>
-          <th class="linkBar" colspan="6">
-            <div class="button-add-new">
+          <th className="linkBar" colSpan='6'>
+            <div className="button-add-new">
+            Add New Contact
             </div>
           </th>
         </tr>
-        <tr class="headerRow">
+        <tr className="headerRow">
           <th> Name </th>
           <th> Email </th>
           <th>Twitter</th>
@@ -33,7 +34,7 @@ var ContactList = React.createClass({
         </tr>
       </thead>
 
-      <tbody class="bodyRow">
+      <tbody className="bodyRow">
         {contactNodes}
       </tbody>
       </table>
