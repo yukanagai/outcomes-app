@@ -87,18 +87,31 @@ class StudentsController < ApplicationController
     @cohort_officer = CohortOfficer.find_by({username: params[:username]})
     # does not work! super broken
 
+    # if !@student && !@cohort_officer
+    #   redirect_to '/'
+    # end
+
+
     if @student
       if @student.authenticate(params[:password])
         session[:id] = @student.id
         session[:contact_id] = @student.contact_id
-        redirect_to student_path(@student.id)
+        redirect_to student_path(@student.id),
+        notice: "Hello #{@student.name}!"
+      else
+        redirect_to '/', error: "Bad Password"
       end
-    else
+    elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
         session[:contact_id] = @cohort_officer.contact_id
-        redirect_to '/dashboard'
+        redirect_to '/dashboard',
+        notice: "Hello #{@cohort_officer.name}!"
+      else
+        redirect_to '/', error: "Bad Password"
       end
+    else
+      redirect_to '/', error: "Incorrect Username"
     end
   end
 
