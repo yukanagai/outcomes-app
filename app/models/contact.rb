@@ -20,10 +20,6 @@ class Contact < ActiveRecord::Base
     end
   end
 
-  def hundred_days?
-    Date.today - cohort.end_date >= 100
-  end
-
   def name
   	"#{first_name} #{last_name}"
   end
