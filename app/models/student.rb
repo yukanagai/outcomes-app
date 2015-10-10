@@ -6,7 +6,7 @@ class Student < ActiveRecord::Base
   has_many :student_skills
   has_many :skills, :through => :student_skills
 
-  # Awesome scope made with the help of Awesome Jaden
+  # Awesome scope made with the help of Awesome Jaden! -t
   scope :employed_in_90_days, -> { joins(:cohort).where('students.employed_date - cohorts.end_date <= 90') }
 
   #josh: these are a pain in the ass with teh Contact model.

@@ -47,9 +47,6 @@ class StudentsController < ApplicationController
     }
     gon.watch.overall = @overall
 
-
-
-
   end
 
   # GET /students/1
