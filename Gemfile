@@ -7,6 +7,7 @@ end
 gem 'better_errors'
 
 gem 'react-rails', '~> 1.3.0'
+gem 'browserify-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
