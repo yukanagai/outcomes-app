@@ -1,0 +1,102 @@
+Fetching gem metadata from https://rails-assets.org/...
+Fetching version metadata from https://rails-assets.org/..
+Fetching gem metadata from https://rubygems.org/............
+Fetching version metadata from https://rubygems.org/...
+Fetching dependency metadata from https://rubygems.org/..
+Resolving dependencies......
+Using rake 10.4.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.8.1
+Using thread_safe 0.3.5
+Using tzinfo 1.2.2
+Using activesupport 4.2.4
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile 0.6.2
+Using nokogiri 1.6.6.2
+Using rails-deprecated_sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using loofah 2.0.3
+Using rails-html-sanitizer 1.0.2
+Using actionview 4.2.4
+Using rack 1.6.4
+Using rack-test 0.6.3
+Using actionpack 4.2.4
+Using globalid 0.3.6
+Using activejob 4.2.4
+Using mime-types 2.6.2
+Using mail 2.6.3
+Using actionmailer 4.2.4
+Using activemodel 4.2.4
+Using arel 6.0.3
+Using activerecord 4.2.4
+Using babel-source 5.8.26
+Using execjs 2.6.0
+Using babel-transpiler 0.7.0
+Using bcrypt 3.1.10
+Using bet 1.0.2
+Using coderay 1.1.0
+Using better_errors 2.1.1
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using bundler 1.10.6
+Using byebug 6.0.2
+Using thor 0.19.1
+Using railties 4.2.4
+Using chart-js-rails 0.0.9
+Using coffee-script-source 1.9.1.1
+Using coffee-script 2.4.1
+Using coffee-rails 4.1.0
+Using connection_pool 2.2.0
+Using ffaker 2.1.0
+Using multi_json 1.11.2
+Using request_store 1.2.0
+Using gon 6.0.1
+Using jbuilder 2.3.2
+Using jquery-rails 4.0.5
+Installing kgio 2.10.0 with native extensions
+
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /Users/galactus/.rbenv/versions/2.2.0/bin/ruby -r ./siteconf20151010-4895-4fcebi.rb extconf.rb
+checking for CLOCK_MONOTONIC in time.h... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/galactus/.rbenv/versions/2.2.0/bin/$(RUBY_BASE_NAME)
+/Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:456:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
+You have to install development tools first.
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:571:in `block in try_compile'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:524:in `with_werror'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:571:in `try_compile'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:810:in `macro_defined?'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:949:in `block in have_macro'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:917:in `block in checking_for'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:351:in `block (2 levels) in postpone'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:321:in `open'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:351:in `block in postpone'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:321:in `open'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:347:in `postpone'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:916:in `checking_for'
+	from /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/2.2.0/mkmf.rb:948:in `have_macro'
+	from extconf.rb:5:in `<main>'
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/kgio-2.10.0 for inspection.
+Results logged to /Users/galactus/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/extensions/x86_64-darwin-14/2.2.0-static/kgio-2.10.0/gem_make.out
+An error occurred while installing kgio (2.10.0), and Bundler cannot continue.
+Make sure that `gem install kgio -v '2.10.0'` succeeds before bundling.

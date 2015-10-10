@@ -38,8 +38,8 @@ gem 'gon'
 gem 'ffaker'
 gem 'coffee-rails'
 
-gem "therubyracer"
-gem "unicorn-rails"
+gem 'therubyracer'
+gem 'unicorn-rails' 
 
 
 group :development, :test do
