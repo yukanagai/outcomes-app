@@ -34,15 +34,6 @@
  	margin: 0 auto;
  }
 
-
- .sidebar {
-    list-style: none;
-  }
-
- hr.fifty-percent {
- 	width: 50%;
- }
-
 .container {
     position: relative;
     height: 100%;
@@ -59,6 +50,27 @@
 .container.open-sidebar {
     left: 240px;
 }
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        background: none;
+        color: black;
+    }
+}
+
+.sidebar {
+    list-style: none;
+  }
+
+hr.fifty-percent {
+    width: 50%;
+ }
+
+hr {
+    width: 50%;
+ }
 
 #sidebar {
     position: absolute;
@@ -151,14 +163,6 @@ form {
      margin-bottom: 0;
 }
 
-a {
-    text-decoration: none;
-
- 	&:hover {
- 		background: none;
- 		color: black;
- 	}
-}
 
 .navbar {
  	background-color: $bigstone;
@@ -166,6 +170,22 @@ a {
  	width: 100%;
  	height: 50px;
  	display: block;
+ }
+
+ #navcurrentuser {
+    float: right;
+    margin: 10px;
+    display: inline-block;
+ }
+
+ #navlogout {
+    float: right;
+    margin: 10px;
+    display: inline-block;
+
+    a {
+        color: white;
+    }
  }
 
  thead {
@@ -388,11 +408,6 @@ td, th {
  	display: inline-block;
  }
 
-
- hr {
- 	width: 50%;
- }
-
 #catlogo {
 	background-image: url(asset-path('catlogo.png'));
 	background-size: cover;
@@ -403,7 +418,7 @@ td, th {
 	margin-top: 50px;
 }
 
-.switcher-sidebar{
+.switcher-sidebar {
   max-width: 20%;
   float: right;
 
@@ -417,20 +432,61 @@ td, th {
     width: 100%;
     bottom: 0;
     height: 70px;
-
-
 }
 
 #notice {
     font-size: 1.2em;
     text-align: center;
     color: $pink;
-
-
-@media only screen and (min-width: 768px) {
-
 }
 
-@media only screen and (min-width: 768px) {
+// STYLING THE SURVEY
 
+.surveyForm {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 80px;
+    background: white;
+    padding:0;
+    text-align: left;
+    font-size: 1.5em;
+    line-height: 1;
+    font-family: $bodyfont;
+
+    .field {
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+    }
+
+    .surveyHeader {
+        background: $bigstone;
+        color: white;
+        padding: 5px;
+        text-align: center;
+    }
+
+    input {
+        border: 0;
+        border-bottom: 2px solid black;
+        outline: 0;
+        height: 20px;
+        padding: 5px;
+        font-size: 1em;
+        margin-left: 20px;
+    }
+
+    #survey-submit {
+        margin: 0 auto;
+        text-align: center;
+        height: 40px;
+        border: 0;
+        background: $pink;
+        color: white;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 10px;
+    }
+
+   
 }
