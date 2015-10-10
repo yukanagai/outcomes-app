@@ -20,7 +20,6 @@ class StudentsController < ApplicationController
     @students = Student.all
     @cohorts = Cohort.all
     @programs = Program.all
-
     # Using gon.watch to pass rails vars to js
     # def index
     #  @users_count = User.count
@@ -30,8 +29,27 @@ class StudentsController < ApplicationController
     gon.watch.total_employed = @total_employed
     @total_looking = Student.where(:employed => "f").count
     gon.watch.total_looking = @total_looking
-    @overall = [@total_employed, @total_looking]
+
+
+    # array with totals of employed and looking not filtered by date
+    # @overall = [@total_employed, @total_looking]
+    # gon.watch.overall = @overall
+
+    # array with totals of employed and looking not filtered by 90 days timeframe
+
+    @total_employed_90 = Student.where(:employed => "t").employed_in_90_days.count
+    gon.watch.total_employed_90 = @total_employed_90
+    @total_looking_90 = Student.where(:employed => "f").count
+    gon.watch.total_looking_90 = @total_looking_90
+    # @overall_90 = [@total_employed_90, @total_looking_90]
+    # gon.watch.overall_90 = @overall_90
+
+    @overall = {
+      overall: [@total_employed, @total_looking],
+      overall_90: [@total_employed_90, @total_looking_90]
+    }
     gon.watch.overall = @overall
+
 
     #-- cohort options for select_tag
     @cohort_options = @cohorts.map{|cohort| [cohort.name, cohort.id]}
