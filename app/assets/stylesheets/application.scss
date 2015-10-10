@@ -471,9 +471,15 @@ td, th {
         border-bottom: 2px solid black;
         outline: 0;
         height: 20px;
+        width: 80%;
         padding: 5px;
         font-size: 1em;
         margin-left: 20px;
+    }
+
+    #checkboxanswers {
+      width: auto;
+      display: inline-block;
     }
 
     #survey-submit {
@@ -488,5 +494,5 @@ td, th {
         padding: 10px;
     }
 
-   
+
 }

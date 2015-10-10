@@ -34,10 +34,12 @@ this guy should send an email
 
     <h4>1. Have you found steady work in the tech field since graduation?</h4>
 
-    <p><input type="checkbox" name="student[employed]" value="true"/> Yes! Employed </p>
-   <p><input type="checkbox" id="employed" name="student[employed]" value="false"/> Nope! Still Searching!</p>
+    <p id="checkboxanswers"><input type="checkbox" name="student[employed]" value="true"/>
+    Yes! Employed </p>
+   <p id="checkboxanswers"><input type="checkbox" id="employed" name="student[employed]" value="false"/> No still Searching!</p>
 
     <!-- jquery event for hiding/showing this -->
+
     <h4>2. Where are you working?</h4>
     <% f.label :employer %>
     <p><%= f.text_field :employer %></p>
@@ -59,7 +61,7 @@ this guy should send an email
         <% f.label :github %>
       <p><%= f.text_field :github %></p>
 
-      <h4> 7. New phone number?</h4>
+      <h4> 7. Is this still your phone number?</h4>
         <% f.label :phone %>
       <p><%= f.text_field :phone %></p>
 
@@ -74,5 +76,3 @@ this guy should send an email
 
 <% end %>
 </div>
-
-<% end %>
