@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts, only: [:index, :new, :show, :update, :destroy, :create]
+  resources :contacts
   resources :students
   resources :cohort_officers
   resources :cohorts
@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 
   # load survey
   get '/survey' => 'surveys#index'
+  post '/dashboard', to: 'students#send_reminder_email'
 
 end

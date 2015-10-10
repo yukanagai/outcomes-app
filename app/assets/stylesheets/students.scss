@@ -14,6 +14,7 @@
 		color: white;
 		background: $eucalyptus;
 	}
+<<<<<<< HEAD
 }
 
 #students_show {
@@ -26,21 +27,38 @@
 			color: white;
 		}
 	}
+=======
+>>>>>>> master
 }
-
 
 // Student login styling
 
+<<<<<<< HEAD
 #students_login {
 	background-color:#E5E5E5;
 	color: white;
 	height: 100%;
 	padding: 0;
 	margin: 0;
+=======
+
+#students_login {
+
+	background: $mercury;
+
+	.footer {
+		display: none;
+	}
+
+>>>>>>> master
 
 	.navbar {
 		display: none;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 	#logoblue {
 		width: 350px;
@@ -98,9 +116,9 @@
 		min-width: 140px;
 		height: 150px;
 		margin: 0 auto;
+
 		margin-top: 30px;
 	}
-
 }
 
 // styles for chart js graphs/dashboard
@@ -129,8 +147,10 @@ canvas {
 
 .dashboard-widget{
   display: inline-block;
-	min-width: 270px;
+	min-width: 300px;
   width: 33%;
+	text-align: center;
+	margin:0 auto;
 }
 
 .cohort-list{
@@ -140,6 +160,13 @@ canvas {
   height:250px;
   vertical-align:top;
   text-align:center;
+}
+
+.cohorts-name-list{
+	margin:0 auto;
+	text-align:left;
+	width:50%;
+	padding-left:25%;
 }
 
 .doughnut-chart{
@@ -153,10 +180,13 @@ canvas {
 }
 
 .employed-totals{
+<<<<<<< HEAD
 	border-radius: 50%;
+=======
+>>>>>>> master
     background-image: url(asset-path('handshake-icon.png'));
     background-repeat:no-repeat;
-    background-size:45%;
+    background-size:31%;
     background-position:center;
 }
 
@@ -164,17 +194,19 @@ ul.dashboard-chart {
   text-align: left;
   list-style-type: none;
   padding: 0;
-
-	li:first-child {
+	// width: 100%;
+	// min-width: 300px;
+  li:first-child {
     line-height: 1em;
     font-weight: bold;
     font-size: 2em;
     font-family: Pacifico, cursive;
     margin-bottom: 1em;
+		width:100%;
   }
 }
 
-table.record-list {
+table.records-list {
   border-collapse: collapse;
   margin:0 auto;
   width:100%;
@@ -197,5 +229,5 @@ table.record-list {
 
 	td a{
     font-style: normal;
-  }
+	}
 }

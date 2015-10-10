@@ -1,7 +1,7 @@
  /*
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 
  $eucalyptus: #30A370;
@@ -34,8 +34,13 @@
  	margin: 0 auto;
  }
 
+
  .sidebar {
     list-style: none;
+  }
+
+ hr.fifty-percent {
+ 	width: 50%;
  }
 
 .container {
@@ -407,12 +412,12 @@ td, th {
   }
 }
 
-
 .footer {
     background: $bigstone;
     width: 100%;
     bottom: 0;
     height: 70px;
+
 
 }
 
@@ -421,7 +426,6 @@ td, th {
     text-align: center;
     color: $pink;
 
-}
 
 @media only screen and (min-width: 768px) {
 

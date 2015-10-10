@@ -6,4 +6,9 @@ class Skill < ActiveRecord::Base
   has_many :program_skills
   has_many :programs, :through => :program_skills
 
+
+
+
+
+
 end

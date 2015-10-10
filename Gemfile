@@ -7,6 +7,7 @@ end
 gem 'better_errors'
 
 gem 'react-rails', '~> 1.3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
@@ -27,10 +28,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'chart-js-rails'
 
+# Gon gem — get your Rails variables in your js
+# https://github.com/gazay/gon
+gem 'gon'
+
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
 
 gem 'ffaker'
+gem 'coffee-rails'
+
+gem "therubyracer"
+gem "unicorn-rails"
+
 
 group :development, :test do
   gem 'byebug'
