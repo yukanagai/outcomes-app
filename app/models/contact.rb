@@ -12,6 +12,14 @@ class Contact < ActiveRecord::Base
     end
   end
 
+  def is_student?
+    if Student.find_by(contact_id: self.id)
+      return true
+    else
+      return false
+    end
+  end
+
   def name
   	"#{first_name} #{last_name}"
   end

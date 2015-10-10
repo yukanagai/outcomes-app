@@ -1,15 +1,31 @@
 @import "application";
 
-#students_show {
-	thead {
-		width: 100%;
-	}
-	tbody {
-		width: 60%;
+#students_about {
+	.teadHeader {
+		height: 50px;
+		width: 40%;
 		margin: 0 auto;
+		background-color: $eucalyptus;
+		display: inline-block;
 	}
-	.bodyRow {
-		text-align: center;
+
+	.teamHeaderText {
+		font-family: $headerfont;
+		color: white;
+		background: $eucalyptus;
+	}
+
+}
+
+#students_show {
+	.studentContactInfo {
+		font-size: 11px;
+	}
+
+	.studentContactInfo {
+		th {
+			color: white;
+		}
 	}
 }
 
@@ -17,18 +33,19 @@
 
 
 #students_login {
-
-	background: $mercury;
+	background-color:#E5E5E5;
+	color: white;
+	height: 100%;
+	padding: 0;
+	margin: 0;
 
 	.footer {
 		display: none;
 	}
 
-
 	.navbar {
 		display: none;
 	}
-
 
 	#logoblue {
 		width: 350px;
@@ -52,7 +69,6 @@
 		border: 0;
 		font-size: 1em;
 		font-color: black;
-  		text-transform: uppercase;
   		box-sizing: border-box;
   		outline: 0;
 
@@ -66,13 +82,19 @@
 		font-size: 1em;
 		height: 50px;
 		box-sizing: border-box;
-
+		background-color: $pink;
+		color: white;
 
 		&:hover {
 			background: #1A2B37;
 			color: white;
 		}
 	}
+
+	.footer {
+		display: none;
+	}
+
 
 	#catlogo {
 		background-image: url(asset-path('catlogo.png'));
@@ -145,6 +167,7 @@ canvas {
 }
 
 .employed-totals{
+	border-radius: 50%;
     background-image: url(asset-path('handshake-icon.png'));
     background-repeat:no-repeat;
     background-size:31%;

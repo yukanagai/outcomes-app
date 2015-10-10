@@ -1,82 +1,84 @@
 // Place all the styles related to the Contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 #contacts_index {
-  background-color: #E5E5E5;
-
-// Contacts styling main container and tags
-  .main-container{
-    margin:0 auto;
-    text-align: center;
-  }
-
-  .headline-box{
-    max-width: 50%;
-    width: 50%;
-    height: 55px;
-    background-color: #1A2B37;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    text-align: center;
-    border-radius: 10px;
-  }
-
-  .search-form{
-    max-width: 50%;
-    width: 50%;
-    height: 50px;
-    margin: 0 auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-
-
 
   input[type="text"]{
     height: 30px;
-    width: 290px;
-    margin-bottom: 10px;
+    width: 50%;
+    margin: 10px 0;
+    outline: 0;
+    font-size: 1em;
+  }
+
+  .button-add-new {
+      background: white;
+      a {
+        color: black;
+      }
   }
 
   input[type="submit"]{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
     background-color: #FCA311;
-        width: 120px;
-        height: auto;
-        padding: 10px;
-        border-radius: 10px;
-        font-weight: 400;
+    border: 0;
+    outline: 0;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
     margin-left: 2%;
+    text-transform: uppercase;
   }
 
-  h2{
+  h1 {
     font-family: "Pacifico", cursive;
     font-size: 2.5em;
     color: white;
-    vertical-align: middle;
+    text-align: center;
     padding-top: 16px;
     }
 
+
   table{
-    // width: 50%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
-    border-radius: 10px;
     padding:10px;
     margin-bottom: 20px;
     margin-top: 15px;
     border-collapse: collapse;
   }
 
-  th{
-    padding: 2%;
+  th {
+    text-align: center;
+    text-transform: uppercase;
+    background: #1A2B37;
+    color: white;
   }
 
+  .contact {
+    padding: 20px;
+    margin: 20px;
+  }
 
   table td {
-    text-align: left;
-    padding: 4%;
+    text-align: center;
+    padding: 20;
+    margin: 0;
+    padding: 5px 0px;
+  }
+
+  .contact {
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .main-table {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
   }
 }

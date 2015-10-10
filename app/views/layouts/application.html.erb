@@ -5,14 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <%# As required by the 'gon' gem %>
   <%= include_gon(watch: true) %>
 
-  <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <link rel="stylesheet" href="animate.min.css">
 </head>
 
 <body id="<%= controller_name %>_<%= action_name %>" class="<%= controller_name %>">
@@ -21,13 +22,9 @@
 	<div id="sidebar">
 		<div id="catlogo"></div>
   	<ul>
-      <li><a href="#">Home</a></li>
+      <li><a href="/contacts">Contacts</a></li>
       <li><a href="/programs">Programs</a></li>
       <li><a href="/cohorts">Cohorts</a></li>
-
-  		<% if current_user %>
-        	<li><%= link_to current_user.name, current_user %></li>
-   	  <% end %>
       <li><a href="/logout">Logout</a></li>
    	 </ul>
     </div>
@@ -39,6 +36,7 @@
         <span class="bar"></span>
 	     </a>
        <div id="logobluesmall">Catcademy</div>
+       <div id="navlogout"><a href="/logout">LOGOUT</a></div>
 	   </div>
   </div>
 
@@ -47,10 +45,6 @@
     <p id="error"><%= error %></p>
   	<%= yield %>
   </div>
-
-  <div class="footer">
-  </div>
-
 </div>
 
 </body>

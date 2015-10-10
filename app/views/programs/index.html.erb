@@ -10,7 +10,7 @@
       <% @programs.each_with_index do |program, index| %>
         <tr>
           <td class ="program-index-names" id='<%="program-#{index}"%>'></td>
-          <td><%= link_to program.name, "/programs" %></td>
+          <td><%= link_to program.name, program %></td>
         </tr>
       <% end %>
     </tbody>

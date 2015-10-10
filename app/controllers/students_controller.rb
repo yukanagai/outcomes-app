@@ -1,7 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-  # if params :cohort then look up cohort and @students = cohort.students
 
   # GET /students
   # GET /students.json
@@ -9,10 +8,6 @@ class StudentsController < ApplicationController
     @students = Student.all
     @cohorts = Cohort.all
     @programs = Program.all
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   # Added Method for dashboard
@@ -20,6 +15,7 @@ class StudentsController < ApplicationController
     @students = Student.all
     @cohorts = Cohort.all
     @programs = Program.all
+
     # Using gon.watch to pass rails vars to js
     # def index
     #  @users_count = User.count
@@ -29,36 +25,9 @@ class StudentsController < ApplicationController
     gon.watch.total_employed = @total_employed
     @total_looking = Student.where(:employed => "f").count
     gon.watch.total_looking = @total_looking
-
-
-    # array with totals of employed and looking not filtered by date
-    # @overall = [@total_employed, @total_looking]
-    # gon.watch.overall = @overall
-
-    # array with totals of employed and looking not filtered by 90 days timeframe
-
-    @total_employed_90 = Student.where(:employed => "t").employed_in_90_days.count
-    gon.watch.total_employed_90 = @total_employed_90
-    @total_looking_90 = Student.where(:employed => "f").count
-    gon.watch.total_looking_90 = @total_looking_90
-    # @overall_90 = [@total_employed_90, @total_looking_90]
-    # gon.watch.overall_90 = @overall_90
-
-    @overall = {
-      overall: [@total_employed, @total_looking],
-      overall_90: [@total_employed_90, @total_looking_90]
-    }
+    @overall = [@total_employed, @total_looking]
     gon.watch.overall = @overall
-  end
 
-  def reminder_email(sender, recipient)
-    SurveyMailer.survey_time(sender, recipient).deliver_now
-  end
-
-  #POST /dashboard
-  def send_reminder_email
-    reminder_email( current_user, Student.find(params[:data][:id].to_i) )
-    redirect_to '/dashboard'
   end
 
   # GET /students/1
@@ -70,15 +39,9 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      session[:contact_id] = current_user.id
-
-      if current_user.is_officer?
-        session[:id] = CohortOfficer.find_by(contact: current_user.id).id
-
-      else
-        session[:id] = Student.find_by(contact: current_user.id).id
-
-      end
+      redirect_to student_path
+    else
+      render :login
     end
   end
 
@@ -116,8 +79,7 @@ class StudentsController < ApplicationController
   end
 
   def logout
-    session[:contact_id]=nil
-    session[:id] = nil
+    session[:id]=nil
     redirect_to '/'
   end
 
@@ -169,8 +131,6 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update(student_params)
-        @user.update(contact_params)
-
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -189,35 +149,6 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  # def login
-  #   if current_user
-  #     redirect_to '/cohorts'
-  #   else
-  #     render :login
-  #   end
-  # end
-
-  # def login_post
-
-  #   @contact = Contact.find_by({email: params[:email]})
-  #   @student = Student.find_by(contact_id: @contact.id)
-  #   if @contact
-  #     if @student['password'].authenticate(params[:password]) || @cohortofficer.password.authenticate(params[:password])
-  #       session[:contact_id] = @contact.id
-  #       redirect_to '/cohorts'
-  #     else
-  #       redirect_to '/login'
-  #     end
-  #   else
-  #     redirect_to '/login'
-  #   end
-  # end
-
-  # def logout
-  #   session[:contact_id]=nil
-  #   redirect_to '/login'
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
