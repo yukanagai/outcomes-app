@@ -9,6 +9,10 @@ class StudentsController < ApplicationController
     @students = Student.all
     @cohorts = Cohort.all
     @programs = Program.all
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   # Added Method for dashboard
@@ -39,6 +43,14 @@ class StudentsController < ApplicationController
     #redirect_to "/dashboard"
   end
 
+  def reminder_email(sender, recipient)
+    SurveyMailer.survey_time(sender, recipient).deliver_now
+  end
+
+  #POST /dashboard
+  def send_reminder_email
+    reminder_email( current_user, Student.find(params[:data][:id].to_i) )
+    redirect_to '/dashboard'
   end
 
   # GET /students/1
@@ -50,46 +62,41 @@ class StudentsController < ApplicationController
 
   def login
     if current_user
-      redirect_to student_path
-    else
-      render :login
+      session[:contact_id] = current_user.id
+
+      if current_user.is_officer?
+        session[:id] = CohortOfficer.find_by(contact: current_user.id).id
+
+      else
+        session[:id] = Student.find_by(contact: current_user.id).id
+
+      end
     end
   end
 
   def login_post
     @student = Student.find_by({username: params[:username]})
     @cohort_officer = CohortOfficer.find_by({username: params[:username]})
+    # does not work! super broken
 
     if @student
       if @student.authenticate(params[:password])
         session[:id] = @student.id
         session[:contact_id] = @student.contact_id
-        if @student.hundred_days?
-          redirect_to student_path(@student.id),
-          notice: "Time to take your survey, please click on the link in the sidebar"
-        else
-          redirect_to student_path(@student.id), error: "Hello #{@student.name}!"
-        end
-      else
-        redirect_to '/', error: "Bad Password"
+        redirect_to student_path(@student.id)
       end
-
-    elsif @cohort_officer
+    else
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
         session[:contact_id] = @cohort_officer.contact_id
-        redirect_to '/dashboard',
-        notice: "Hello #{@cohort_officer.name}!"
-      else
-        redirect_to '/', error: "Bad Password"
+        redirect_to '/dashboard'
       end
-    else
-      redirect_to '/', error: "Incorrect Username"
     end
   end
 
   def logout
-    session[:id]=nil
+    session[:contact_id]=nil
+    session[:id] = nil
     redirect_to '/'
   end
 
@@ -141,6 +148,8 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update(student_params)
+        @user.update(contact_params)
+
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
@@ -160,6 +169,35 @@ class StudentsController < ApplicationController
     end
   end
 
+  # def login
+  #   if current_user
+  #     redirect_to '/cohorts'
+  #   else
+  #     render :login
+  #   end
+  # end
+
+  # def login_post
+
+  #   @contact = Contact.find_by({email: params[:email]})
+  #   @student = Student.find_by(contact_id: @contact.id)
+  #   if @contact
+  #     if @student['password'].authenticate(params[:password]) || @cohortofficer.password.authenticate(params[:password])
+  #       session[:contact_id] = @contact.id
+  #       redirect_to '/cohorts'
+  #     else
+  #       redirect_to '/login'
+  #     end
+  #   else
+  #     redirect_to '/login'
+  #   end
+  # end
+
+  # def logout
+  #   session[:contact_id]=nil
+  #   redirect_to '/login'
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
@@ -170,3 +208,4 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:username, :password, :completed, :employed, :employer, :employed_as, :contact_id, :cohort_id, :checkbox_value)
     end
+end
