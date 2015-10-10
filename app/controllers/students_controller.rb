@@ -59,11 +59,19 @@ class StudentsController < ApplicationController
       if @student.authenticate(params[:password])
         session[:id] = @student.id
         session[:contact_id] = @student.contact_id
-        redirect_to student_path(@student.id),
-        notice: "Hello #{@student.name}!"
+        if @student.hundred_days?
+          redirect_to student_path(@student.id),
+          notice: "Time to take your survey, please click on the link in the sidebar"
+        else
+          redirect_to student_path(@student.id), error: "Hello #{@student.name}!"
+        end
+
+
+
       else
         redirect_to '/', error: "Bad Password"
       end
+
     elsif @cohort_officer
       if @cohort_officer.authenticate(params[:password])
         session[:id] = @cohort_officer.id
