@@ -11,6 +11,7 @@ class ProgramsController < ApplicationController
   # GET /programs/1.json
   def show
     @program = Program.find(params[:id])
+    @cohorts = Cohort.all
   end
 
   # GET /programs/new

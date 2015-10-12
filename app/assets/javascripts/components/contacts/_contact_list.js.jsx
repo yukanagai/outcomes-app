@@ -8,18 +8,35 @@ var ContactList = React.createClass({
       })
 
   return (
-    <div className = "contact-list">
-      <table className="main-table">
-        <tbody>
+    <div className= "contact-list">
+      <table>
+      <thead>
         <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Email
+          <th className="header" colSpan='10'>
+            <h1 className="headerText">Contact Search</h1>
           </th>
         </tr>
-      {contactNodes}
+
+        <tr>
+          <th className="linkBar" colSpan='6'>
+            <ContactSearchForm onContactSearch={this.props.onContactSearch}/>
+            <div className="button-add-new">
+              <a href="/contacts/new">Add New Contact</a>
+            </div>
+          </th>
+        </tr>
+        <tr className="headerRow">
+          <th> Name </th>
+          <th> Email </th>
+          <th>Twitter</th>
+          <th>Github</th>
+          <th>Linkedin</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+
+      <tbody className="bodyRow">
+        {contactNodes}
       </tbody>
       </table>
   </div>

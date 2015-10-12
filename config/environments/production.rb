@@ -89,7 +89,7 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"],
     openssl_verify_mode: 'none'
   }
-  config.action_mailer.default_url_options = {host: "localhost:3000"}
+  config.action_mailer.default_url_options = {host: "http://45.55.201.209:3000/"}
 
 
 

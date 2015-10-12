@@ -16,50 +16,63 @@ textarea
 this guy should send an email
 9. Thank you for filling this out! Please let us know of any feedback you have! Afterwards, please scroll down and click "Send". Good luck! textarea
 -->
-<p><%=@user.name%></p>
+<!-- <p><%=@user.name%></p>
 <p><%=current_user.name%></p>
-<p><%=@survey_user %></p>
+<p><%=@survey_user %></p> -->
 
-<%= form_for(@survey_user) do |f| %>
-  <h1>IT'S BEEN 100 DAYS!</h1>
+
+
+<div class="surveyForm">
+
+  <div class="surveyHeader">
+    <h2>Congratulations <%=@survey_user.name %>.</h2>
+    <h3>IT'S BEEN 100 DAYS!</h3>
+  </div>
+
+  <%= form_for(@survey_user) do |f| %>
   <div class="field">
-    <p>1. Have you found steady work in the tech field since graduation?</p>
 
-      Yes! Employed <input type="checkbox" name="student[employed]" value="true"/>
-      Nope! Still Searching!<input type="checkbox" id="employed" name="student[employed]" value="false"/>
+    <h4>1. Have you found steady work in the tech field since graduation?</h4>
+
+    <p id="checkboxanswers"><input type="checkbox" name="student[employed]" value="true"/>
+    Yes! Employed </p>
+   <p id="checkboxanswers"><input type="checkbox" id="employed" name="student[employed]" value="false"/> No still Searching!</p>
 
     <!-- jquery event for hiding/showing this -->
-    <p>2. Where are you working?
-      <% f.label :employer %>
-      <%= f.text_field :employer %>
-    </p>
-    <p> 3. If you're currently employed, what're you up to?
+
+    <h4>2. Where are you working?</h4>
+    <% f.label :employer %>
+    <p><%= f.text_field :employer %></p>
+
+    <h4> 3. If you're currently employed, what's your positon?</h4>
       <% f.label :employed_as %>
-      <%= f.text_field :employed_as %>
-    </p>
+    <p><%= f.text_field :employed_as %></p>
 
     <%= form_for(@survey_user.contact) do |f| %>
-      <p> 4. Do you have a new email? (if yes, fix it!)
+      <h4> 4. Do you have a new email? (If yes, please update!)</h4>
         <% f.label :email %>
-        <%= f.text_field :email %>
-      </p>
-      <p> 5. Is this still your personal website? (if not, fix it!)
+      <p><%= f.text_field :email %></p>
+
+      <h4> 5. Do you have a personal website? (Please update!)</h4>
         <% f.label :website %>
-        <%= f.text_field :website %>
-      </p>
-      <p> 6. Is this Github account still your best work?
+      <p><%= f.text_field :website %></p>
+
+      <h4> 6. Is this Github account still your best work?</h4>
         <% f.label :github %>
-        <%= f.text_field :github %>
-      </p>
-      <p> 7. New phone?
+      <p><%= f.text_field :github %></p>
+
+      <h4> 7. Is this still your phone number?</h4>
         <% f.label :phone %>
-        <%= f.text_field :phone %>
-      </p>
+      <p><%= f.text_field :phone %></p>
+
+      <br>
+
     <% end %>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit :Submit, id: 'survey-submit' %>
     </div>
   </div>
 
 <% end %>
+</div>

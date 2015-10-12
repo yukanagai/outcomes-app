@@ -14,11 +14,13 @@ Rails.application.routes.draw do
 
   get '/styleguide' => 'students#styleguide'
 
+  get '/about' => 'students#about'
+
   # load data
   get '/dashboard' => 'students#dashboard'
 
   # load survey
   get '/survey' => 'surveys#index'
   post '/dashboard', to: 'students#send_reminder_email'
-
+  post 'dashboard/:id', to: 'students#switch_data_source'
 end
