@@ -1,4 +1,4 @@
-##**Caturday - Outcomes App**##
+##**Catcademy - Outcomes App**##
 
 Catcademy is a fictitious programming bootcamp for career-changers. This web-app allows Catcademy students to log in and update their profiles and employment status - which admins can monitor for overall students, an individual student, all programs, and per cohort using dynamic charts.  Admins are also able to send students who've reached their 100 Day graduation mark a survey via email.
 
