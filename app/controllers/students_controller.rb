@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
-  # if params :cohort then look up cohort and @students = cohort.students (Jaden's suggestion)
+  # if params :cohort then look up cohort and @students = cohort.students (Jaden's suggestion) ???
 
   # GET /students
   # GET /students.json
@@ -44,12 +44,44 @@ class StudentsController < ApplicationController
     # @overall_90 = [@total_employed_90, @total_looking_90]
     # gon.watch.overall_90 = @overall_90
 
-    @overall = {
-      overall: [@total_employed, @total_looking],
-      overall_90: [@total_employed_90, @total_looking_90]
-    }
-    gon.watch.overall = @overall
+    # @overall = {
+    #   overall: [@total_employed, @total_looking],
+    #   overall_90: [@total_employed_90, @total_looking_90]
+    # }
+    # gon.watch.overall = @overall
 
+###########
+
+    overall_array=[]
+    overall_array.push(@total_employed,@total_looking)
+    overall_90_array=[]
+    overall_90_array.push(@total_employed_90, @total_looking_90)
+
+    @all_charts_data = Hash.new
+
+    @all_data = @cohorts.map.with_index{ |cohort, i|
+
+      @total_employed_by_cohort = Student.where(:employed => "t", :cohort_id => i).count
+      @total_looking_by_cohort = Student.where(:employed => "f", :cohort_id => i).count
+
+      @total_employed_90_by_cohort = Student.where(:employed => "t", :cohort_id => i).employed_in_90_days.count
+      @total_looking_90_by_cohort = Student.where(:employed => "f", :cohort_id => i).count
+
+      overall_array.push(@total_employed_by_cohort,@total_looking_by_cohort)
+      overall_90_array.push(@total_employed_90, @total_looking_90)
+
+      }
+
+    @all_charts_data = {
+      overall: overall_array,
+      overall_90: overall_90_array
+    }
+    gon.watch.all_charts_data = @all_charts_data
+
+    # binding.pry
+
+
+###########
 
     #-- cohort options for select_tag
     @cohort_options = @cohorts.map{|cohort| [cohort.name, cohort.id]}
