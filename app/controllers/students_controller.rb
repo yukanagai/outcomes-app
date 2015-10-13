@@ -56,6 +56,34 @@ class StudentsController < ApplicationController
 
   end
 
+  # for testing react
+  def test
+    @students = Student.all
+    @cohorts = Cohort.all
+    @programs = Program.all
+
+    @total_employed = Student.where(:employed => "t").count
+    gon.watch.total_employed = @total_employed
+    @total_looking = Student.where(:employed => "f").count
+    gon.watch.total_looking = @total_looking
+
+    @total_employed_90 = Student.where(:employed => "t").employed_in_90_days.count
+    gon.watch.total_employed_90 = @total_employed_90
+    @total_looking_90 = Student.where(:employed => "f").count
+    gon.watch.total_looking_90 = @total_looking_90
+    # @overall_90 = [@total_employed_90, @total_looking_90]
+    # gon.watch.overall_90 = @overall_90
+
+    @overall = {
+      overall: [@total_employed, @total_looking],
+      overall_90: [@total_employed_90, @total_looking_90]
+    }
+    gon.watch.overall = @overall
+
+    @cohort_options = @cohorts.map{|cohort| [cohort.name, cohort.id]}
+
+  end
+
   def switch_data_source
     #logic here...
     #redirect_to "/dashboard"

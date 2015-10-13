@@ -7,6 +7,8 @@ end
 gem 'better_errors'
 
 gem 'react-rails', '~> 1.3.0'
+
+# browserify-rails for npm packages
 gem 'browserify-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -27,6 +29,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# renders charts
 gem 'chart-js-rails'
 
 # Gon gem — get your Rails variables in your js

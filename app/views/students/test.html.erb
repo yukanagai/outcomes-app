@@ -1,0 +1,65 @@
+
+<div id='total_employed'>
+</div>
+
+<div id="canvas-container">
+
+    <div class="top-text-header">Dashboard
+    </div>
+
+    <%= react_component('ChartBox',students: @students) %>
+
+</div>
+
+<!--
+    <section id="charts">
+        <article>
+            <div class="dashboard-widget">
+              <ul class="dashboard-chart">
+                <li style="text-align:center;">
+                  All Time
+                </li>
+                <li>
+                  <canvas id="pieChart01" width="250" height="250" class="pie-chart employed-all"></canvas>
+                </li>
+              </ul>
+            </div>
+
+            <div class="dashboard-widget">
+              <ul class="dashboard-chart">
+                <li style="text-align:center;">
+                  Last 90 Days
+                </li>
+                <li>
+                  <canvas id="doughnutChart01" width="250" height="250" class="doughnut-chart employed-totals"></canvas>
+                </li>
+              </ul>
+            </div>
+
+            <div class="dashboard-widget cohort-list">
+              <ul class="dashboard-chart">
+                <li style="text-align:center;">Cohorts</li>
+                <% Cohort.all.each do |cohort| %>
+                <li style="text-align:center;">
+                  <div class="cohorts-name-list">
+                    <a href="<%= cohort_path(cohort) %>"><%="View #{cohort.name} Page"%></a>
+                  </div>
+                </li>
+              <%end%>
+                <li>
+                  <br />
+                  <div class="cohorts-name-list">
+                    <%= form_tag('/dashboard') do -%>
+                    <%= select_tag(:cohort_options, options_for_select(@cohort_options), include_blank: "All Cohorts") %>
+                    <%end%>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </article>
+    </section>
+</div>
+<script type="text/javascript">
+  initCharts();
+</script>
+</div> -->

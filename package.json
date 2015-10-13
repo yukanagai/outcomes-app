@@ -1,0 +1,26 @@
+{
+  "name": "outcomes-app",
+  "version": "1.0.0",
+  "description": "adding node to get reactive chart.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nialbima/outcomes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nialbima/outcomes-app/issues"
+  },
+  "homepage": "https://github.com/nialbima/outcomes-app#readme",
+  "dependencies": {
+    "browserify": "^6.3.4",
+    "browserify-incremental": "^1.4.0",
+    "chart.js": "^1.0.2",
+    "react": "^0.14.0",
+    "react-chartjs": "^0.6.0"
+  }
+}

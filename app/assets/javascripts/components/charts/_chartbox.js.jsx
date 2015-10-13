@@ -1,3 +1,10 @@
+var ChartBox = React.createClass({
+  getInitialState: function(){
+    data_array = this.props
+    console.log(data_array)
+    return data_array
+  },
+
   function initCharts() {
   var overall_data = gon.watch('overall', pieData);
   function pieData (overall_data){
@@ -42,28 +49,30 @@
     // ...And for a doughnut chart
     var doughnutChart01ToRender = $("#doughnutChart01").get(0).getContext("2d");
     var doughnutChart01 = new Chart(doughnutChart01ToRender).Doughnut(doughnutChart01Data);
+  },
+
+  render: function(){
+    var divStyle = {
+      width: 250,
+      height: 250,
+      border: "1px solid black",
+
+    }
+
+    return(
+    <div>
+      <p>Alive</p>
+
+
+      <ul className="dashboard-chart">
+        <li>
+          All Time
+        </li>
+        <li>
+          <canvas id="pieChart01" style={divStyle} className="pie-chart employed-all"></canvas>
+        </li>
+      </ul>
+    </div>
+  )
   }
-
-  //-- END: PIEs N DOGHNUTs --//
-
-$('#cohort_options').on('change', function (event){
-  var selectedCohort = ($('#cohort_options option:selected').val());// get option value (note: type is string)
-  console.log($('#cohort_options option:selected').val());
 })
-
-}//END OF Init Function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

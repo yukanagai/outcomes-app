@@ -1,0 +1,1 @@
+This is just here to provide an explanation of what the React does. It doesn't compile to application.js or components.js.
