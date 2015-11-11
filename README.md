@@ -1,5 +1,7 @@
 ##**Catcademy - Outcomes App**##
 
+ ![alt tag] (https://cloud.githubusercontent.com/assets/1388737/11097077/3bf902ac-886b-11e5-8300-7775fbc44183.png)
+
 Catcademy is a fictitious programming bootcamp for career-changers. This web-app allows Catcademy students to log in and update their profiles and employment status - which admins can monitor for overall students, an individual student, all programs, and per cohort using dynamic charts.  Admins are also able to send students who've reached their 100 Day graduation mark a survey via email.
 
 This site is hosted on Digital Ocean, and built using Ruby on Rails, React, Chart.js, PostgreSQL, and ActionMailer.
@@ -22,6 +24,3 @@ Made by:
 Artifacts:
  - [ERD](https://github.com/nialbima/outcomes-app/blob/master/No-Name-Outcomes-ERD.pdf)
  - [Routes Flow](https://github.com/nialbima/outcomes-app/blob/master/routes-flow-diagram.pdf)
-
-
- ![alt tag] (https://cloud.githubusercontent.com/assets/1388737/11097077/3bf902ac-886b-11e5-8300-7775fbc44183.png)
